@@ -16,7 +16,7 @@ If you use this work, please consider citing using:
 Lalović, Marko. (2014, September 5). Partial Drawings of Complete Graphs.
 ```
 
-BibTeX:
+Or the Zenodo record using BibTeX:
 ```
 @misc{lalovic_marko_2014_679511,
   author       = {Lalović, Marko},
