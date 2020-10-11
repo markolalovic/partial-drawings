@@ -1,0 +1,52 @@
+\begin{tikzpicture}[scale = 6.5, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]
+
+\begin{footnotesize}
+\node [dot=](x) at (0,0) {};
+\node [left = of x] {$x$};
+\node [dot=](y) at (1,0) {};
+\node [right = of y] {$y$};
+\node [dot=](z) at ({1/2},{-sqrt(3)/2}) {};
+\node [below = of z] {$z$};
+
+% ticks on axes and mesh zx
+\draw [thin] (0.3825000000, -0.6451889258) -- (0.3675000000, -0.6538491799);
+\draw [thin] (0.2575000000, -0.4286825749) -- (0.2425000000, -0.4373428289);
+\draw [thin] (0.1325000000, -0.2121762239) -- (0.1175000000, -0.2208364780);
+\coordinate (zx1) at (0.3750000000,-0.6495190528);
+\node [left = of zx1] {$\frac{1}{4}$};
+\coordinate (zx2) at (0.2500000000,-0.4330127019);
+\node [left = of zx2] {$\frac{1}{2}$};
+\coordinate (zx3) at (0.1250000000,-0.2165063509);
+\node [left = of zx3] {$\frac{3}{4}$};
+\draw [thin, dotted] (zx1) -- (0.6250000000,-0.6495190528);
+\draw [thin, dotted] (zx2) -- (0.7500000000,-0.4330127019);
+\draw [thin, dotted] (zx3) -- (0.8750000000,-0.2165063509);
+
+% ticks on axes and mesh xy
+\draw [thin] (0.2500000000, 0.008660254038) -- (0.2500000000, -0.008660254038);
+\draw [thin] (0.5000000000, 0.008660254038) -- (0.5000000000, -0.008660254038);
+\draw [thin] (0.7500000000, 0.008660254038) -- (0.7500000000, -0.008660254038);
+\draw [thin,dotted] (z) -- (-0.1666666667, 0.2886751346);
+\draw [thin,dotted] (z) -- (0.1666666667, 0.2886751346);
+\draw [thin,dotted] (z) -- (0.5000000000, 0.2886751346);
+\draw [thin,dotted] (z) -- (0.8333333333, 0.2886751346);
+\draw [thin,dotted] (z) -- (1.166666667, 0.2886751346);
+\coordinate (xy1) at (0.2500000000,-0.0);
+\node [below = of xy1,fill=white] {$\frac{1}{4}$};
+\coordinate (xy2) at (0.5000000000,-0.0);
+\node [below = of xy2,fill=white] {$\frac{1}{2}$};
+\coordinate (xy3) at (0.7500000000,-0.0);
+\node [below = of xy3,fill=white] {$\frac{3}{4}$};
+
+% vectors and points
+\draw [thin, ->] (x) -- (y);
+\draw [thin, ->] (z) -- (x);
+\node [dot=](p) at (0.875, 0.216506) {};
+\node [above = of p,fill=white] {$p\langle \alpha, \beta \rangle$};
+\node [dot=](q) at (0.3750000000, -0.4330127019) {};
+\node [above = of q,fill=white] {$q\langle \frac{1}{4}, \frac{1}{2} \rangle$};
+
+\end{footnotesize}
+\end{tikzpicture}

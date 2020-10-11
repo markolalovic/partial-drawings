@@ -1,0 +1,115 @@
+\begin{tikzpicture}[scale = 5, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+
+% S_{ab}
+\draw (0,0) -- (-0.166667, -0.288675) -- (0.166667, -0.288675) -- (0.25,0) -- (0,0) -- cycle;
+\fill[color-parallelogram,opacity=0.9] (0,0) -- (-0.166667, -0.288675) -- (0.166667, -0.288675) -- (0.25,0) -- (0,0) -- cycle;
+
+% S_{ba}
+\draw (1,0) -- (1.16667, -0.288675) -- (0.833333, -0.288675) -- (0.75,0) -- (1,0) -- cycle;
+\fill[color-parallelogram,opacity=0.9] (1,0) -- (1.16667, -0.288675) -- (0.833333, -0.288675) -- (0.75,0) -- (1,0) -- cycle;
+
+
+\node [dot=](a) at (0,0) {};
+\node [left = of a] {$a$};
+\node [dot=](b) at (1,0) {};
+\node [right = of b] {$b$};
+\node [dot=](c) at ({1/2},{sqrt(3)/2}) {};
+\node [above = of c] {$c$};
+
+\coordinate (e) at (-0.06541, -0.57937) {};
+\coordinate (h) at (-0.03315, -0.29366) {};
+\coordinate (n) at (0.96821, -0.2816) {};
+\coordinate (m) at (0.93514, -0.57456) {};
+\coordinate (ab) at (0.25,0) {};
+\coordinate (ba) at (0.75,0) {};
+
+\node [dot2=](overa) at ({1/2-0.4},{sqrt(3)/2}) {};
+\node [above = of overa] {$\abovesym{a}$};
+\node [dot2=](overb) at ({1/2 + 0.6},{sqrt(3)/2}) {};
+\node [dot2=](undera) at ({1/2-0.6},{-sqrt(3)/2}) {};
+\node [below = of undera] {$\undersym{a}$};
+\node [dot2=](underb) at ({1/2+0.4},{-sqrt(3)/2}) {};
+\node [below = of underb] {$\undersym{b}$};
+
+\draw[ultra thin] (undera) -- (underb) -- (overb) -- (overa) -- (undera) -- cycle;
+\draw[thin,dotted] (a) -- (b) -- (c) -- (a) -- cycle;
+
+% big triangle
+\draw [thin,dotted] ({-1/2},{-sqrt(3)/2}) -- ({1/2},{sqrt(3)/2}) -- ({3/2},{-sqrt(3)/2}) -- cycle;
+
+% lower 2 lines and upper 4 tilted lines
+\draw [thin,dotted]({-1/3},{-sqrt(3)/3}) -- ({4/3},{-sqrt(3)/3});
+\draw [thin,dotted]({-1/6},{-sqrt(3)/6}) -- ({7/6},{-sqrt(3)/6});
+
+% rays
+\draw [thin,dotted] (c) -- (0.00332, -0.86603);
+
+% stubs
+\draw[ultra thick] (a) -- ({0.25},0);
+\draw[ultra thick] ({0.75}, 0) -- (b);
+
+
+\coordinate (e) at (-0.06541, -0.57937) {};
+\coordinate (h) at (-0.03315, -0.29366) {};
+\coordinate (n) at (0.96821, -0.2816) {};
+\coordinate (m) at (0.93514, -0.57456) {};
+
+\coordinate (f) at (0.16815, -0.29124) {};
+\coordinate (g) at (0.08573, -0.57864) {};
+\coordinate (ff) at (0.83, -0.289) {};
+\coordinate (gg) at (0.91, -0.578) {};
+\coordinate (uu) at (0.997, -0.86603) {};
+
+% bands
+% B1
+\draw[] (ab) -- (ba) -- (ff) -- (f) -- (ab)-- cycle;
+\fill[red,opacity=0.3] (ab) -- (ba) -- (ff) -- (f) -- (ab)-- cycle;
+
+% B2
+\draw[] (ff) -- (f) -- (g)-- (gg) -- (ff)-- cycle;
+\fill[red,opacity=0.3] (ff) -- (f) -- (g)-- (gg) -- (ff)-- cycle;
+
+% B3
+\draw[] (1.02407, -0.869) -- (m)-- (e) --(-0.17754, -0.86603) --(1.02407, -0.869) -- cycle;
+\fill[red,opacity=0.3] (1.02407, -0.869) -- (m)-- (e) -- (-0.17754, -0.86603) --(1.02407, -0.869) -- cycle;
+
+
+
+\draw[thin,dotted] (c) -- (uu);
+
+\node [dot2=](e) at (-0.06541, -0.5793) {};
+\node [left = of e,fill=white] {$e$};
+\node [dot2=](h) at (-0.03315, -0.29) {};
+\node [left = of h] {$h$};
+\node [dot2=](n) at (0.96821, -0.288) {};
+\node [right = of n] {$n$};
+\node [dot2=](m) at (0.93514, -0.5748) {};
+\node [right = of m,fill=white] {$m$};
+\node[dot2=] (ab) at (0.25,0) {};
+\node [above = of ab,fill=white] {$a_{b}$};
+\node[dot2=] (ba) at (0.75,0) {};
+\node [above = of ba,fill=white] {$b_{a}$};
+\node [above = of overb,fill=white] {$\abovesym{b}$};
+
+%%% denote P1, P2, P3
+\coordinate (p1) at (0.1,{-0.33-0.04}) {};
+\node [left = of p1] {$P_{1}$};
+
+\coordinate (p2) at (0.85,{-0.33-0.04}) {};
+\node [right = of p2] {$P_{3}$};
+
+% denote B_i
+\coordinate (b1) at (0.7,{-0.12}) {};
+\node [left = of b1] {$B_{1}$};
+\coordinate (b2) at (0.74,{-0.33-0.07}) {};
+\node [left = of b2] {$B_{2}$};
+\coordinate (b3) at (0.78,{-0.66-0.04}) {};
+\node [left = of b3] {$B_{3}$};
+
+\node [dot2=](undera) at ({1/2-0.6},{-sqrt(3)/2}) {};
+\node [dot2=](underb) at ({1/2+0.4},{-sqrt(3)/2}) {};
+
+\end{footnotesize}
+\end{tikzpicture}

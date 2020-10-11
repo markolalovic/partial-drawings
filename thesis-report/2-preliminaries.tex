@@ -1,0 +1,467 @@
+\chapter{Preliminaries}
+In this work we use only the Euclidean distance, the adjective Euclidean will be omitted. We consider finite sets of points $\Pi$ in the plane with certain constraints and want to estimate the maximum possible number of points. So we need some definitions. With $\quadsym{abcd}$ we denote a convex quadrilateral with vertices $a,b,c,d$, which follow each other in this order along its edges. If the sides of a convex quadrilateral are parallel to the coordinate axes, we use a more precise notation $\rectansym{abcd}$. We denote by $\trisym{abc}$ the triangle with vertices $a,b,c$. The length of line segment determined by the points $x,y$ is denoted by $|xy|$.
+
+\begin{definition}
+We say that a family of nonempty convex polygons
+$$
+  \mathcal{C} = \left\{ C_{1}, C_{2}, ..., C_{k} \right\},
+$$
+is a \textit{geometric partition} of polygon $L$, if
+$$
+  L = C_{1} \cup C_{2} \cup ... \cup C_{k}
+$$
+and for any $C_{i}, C_{j}, i \neq j$, intersection $C_{i} \cap C_{j}$ is considered to be a part of their common edge.
+\end{definition}
+
+\section{Ray coordinate system}
+In the next chapter, we observe several times the position of the points depending on the position of up to three pre-selected points $x, y, z$. For any point $p$ located at an acute angle $\sangle{xzy}$, see Figure~\ref{fig: rays-coordinate-system}, we are interested in where the ray from the point $z$ trough the point $p$ intersects the line segment $\overline{xy}$ and at what ``height'' is the point $p$ from the position of the point $z$. Therefore, we introduce an alternative coordinate system.
+
+\begin{figure}
+\begin{center}
+\input{./tikz/ray-coordinate-system.tikz}
+\end{center}
+\caption{Ray coordinate system.}
+\label{fig: rays-coordinate-system}
+\end{figure}
+
+\begin{definition}[Ray coordinate system]
+Let $x, y, z \in \mathbb{R}^{2}$ be fixed nonlinear points. Any point $p \in \mathbb{R}^{2}$ can be expressed as a linear combination of vectors $\vec{xy}$ and $\vec{zx}$ in the following way
+
+\begin{equation*}
+ \label{lin}
+ \vec{zp} = \alpha \cdot \beta \cdot \vec{xy} + \beta \cdot \vec{zx}, \alpha, \beta \in \mathbb{R}
+\end{equation*}
+
+In \textit{ray coordinate system (RCS)} with respect to $x,y,z$ any point $p$ in the plane is determined by the ordered pair $(\alpha, \beta)$ and we write $p \langle \alpha, \beta \rangle$. The point $z$ is called \textit{origin} and the ray from $z$ through $x$ is called \textit{ray axis}. The third point that determines the RCS is $y$. The first coordinate $\alpha$ is called \textit{ray angle} and the second coordinate $\beta$ is called \textit{ray height} of the point $p$. Half-line with the starting point in $z$ passing through a point with ray angle $\xi$ is called a \textit{$\xi$-ray}.
+\label{Ray coordinate system}
+\end{definition}
+
+For example, if $\vec{zq} = \frac{1}{2}(\frac{1}{4}\vec{xy} + \vec{zx})$ holds, the point $q$ has ray coordinates $q\langle \frac{1}{4}, \frac{1}{2} \rangle$ in RCS with respect to $x,y,z$.
+
+\begin{definition}[Ray trapezoid]
+In the ray coordinate system with respect to points $x, y, z$ the \textit{ray trapezoid}
+$$
+\tpz{\left[ \alpha,\omega,\gamma,\delta \right]_{x,y,z} }
+$$
+is trapezoid with vertices $\langle\alpha, \gamma\rangle, \langle\omega, \gamma\rangle, \langle\omega, \delta\rangle, \langle\alpha, \delta\rangle$, located in a convex angle $\sangle{xzy}$, see Figure~\ref{fig: ray-trapezoid}. Ray Trapezoid $\tpz{\left[ \alpha,\omega,\gamma,\delta \right]_{x,y,z} }$ corresponds to the Cartesian product
+$$
+\left[ \alpha,\omega \right] \times \left[ \gamma,\delta \right].
+$$
+The opposite sides of the trapezoid contained in the $z$-rays are called \textit{legs}, and the other two sides, which are parallel to the line segment $\overline{xy}$, are called \textit{bases}. The one closer to $z$ is called {\it short base} and the one farther away from $z$ is called {\it long base}. We have implicitly assumed that $\alpha \leq \omega$ and $\gamma \leq \delta$.
+\end{definition}
+
+\begin{figure}
+\begin{center}
+  \input{./tikz/ray-trapezoid.tikz}
+\end{center}
+\caption{Ray trapezoid in ray coordinate system with respect to $x,y,z$.}
+\label{fig: ray-trapezoid}
+\end{figure}
+
+\section{Partial drawing}
+Let $\Pi$ be the finite set of points in the plane and $n = |\Pi|$. For each pair of points $uv \in \Pi$, draw the line segment $\overline{uv}$, omitting the central half. The initial quarter of the line $\overline{uv}$, which contains the vertex $u$, is called a \textit{stub} from $u$ to $v$ and is denoted by $\overline{u}v$. The point $u$ is also called the \textit{start} of the stub $\overline{u}v$, and the other end of the stub its \textit{end}. The union of the two stubs $\overline{u}v$ and $\overline{v}u$ is called a \textit{partial edge} between the points $u$ and $v$. If any two partial edges intersect only at their possible common starting vertex, the resulting structure is called a \textit{partial drawing of a complete graph} $K_{n}$, and the set of points $\Pi$ its \textit{basis}. Let's write it more formally.
+
+\begin{figure}
+\input{./tikz/partial-edges.subfig}
+\caption{How to draw a partial edge.}
+\label{fig: partial-edges}
+\end{figure}
+
+\begin{definition}[Stubs]
+Given points $u, v$ in the plane, line segment with ends $u$ and $\frac{3}{4}u + \frac{1}{4}v$ is called a \textit{stub} $\overline{u}v$, see Figure~\ref{fig: partial-edge}. Points $u$ and $\frac{3}{4}u + \frac{1}{4}v$ are called \textit{start} and \textit{end} of the stub $\overline{u}v$ respectively, see Figure~\ref{fig: stub-ends}. The end of the stub $\overline{u}v$ is denoted by $u_{v}$.
+\label{def: stubs}
+\end{definition}
+
+\begin{definition}[Partial edge]
+\textit{Partial edge} between the points $u, v$ is the union of the two stubs $\overline{u}v$ and $\overline{v}u$.
+\label{def: partial-edge}
+\end{definition}
+
+\begin{definition}[Partial drawing]
+Let $\Pi$ be the finite set of points in the plane and $n = |\Pi|$. The union of partial edges between all pairs of points in $\Pi$ is denoted by $\mathcal{D}(\Pi)$.
+
+\begin{equation}
+\mathcal{D}(\Pi) = \bigcup_{u,v \in \Pi} (\overline{u}v \cup \overline{v}u)
+\end{equation}
+
+If any two partial edges $(\overline{u}v \cup \overline{v}u)$ and $(\overline{u'}v' \cup \overline{v'}u'), u,v,u',v' \in \Pi$ intersect only at their possible common start (say $u = u'$), the resulting structure $\mathcal{D}(\Pi)$ is called \textit{partial drawing of a complete graph} $K_{n}$. The set of points $\Pi$ is called its \textit{basis}.
+\label{def: partial-drawing}
+\end{definition}
+
+\begin{figure}
+\centering
+\input{./tikz/drawings-of-K6.subfig}
+\caption{Various drawings of $K_{6}$.}
+\label{fig: drawings-of-K6}
+\end{figure}
+
+An example is in Figure~\ref{fig: drawing-of-K_6}. The same graph was drawn with partial edges in Figure~\ref{fig: wrong-drawing-of-K_6}. We notice that we are violating the non-crossing requirement. The same graph can be drawn with partial edges without crossings, if the points are moved accordingly, see Figure~\ref{fig: partial-drawing-of-K_6}. Such a drawing is called \textit{partial drawing of a complete graph} $K_{6}$.
+
+It is easy check that the basis points of partial drawing are in a general position.
+\begin{lemma}[Non-linearity]
+If $\Pi$ is the basis of a partial drawing of a complete graph, then $\Pi$ does not contain three collinear points.
+\end{lemma}
+\begin{proof}
+Suppose that the set $\Pi$ contains collinear points $u, v, w$. If the point $v$ lies strictly between $u$ and $w$, the stub $\overline{u}v$ is contained in stub $\overline{u}w$. This is not possible in a partial drawing.
+\label{lemma: non-linearity}
+\end{proof}
+
+For each potential basis $\Pi$ of the partial drawing, we will assume that it does not contain three collinear points.
+
+When estimating the number of points in a partial drawing of a complete graph, we will be interested in whether for two points from some region must come to a crossing between the stubs to three pre-selected points. Therefore, we introduce the term {\it umbrella}.
+
+\begin{definition}[Umbrella]
+Let $x, y, z$ be points in general position. For any point $p$, an \textit{umbrella} $Y_{p,x,y,z}$ of the point $p$ is a union of $x, y, z$ stubs:
+\begin{equation*}
+Y_{p,x,y,z} = \overline{p}x \cup \overline{p}y \cup \overline{p}z.
+\end{equation*}
+\label{umbrella}
+\end{definition}
+
+In Figure~\ref{fig: umbrella-no-crossings} is an example without crossings between the umbrellas of points $u$ and $v$ with respect to three pre-selected points that are not part of the Figure. Figures~\ref{fig: umbrella-crossings-1} and ~\ref{fig: umbrella-crossings-2} show examples of crossings between umbrellas.
+
+\begin{figure}
+\centering
+\input{./tikz/umbrella-crossings.subfig}
+\caption{Possible crossings of umbrellas.}
+\label{fig: umbrella-crossings}
+\end{figure}
+
+Let point $p$ have ray coordinates $p = \langle\beta, \delta\rangle$, then we can calculate the ray coordinates of the ends of the umbrella $Y_{p,x,y,z}$:
+\begin{align}
+  \label{eq: ray-coordinates-umbrella-1}
+  p_{x} &= \left\langle \frac{3\delta\beta}{1+3\delta}, \frac{1+3\delta}{4} \right\rangle,\\[6pt]
+  \label{eq: ray-coordinates-umbrella-2}
+  p_{y} &= \left\langle\ \frac{1+3\delta\beta}{1+3\delta}, \frac{1+3\delta}{4} \right\rangle,\\[6pt]
+  p_{z} &= \left\langle \beta, \frac{3}{4}\delta \right\rangle.
+\end{align}
+
+
+\begin{corollary}
+\label{cor: consequence-of-ray-coordinates-of-umbrella-ends}
+Select RCS with respect to $x,y,z$ and let the ray angle $\beta \in (0,1)$ be fixed. With increasing ray height $\delta \geq 0$ is
+$$
+\frac{3\delta\beta}{1+3\delta}
+$$
+an increasing function of height $\delta$ and
+$$
+\frac{1+3\delta\beta}{1+3\delta}
+$$
+a decreasing function of height $\delta$. This means that at a fixed angle $\beta$, with increasing height, the ray angle of the end $p_{x}$ decreases and the ray angle of the end $p_{y}$ increases.
+\end{corollary}
+
+We now define ray trapezoids with certain properties as additional terminology for determining the upper bound in the next section.
+
+\begin{definition}[Shadows]
+In ray coordinate system with respect to points $x,y,z$ the \textit{shadows} $S_{\overline{x}y}$ and $S_{\overline{y}x}$ are ray trapezoids
+$$
+S_{\overline{x}y} = \tpz{\left[ 0,\frac{1}{4},1,\frac{4}{3} \right]_{x,y,z} }
+$$
+and
+$$
+S_{\overline{y}x} = \tpz{\left[ \frac{3}{4},1,1,\frac{4}{3} \right]_{x,y,z} }.
+$$
+\end{definition}
+
+\begin{proposition}
+For $x,y,z \in \Pi$, the following obviously holds
+\begin{equation}
+\left( S_{\overline{x}y} \setminus \left\{ x \right\} \right) \cap \Pi = \emptyset
+\end{equation}
+and
+\begin{equation}
+\left( S_{\overline{y}x} \setminus \left\{ y \right\} \right) \cap \Pi = \emptyset.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For each  $p \in S_{\overline{x}y}$ or $p \in S_{\overline{y}x}$ the stub $\overline{p}z$ intersects the short base of shadow $S_{\overline{x}y}$ or shadow $S_{\overline{y}x}$. The short base of the shadow $S_{\overline{x}y}$ is the stub $\overline{x}y$ and the short base of the shadow $S_{\overline{y}x}$ is the stub $\overline{y}x$, therefore $p \notin \Pi\setminus \left\{ x,y \right\}$.
+\end{proof}
+
+\begin{definition}[Layer]
+In ray coordinate system with respect to points $x,y,z$ the \textit{layer} $L$ is the ray trapezoid
+$$L = \tpz{\left[ \alpha,\omega,\gamma,\delta \right]_{x,y,z} },$$
+for which
+$$
+\gamma \geq \frac{3}{4} \cdot \delta.
+$$
+The parameters $\gamma$ and $\delta$ are called \textit{lower} and \textit{upper} height of the layer $L$. The parameters $\alpha$ and $\omega$ are called \textit{left} and \textit{right} border of the layer $L$.
+\end{definition}
+
+The consequence of the condition $\gamma \geq \frac{3}{4}\delta$ is that for any point $p \in L$ the stub $\overline{p}z$ intersects short base of the layer $L$. (Even more applies, the stub $\overline{p}z$ intersects the line parallel to the line segment $\overline{xy}$ at the height $\frac{3}{4}\delta$.)
+
+\begin{figure}
+\begin{center}
+\input{./tikz/edge-layers-1.tikz}
+\end{center}
+\caption{Maximal cell $C$ in layer $L$.}
+\label{fig: layer-L}
+\end{figure}
+
+\begin{definition}[Cell]
+In ray coordinate system with respect to points $x,y,z$ the \textit{cell} $C$ is ray trapezoid
+$$
+C = \tpz{\left[ \beta,\beta',\gamma,\delta \right]_{x,y,z} }
+$$
+in the layer $L = \tpz{\left[ \alpha,\omega,\gamma,\delta \right]_{x,y,z} }$, where for any point $p \in C$ holds:
+\begin{itemize}
+  \item stub $\overline{p}x$ intersects $\beta$-ray;
+  \item stub $\overline{p}y$ intersects $\beta'$-ray;
+  \item stub $\overline{p}z$ intersects short base of the cell $L$.
+\end{itemize}
+Parameters $\beta$ and $\beta'$ are called \textit{left} and \textit{right} border of the cell $C$.
+\end{definition}
+
+% first relationship: p = <beta', delta>
+Stub $\overline{p}z$ intersects the short base due to the relationship between the lower and upper height of the layer $L$.
+Let us find the relationships between the left and right borders $\beta$ and $\beta'$ in cell $C$. According to~\eqref{eq: ray-coordinates-umbrella-1} and~\eqref{eq: ray-coordinates-umbrella-2} it holds
+$$
+\beta' \leq \frac{(1+3\delta)\beta}{3\delta}
+$$
+and
+$$
+\beta' \leq \frac{1+3\delta\beta}{1+3\delta}.
+$$
+
+\begin{definition}
+Cell $C = \tpz{\left[ \beta,\beta',\gamma,\delta \right]_{x,y,z} }$ in layer $L = \tpz{\left[ \alpha,\omega,\gamma,\delta \right]_{x,y,z} }$ is \textit{maximal}, if for any interval
+$$
+I = \left[ \xi, \xi' \right],
+$$
+for which
+$$
+\left[ \beta, \beta' \right] \subsetneq \left[ \xi, \xi' \right],
+$$
+the ray trapezoid $\tpz{\left[ \xi,\xi',\gamma,\delta \right]_{x,y,z} }$ is not a cell.
+\end{definition}
+
+This means that for the maximal cell $\tpz{\left[ \beta,\beta',\gamma,\delta \right]_{x,y,z} }$ holds
+$$
+\beta' = \frac{(1+3\delta)\beta}{3\delta} \text{\hspace{0.8cm}   and   \hspace{0.8cm}} \beta' \leq \frac{1+3\delta\beta}{1+3\delta}
+$$
+or
+$$
+\beta' = \frac{1+3\delta\beta}{1+3\delta} \text{\hspace{0.8cm}   and   \hspace{0.8cm}} \beta' \leq \frac{(1+3\delta)\beta}{3\delta}.
+$$
+
+\begin{proposition}
+Denote
+\begin{align}
+\label{eq:f1_beta}
+f_{1,\delta}(\beta) &= \frac{(1+3\delta)\beta}{3\delta},\\[6pt]
+\label{eq:f2_beta}
+f_{2,\delta}(\beta) &= \frac{1+3\delta\beta}{1+3\delta}.
+\end{align}
+If
+$$
+\beta' = \min\left\{ f_{1,\delta}(\beta), f_{2,\delta}(\beta) \right\},
+$$
+then the cell $C = \tpz{\left[ \beta,\beta',\gamma,\delta \right]_{x,y,z} }$ is maximal in layer $L$ with lower and upper layer height $\gamma$ and $\delta$.
+\end{proposition}
+
+\begin{figure}
+\begin{center}
+\input{./tikz/edge-layers-2.tikz}
+\end{center}
+\caption{Example of functions $f_{1,\delta}(\beta), f_{2,\delta}(\beta)$ and corresponding maximal cell $C$.}
+\label{fig: edge-layers-2}
+\end{figure}
+
+Compare functions $f_{1,\delta}(\beta)$ and $f_{2,\delta}(\beta)$.
+\begin{proposition}
+\label{prop: compare-functions-f1-f2}
+If $\beta \in [0,1]$ and $\delta \geq \frac{4}{3}$, then
+\begin{itemize}
+  \item $f_{1,\delta}(\beta) \leq f_{2,\delta}(\beta)$, at $\beta \leq \frac{3\delta}{1 + 6\delta}$ and
+  \item $f_{1,\delta}(\beta) \geq f_{2,\delta}(\beta)$, at $\beta \geq \frac{3\delta}{1 + 6\delta}$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+Expression $f_{1,\delta}(\beta) - f_{2,\delta}(\beta)$ has the same sign as $(1 + 3\delta) \cdot 3\delta \cdot (f_{1,\delta}(\beta) - f_{2,\delta}(\beta))$. Calculate
+\begin{align*}
+(1 + 3\delta) \cdot 3\delta \cdot (f_{1,\delta}(\beta) - f_{2,\delta}(\beta)) &= \\[6pt]%
+= (1 + 3\delta)^{2} \cdot \beta - (1 + 3\delta\beta) \cdot 3\delta &= \\[6pt]%
+= \beta \cdot (1 + 6\delta) - 3\delta, \\[6pt]%
+\end{align*}
+which is greater than zero exactly when $\beta \leq \frac{3\delta}{1+6\delta}$.
+\end{proof}
+
+% upper bound
+\section{Upper bound}
+Let $\Pi $ be the basis of a partial drawing of a complete graph. In the next section, we show that the power of the set $\Pi$ has an upper bound. This means that there are no partial drawings of complete graphs on arbitrarily large numbers of vertices. Without loss of generality, the following properties can be assumed for $\Pi$.
+
+\begin{properties}
+\leavevmode
+\begin{itemize}
+  \item[P1)] Diameter of $\Pi$ is equal to $1$.
+  \item[P2)] The points $a$ and $b$ $\in \Pi$ at the maximum distance of $1$ in $\Pi$, have coordinates $(0,0)$ in $(1,0)$.
+  \item[P3)] The point in $\Pi$ furthest from the $x$-axis has a positive $y$-coordinate denoted by $c$. (If there are more candidates, select one with the largest $x$-coordinate.)
+  \item[P4)] The point in $\Pi$, with the smallest $y$-coordinate is denoted by $d$. (If there are more candidates, select one with the largest $x$-coordinate, even $d = b$ is possible.)
+\end{itemize}
+\label{list: properties}
+\end{properties}
+
+\begin{definition}[Frame]
+\label{def: frame}
+The frame $F$ of the drawing is the smallest coordinate rectangle containing all the points from $\Pi$. In Figure~\ref{fig: frame}, it's vertices are denoted by $\abovesym{a}, \undersym{a}, \abovesym{b}, \undersym{b}$. If we denote by $c_{y}$ and $d_{y}$ the $y$-coordinates of points $c$ and $d$, then
+\begin{equation*}
+F = {[0,1] \times [d_{y}, c_{y}]} =
+\rectansym{\undersym{a}\undersym{b}\abovesym{b}\abovesym{a}}.
+\end{equation*}
+\end{definition}
+
+\begin{figure}
+\centering
+\input{./tikz/frame-definition.tikz}
+\caption{Frame $F$}
+\label{fig: frame}
+\end{figure}
+
+We would like to find the upper bound on the number of points in $\Pi$. Depending on the relative position of the points $c, d$ with respect to points $a, b$ we will construct the coverage $\mathcal{C}$ of the frame $F$ with a finite family of polygons $P_{1}, P_{2}, ..., P_{k}$:
+$$
+  F \subseteq P_{1} \cup P_{2} \cup ... \cup P_{k}.
+$$
+
+The shapes of the polygons $P_{i}$ and the number of polygons $k$ of coverage $\mathcal{C}$ will depend on the parameters $t$ and $h$:
+\begin{align}
+  \label{eq: t}
+  t = c_{x}, \\[6pt]
+  \label{eq: h}
+  h = -\frac{d_{y}}{c_{y}}.
+\end{align}
+
+We denote by $c_{x}$ the $x$-coordinate of the point $c$. The point $c$ can be arbitrarily close to $\abovesym{a}$ or $\abovesym{b}$, so $t$ is any real number from the interval $(0, 1)$. The parameter $h$ is any real number from the interval $[0,1]$. We will estimate the upper bound on the number of possible basis points of the partial drawing located in each individual polygon. The estimate for the upper bound on the number of basis points in the polygon $P_{i}$ is denoted by $m(P_{i})$, so $|\Pi \cap P_{i}| \leq m(P_{i})$. The notation $m(P_{i}) = m_{0}$ means that we will be able to show that a maximum of $m_{0}$ points of a partial drawing can lie in the polygon $P_{i}$. The estimate $m(\mathcal{C}(t, h))$ of the upper bound on the number of all basis points of partial drawing of complete graph is obtained by summing the estimates of the upper bounds $m(P_{i}), i = 1, ..., k(t,h)$:
+\begin{equation}
+  \label{eq: estimate-for-F}
+  m(\mathcal{C}(t,h)) = m(P_{1}) + m(P_{2}) + ... + m(P_{k(t,h)}).
+\end{equation}
+
+The parameters $t$ and $h$ change the shape of $k$ polygons $P_{i}$. To estimate the power of the partial drawing basis of complete graph, we must calculate for which pair $t, h$ the Estimate~\eqref{eq: estimate-for-F} is the worst.
+
+\section{Step functions}
+We define a \textit{step function} $ k = k (t) $ as a mapping
+$$
+  k: \left [0,1 \right] \mapsto \mathbb{N},
+$$
+which is
+\begin{itemize}
+\item piecewise constant and
+\item there is a finite family of parameter values $t_{1}, t_{2}, ..., t_{r}$, where discontinuity can occur.
+\end{itemize}
+
+Additionally, $ k = k (t) $ is \textit{jump-step function} if it has a jump at each point of discontinuity. That means if
+$$
+  \lim_{t \to t_{0} ^{+}} k (t) \neq \lim_{t \to t_{0} ^{-}} k (t),
+$$
+then
+$$
+  k (t_{0}) = \lim_{t \to t_{0} ^{+}} k (t) \text{\hspace{0.8cm} or \hspace{0.8cm}} k (t_{0} ) = \lim_{t \to t_{0} ^{+}} k (t).
+$$
+A non-jump-step function may have values at a single point that differ from both the left and right limits.
+
+To calculate the maximum of the step function, we need exact values of the discontinuity points. To calculate the maximum of the jump-step function, however, it is sufficient to know
+\begin{itemize}
+\item approximate values of discontinuity points $ (t_{i})_{i} $ and
+\item an ascending sequence of rational numbers called \textit{system of safety intervals}:
+$$
+  q_{0} < q_{1} < ... < q_{r},
+$$
+for which for every $ i = 1, ..., r $ the inclusion
+$$
+  t_{i} \in (q_{i-1}, q_{i}).
+$$
+is fulfilled.
+\end{itemize}
+
+The maximum value of the jump-step  function $ k $ can be determined by calculating precisely the values of $k$ in all rational numbers $ q_{i}, i = 0, ..., r $.
+
+The sum of step functions is obviously a step function, but the sum of jump-step functions is not necessarily jump-step function. If the jump-step functions $ k_{1} $ and $k_{2}$ have different points of discontinuity, then their sum $ k_{1} + k_{2} $ is also a jump-step function.
+
+Since in practice we will know only the approximations of the discontinuity points of $ k_{1} $ and $ k_{2} $, we will be able to prove the jump of the sum $ k_{1} + k_{2} $ with their systems of safety intervals. If we find a sequence of rational numbers
+$$ q_{0} <q_{1} <... <q_{r}, $$
+for which holds that at each of the open intervals
+$$ (q_{i-1}, q_{i}), i = 1, ..., r $$
+at most one of the jump-step functions $ k_{1} $ or $ k_{2} $ has a jump, then $ k_{1} + k_{2} $ is also a jump-step function and its maximum can be calculated by calculating $ k_{1} (q_{i}) + k_{2} (q_{i}) $, for all $ i = 0, ..., r $.
+
+In practice, we will determine the upper bound for some of the areas depending on the value of the parameter $t$. For region $P$, $k_{P}(t)$ is the upper limit for the number of points in the basis $P$, $|\Pi \cap P|$. For a global estimate, we could find a maximum for each area of $P$
+$$
+m(P) = \max_{t} \left \{k_{P}(t) \right \},
+$$
+but a better global estimate is obtained by summing the functions $k$ by individual regions and applying the maximum to the obtained sum. The functions $k = k_{P}(t)$ have natural numbers as values and only finitely many discontinuities.
+
+
+\section{Crossing theorems}
+The following are two theorems about crossings. In region $T_{0}$ defined in a ray trapezoid or in a triangle, we can effectively limit the number of basis points with the Theorem~\ref{thm: k33-trapezoid} or with the Theorem~\ref{thm: k33-triangle}. At this point we remind the reader that according to Lemma~\ref{lemma: non-linearity} none of the three points in $\Pi$ are collinear.
+
+\begin{figure}
+\centering
+\input{./tikz/k33-trapezoid.tikz}
+\caption{Drawing of $K_{3,3}$ can have crossing only in trapezoid $Q$.}
+\label{fig: k33-trapezoid}
+\end{figure}
+
+
+\begin{theorem}[Trapezoid crossing]
+\label{thm: k33-trapezoid}
+Let $\Pi$ be the basis of the partial drawing of complete graph and $x,y,z \in \Pi$. Let $Q$ be $xyz$-ray trapezoid in $Q_{0} \subseteq Q$. If for any point in $Q_{0}$ holds that its $x, y, z$ stubs intersect legs and short base of the ray trapezoid $Q$, then for every two points $p_{1}, p_{2}$ from $Q_{0}$ holds
+$$
+Y_{p_{1},x,y,z} \cap Y_{p_{2},x,y,z} \neq \emptyset.
+$$
+\end{theorem}
+\begin{proof}
+Suppose we have in $Q_{0}$ two points $p_{1}$ and $p_{2}$ from the basis $\Pi$. Clearly  $x \not\in Q_{0}$ and consequently $x \neq p_{1}$ and $x \neq p_{2}$. Extend the stubs $\overline{p_{i}}x, \overline{p_{i}}y$ and $\overline{p_{i}}z$, for $i = 1,2$, to line segments $\overline{p_{i}x}, \overline{p_{i}y}$ and $\overline{p_{i}z}$. Choose any point $\infty$, which lies below the points $x,y,z$ and connect it with points $x,y,z$ without producing additional crossings, see Figure~\ref{fig: k33-trapezoid}. The result is a drawing of graph $K_{3, 3}$, which contains at least one intersection. Any intersection can only be contained in $Q$, therefore
+$$
+Y_{p_{1},x,y,z} \cap Y_{p_{2},x,y,z} \neq \emptyset.
+$$
+\end{proof}
+
+The Theorem~\ref{thm: k33-trapezoid} will typically be used with the region $Q_{0} = Q$, or $Q_{0}$ will be ray trapezoid with the same left and right boundaries as $Q$. An analogous theorem about the region inside a triangle follows.
+
+
+\begin{theorem}[Triangle crossing]
+\label{thm: k33-triangle}
+Let $\Pi$ be the basis of partial drawing of complete graph and $x,y,z \in \Pi$. Let the lines $p_{x}, p_{y}, p_{z}$ be parallel to line segments $\overline{yz}, \overline{xz}, \overline{xy}$. Suppose that for the region $T_{0} \subset T$ holds that for each point $p \in T_{0}$ its $x,y,z$-stubs $\overline{p}x, \overline{p}y, \overline{p}z$ intersect the sides of the triangle $T$, which lie on the lines $p_{x}, p_{y}, p_{z}$. Then for every two points $p_{1}, p_{2} \in T_{0}$ holds
+$$
+Y_{p_{1},x,y,z} \cap Y_{p_{2},x,y,z} \neq \emptyset.
+$$
+\end{theorem}
+
+\begin{proof}
+Suppose we have in $T_{0}$ two points $p_{1}, p_{2}$ from the basis $\Pi$.
+Extend the stubs $\overline{p_{i}}x, \overline{p_{i}}y, \overline{p_{i}}z$, for $i = 1,2$, to lines $\overline{p_{i}x}, \overline{p_{i}y}, \overline{p_{i}z}$. Choose any point $\infty$ that lies below the points $x,y,z$ so that we do not produce additional crossings, see Figure~\ref{fig: k33-triangle}. Result is a drawing of $K_{3, 3}$, which contains at least one intersection. Any intersection can only be contained in $T$, therefore
+$$
+Y_{p_{1},x,y,z} \cap Y_{p_{2},x,y,z} \neq \emptyset.
+$$
+\end{proof}
+
+\begin{figure}
+\centering
+\input{./tikz/k33-triangle.tikz}
+\caption{Drawing of $K_{3,3}$ can have crossing only in triangle $T$.}
+\label{fig: k33-triangle}
+\end{figure}
+
+For the ray trapezoid $Q$ corresponding to the Theorem~\ref{thm: k33-trapezoid}, we have shown
+$$
+m(Q) = 1.
+$$
+Also for the triangle $T$ corresponding to the Theorem~\ref{thm: k33-triangle}
+$$
+m(T) = 1
+$$
+holds.
+
+\section{Transformation}
+It will sometimes be advantageous to use geometric symmetry when estimating the maximum number of points of a partial drawing of a complete graph. For example, we would like to estimate the number of points from $\Pi$ in the triangle $\trisym{abc}$. If the triangle $\trisym{abc}$ is equilateral, we will use symmetry to our advantage. Typically, the triangle $\trisym{abc}$ will not be of this shape, but using the appropriate transformation we can convert it to equilateral. A plane transformation is \textit{affine} if it is a composite of linear transformation and parallel translation.
+
+\begin{theorem}[Transformation]
+\label{thm: transformation}
+Let $\Phi$ be an invertible affine transformation of the plane. Then $\Pi$ is the basis of the partial drawing of the complete graph if and only if $\Phi(\Pi)$ is the basis of the partial drawing of the complete graph.
+\end{theorem}
+
+\begin{proof}
+A partial drawing of a full graph is a union of lines. Invertible affine transformation of the plane maps disjoint line segments into disjoint line segments. However, if the line segments $\overline{ab}, \overline{ac}$ have a common vertex $a$ then their $\Phi$-images have a common edge $\Phi(a)$.
+\end{proof}
+
+Using the transformation theorem, we can assume that, for example, the triangle $\trisym{abc}$ is equilateral or the rectangle $\rectansym{ab}\abovesym{b}\abovesym{a}$ is a square, of course not both at the same time.

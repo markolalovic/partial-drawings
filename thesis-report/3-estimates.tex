@@ -1,0 +1,906 @@
+\chapter{Estimates}
+For the basis of the partial drawing $\Pi$ we assume Properties~\ref{list: properties} and use the notation in accordance with the mentioned properties. We present the chosen division of frame, which depends on the position of the points $c$ and $d$. For the remainder of the chapter, for each region of frame division, we estimate the upper bound on the number of basis points that each region can contain. From the sum of the obtained estimates, we get the upper bound for the number of points of the basis of the partial drawing of the complete graph. Let’s write down our main result.
+
+\begin{theorem}
+The maximum possible number of points in the basis of a partial drawing of a complete graph is $101$. Symbolically, if $\Pi$ is the basis of a partial drawing, then
+\begin{equation}
+  |\Pi| \leq 101.
+\end{equation}
+\label{thm: main}
+\end{theorem}
+
+
+\section{Frame division}
+\begin{figure}
+\centering
+\input{./tikz/frame-subsets.tikz}
+\caption{Division of the frame $F$ into a central, left, and right triangle, and a bottom triangle.}
+\label{fig: frame-subsets}
+\end{figure}
+
+For an easier presentation, according to the Theorem~\ref{thm: transformation}(Transformation), we can stretch the basis $\Pi$ and thus the frame $F$ in the direction of $y$-coordinate. Thus we achieve that the $y$-coordinate of the point $c$ (this coordinate is denoted by $c_{y}$) will be equal to $\frac{\sqrt{3}}{2}$, see Figure~\ref{fig: frame-subsets}. This changes the distances between the points, and the distance between the mapped points $a$ and $b$ is no longer necessarily the largest. However, we do not change the non-crossing property of stubs. In the frame $F$, define the following polygons:
+
+\begin{enumerate}
+  \item[{1)}] \textit{central triangle} $\trisym{abc}$;
+  \item[{3)}] \textit{left and right triangle} $\trisym{ac\abovesym{a}}$ in $\trisym{b\abovesym{b}c}$;
+  \item[{3)}] \textit{lower quadrilateral} $\rectansym{\undersym{a}\undersym{b}ba}$.
+\end{enumerate}
+
+In Figure~\ref{fig: frame-subsets} is the division of the frame $F$, where $t = c_{x} = \frac{1}{4}$ and $d_{y} = -\frac{2}{3}$ (points $a$ and $b$ are at the maximum distance in $\Pi$).  Vertices of the frame $F$ are not part of the set $\Pi$, so they are drawn with white circles. All auxiliary points, which are not necessarily part of the set $\Pi$, will be drawn with white circles.
+
+We will first make the estimate for the central triangle $\trisym{abc}$ absolute, and if $h$ is large enough (point $d$ is low enough), we will improve it. The estimates of the number of basis points in the left and right triangles will depend on the value of the parameter $t$. Our take on the estimate for the lower quadrilateral is by using the parameters $t = c_{x}$ in $h = -\frac{d_{y}}{c_{y}}$ simultaneously. We start with the central triangle $\trisym{abc}$.
+
+\section{Central triangle}
+In this section we estimate the upper bound for the number of basis points in the central triangle $|\Pi \cap \trisym{abc}|$. According to the Theorem~\ref{thm: transformation}(Transformation) we can assume that $\trisym{abc}$ is equilateral.
+
+\begin{figure}
+\begin{center}
+\input{./tikz/triangle-abc.tikz}
+\end{center}
+\caption{The central triangle can be transformed into an equilateral one.}
+\label{fig: triangle-abc}
+\end{figure}
+
+For $u,v \in \left\{ {a,b,c} \right\}$, where $u \neq v$, we define the points $u_{v}$ as the ends of all stubs between the points $a,b, c$, see Figure~\ref{fig: triangle-abc}.
+
+% inner triangle
+The intersections of the lines $\overline{a_{b}c_{b}}$, $\overline{c_{a}b_{a}}$ and $\overline{a_{c}b_{c}}$ are denoted by $a',b',c'$ and with them we define \textit{inner triangle} $\trisym{a'b'c'}$, which is presented in Figure~\ref{fig: inner-triangle}. Using the central symmetry of the central triangle $\trisym{abc}$, we define two more groups of congruent polygons.
+
+% corner regions
+Intersection of lines $\overline{b_{c}a}$ and $\overline{b_{a}c}$ with coordinates $(\frac{7}{10},\frac{\sqrt{3}}{10})$ is denoted by $b^{*}$ and we define \textit{corner region} at $b$ as quadrilateral
+$$
+\quadsym{b_{a}bb_{c}b^{*}}.
+$$
+Symmetrically define the corner regions at $a$ and $c$:
+$$
+\quadsym{aa_{b}a^{*}a_{c}},
+$$
+$$
+\quadsym{cc_{a}c^{*}c_{b}}.
+$$
+Corner regions are deltoids, because $\trisym{abc}$ is equilateral. They are presented in blue in Figure~\ref{fig: corner-regions}.
+
+\begin{figure}
+\begin{center}
+\input{./tikz/subsets-of-triangle-abc.subfig}
+\end{center}
+\caption{Polygons in the central triangle.}
+\label{fig: subsets-of-triangle-abc}
+\end{figure}
+
+% inner layers
+We choose a ray coordinate system with respect to $a, b, c$. This means that the point $c$ is the origin, half-line from $c$ trough $a$ is the ray axis.
+
+\textit{Inner layer} with respect to $a,b,c$ is a ray trapezoid:
+$$
+\tpz{\left[ \frac{1}{4},\frac{3}{4},\frac{3}{4},1 \right]_{a,b,c} }.
+$$
+The remaining two inner layers are determined by the same ray coordinates with respect to corresponding permutations of the points $a,b,c$:
+$$
+\tpz{\left[ \frac{1}{4},\frac{3}{4},\frac{3}{4},1 \right]_{a,c,b} },
+$$
+$$
+\tpz{\left[ \frac{1}{4},\frac{3}{4},\frac{3}{4},1 \right]_{b,c,a} }.
+$$
+\textit{Inner layers} in Figure~\ref{fig: inner-layers} are shaded. We notice that they partially overlap.
+
+\begin{figure}
+\begin{center}
+\input{./tikz/united-cover-abc.tikz}
+\end{center}
+\caption{Coverage of central triangle $\trisym{abc}$.}
+\label{fig: united-cover-abc}
+\end{figure}
+
+The inner triangle and both groups of congruent polygons form the coverage of the central triangle, see Figure~\ref{fig: united-cover-abc}. For each deltoid (see the same figure) in the inner triangle and for each cell in the inner layers, we will show that it contains at most one point of the partial drawing. For each corner area, we will show that it contains a maximum of $6$ points of partial drawing. The estimate for the number of points in the corner areas touching the points $a$ and $b$ will be improved by using the lowermost point $d$ in the lower quadrilateral $\quadsym{\undersym{a}\undersym{b}ba}$ of the frame $F$. Points $a,b,c$ are considered separately. We pretend that they do not belong to any area or cell, and their presence is taken into account only at the very end of the assessment.
+
+The sum of the obtained estimates for the coverage regions of the central triangle $\trisym{abc}$ will give the estimate of the upper bound for the number of basis points in the central triangle, which will depend on the parameter $h$ (position of the point $d$). In the following, we reveal why we chose such a central triangle coverage and why the inner layers are not disjoint. In dealing with both groups of polygons, we describe and apply the ideas, which we later extend and apply to the remaining subsets of the frame $F$.
+
+\subsection{Inner triangle}
+
+\begin{figure}
+\begin{center}
+\input{./tikz/deltoids.tikz}
+\end{center}
+\caption{Divide the inner triangle into three congruent deltoids.}
+\label{fig: deltoids}
+\end{figure}
+
+In the central triangle $\trisym{abc}$ we denote the bisectors of the sides by $d, e, f$, and median with $g$, see Figure~\ref{fig: deltoids}. The point $g$ divides the median in the ratio $1:2$, so the $y$-coordinate of the point $g$ is equal to one third of the $y$-coordinate of the point $c$. The intersections of medians with the sides of the inner triangle $\trisym{a'b'c'}$ are denoted by $h, i, j$. Define the points that divide the inner triangle into three congruent deltoids:
+$$
+\quadsym{a'hgj},\text{\hspace{0.8cm}} \quadsym{hb'ig}\text{\hspace{0.8cm}   and   \hspace{0.8cm}} \quadsym{gic'j}.
+$$
+
+For them, we show that each contains at most one point from the set $\Pi$. From here we get the following estimate:
+
+\begin{figure}
+\begin{center}
+\input{./tikz/deltoids-together.subfig}
+\end{center}
+\caption{For Proposition~\ref{prop: deltoids}.}
+\label{fig: deltoids-together}
+\end{figure}
+
+\begin{proposition}
+\label{prop: deltoids}
+The inner triangle $\trisym{a'b'c'}$ contains a maximum of 3 basis points. Symbolically
+$$
+  m(\trisym{a'b'c'}) = 3.
+$$
+\end{proposition}
+
+\begin{proof}
+Denote one of the deltoids by $T_{0}$
+$$
+  \quadsym{a'hgj},\text{\hspace{0.8cm}} \quadsym{hb'ig}\text{\hspace{0.8cm}   and   \hspace{0.8cm}} \quadsym{gic'j}.
+$$
+The following property must be shown. If $p \in T_{0}$, then its stubs $\overline{p}a,\overline{p}b,\overline{p}c$ intersect all three sides of the triangle $T$ (for the shaded deltoid $T_{0}$ in Figures~\ref{fig: deltoids} is a triangle $T$ drawn in bold).
+
+Let $x$ be any point from deltoid
+$$
+  \quadsym{gic'j}
+$$
+and $y$ any point from deltoid
+$$
+  \quadsym{hb'ig}.
+$$
+Because of symmetry, it suffices to show that the stub $\overline{x}c$ (Figure~\ref{fig: side-kl}) intersects the line segment $\overline{kl}$ and the stub $\overline{y}c$ (Figure~\ref{fig: side-jm}) intersects the line segment $\overline{jm}$.
+
+Place the origin of ray coordinate system at the point $c$ and let the ray axis run from $c$ to $a$. The point $g$ is at the ray height $\frac{2}{3}$ from the point $c$, the points $a',h,b'$ are at the ray height $\frac{3}{4}$, points $k, c', l$ at $\frac{1}{2}$ and points $j,i,m$ at $\frac{5}{8}$.
+
+The ray height of the point $x$ is on the interval
+$$
+  \left[\frac{1}{2}, \frac{2}{3}\right],
+$$
+and the ray height of the point $y$ on the interval
+$$
+  \left[\frac{5}{8}, \frac{3}{4}\right].
+$$
+Since
+$$
+  \frac{2}{3} \cdot \frac{3}{4} \leq \frac{1}{2}
+$$
+the stub $\overline{x}c$ intersects $\overline{kl}$ and since
+$$
+  \frac{3}{4} \cdot \frac{3}{4} \leq \frac{5}{8}
+$$
+the stub $\overline{y}c$ intersects $\overline{jm}$.
+
+Theorem~\ref{thm: k33-triangle} using $T_{0} = \quadsym{gic'j}$ and $T = \trisym{hlk}$ claims that $|\Pi \cap T_{0}| \leq 1$. Therefore, using symmetry, the claim is proved.
+\end{proof}
+
+\subsection{Corner regions}
+Let
+$$
+Q = \quadsym{b_{a}bb_{c}b^{*}},
+$$
+see Figure~\ref{fig: first-relationship}, and $p,p'$ any poins from $\left(\Pi \cap Q\right) \setminus \left\{ b \right\}$. Stubs $\overline{p}a$ and $\overline{p'}a$ intersect the line segment $\overline{b_{a}b^{*}}$ and stubs $\overline{p}c$ and $\overline{p'}c$ intersect the line segment $\overline{b_{c}b^{*}}$. Therefore, one of the angles $\sangle{apc}, \sangle{ap'c}$ is contained in the other. Without the loss of generality, it should apply
+
+\begin{equation}
+\label{eq: nesting-angles}
+\sangle{apc} \subseteq \sangle{ap'c}.
+\end{equation}
+
+We say the points $p,p' \in \left(\Pi \cap Q\right) \setminus \left\{ b \right\}$ are \textit{nested}.
+
+\begin{figure}
+\begin{center}
+\input{./tikz/first-relationship.tikz}
+\end{center}
+\caption{For Proposition~\ref{prop: nesting}}
+% corner region is quadrilateral $Q$.
+\label{fig: first-relationship}
+\end{figure}
+
+Denote $\alpha = \sangle{pab}$ and $\alpha' = \sangle{p'ab}$. Since the end $p_{b}$ of the stub $\overline{p}b$ lies inside the angle $\sangle{ap'c}$, the relationship
+$$
+\alpha \geq \frac{4}{3} \cdot \alpha',
+$$
+holds, since the angle $\sangle{pap_{b}} \geq \frac{1}{4}\alpha$, because $\sangle{apb} \geq \frac{\pi}{2}$. We summarize the statement using the above labels.
+
+\begin{proposition} % about nesting
+\label{prop: nesting}
+Let $p,p' \in  \left(\Pi \cap Q\right) \setminus \left\{ b \right\}$. Angles $\sangle{apc}$ and $\sangle{ap'c}$ are comparable, and if
+$$\sangle{apc} \subseteq \sangle{ap'c},$$
+then the estimate
+$$
+  \alpha \geq \frac{4}{3} \cdot \alpha'.
+$$
+holds.
+\end{proposition}
+
+We will need another estimate. Since the pointers $\overline{p'}c$ and $\overline{p'}a$ do not intersect the line segment $\overline{bb_{p}}$, see Figure~\ref{fig: second-relationship}, for point $p'$ at least one of the inequalities holds
+$$
+  \sangle{p'ab} > \sangle{b_{p}ab}
+$$
+or
+$$
+  \sangle{p'cb} > \sangle{b_{p}cb}.
+$$
+Without the loss of generality let the first inequality hold
+$$
+  \alpha' > \sangle{b_{p}ab}.
+$$
+We can estimate the angle $\sangle{b_{p}ab}$ using trigonometry. Using the above notation, we can write a proposition.
+
+\begin{figure}
+\begin{center}
+\input{./tikz/second-relationship.tikz}
+\end{center}
+\caption{For Proposition~\ref{prop: stub-bpk}}
+\label{fig: second-relationship}
+\end{figure}
+
+\begin{proposition}
+\label{prop: stub-bpk}
+Let $p,p' \in  \left(\Pi \cap Q\right) \setminus \left\{ b \right\}$, and assume that they are nested~\eqref{eq: nesting-angles} and
+$$
+  \alpha' > \sangle{b_{p}ab}.
+$$
+
+Then it applies
+$$
+  \alpha' > \frac{7}{37} \cdot \alpha.
+$$
+\end{proposition}
+
+\begin{proof}
+Denote $\hat{\alpha} = \sangle{b_{p}ab}$. Estimate the quotient $\frac{\alpha'}{\alpha}$. Since the tangent to $\left(0, \frac{\pi}{2}\right)$ is a convex and increasing function, it holds
+\begin{equation*}
+  \frac{\alpha'}{\alpha} \geq \frac{\tan(\alpha')}{\tan(\alpha)} \geq \frac{\tan(\hat{\alpha})}{\tan(\alpha)} = 1 - \frac{3}{3 + p_{x}},
+\end{equation*}
+where $p_{x}$ is the $x$-coordinate of the point $p$. The latter is bounded downwards by the $x$-coordinate of the point $b^{*}$, which is equal to $\frac{7}{10}$. That is why
+\begin{equation*}
+  \frac{\alpha'}{\alpha} > 1 - \frac{3}{3 + \frac{7}{10}} = \frac{7}{37}
+\end{equation*}
+and proposition holds.
+\end{proof}
+
+Using both propositions, we will be able to estimate the maximum possible number of points of the basis $\Pi$ in the quadrilateral $Q$. Let $\left\{ p_{1}, p_{2},...,p_{k} \right\}$ be the maximum set of points in $\left(\Pi \cap Q\right) \setminus \left\{ b \right\}$. According to Proposition~\ref{prop: nesting} we can assume without the loss of generality
+$$
+  \sangle{ap_{k}c} \subseteq \sangle{ap_{k-1}c} \subseteq ... \subseteq \sangle{ap_{2}c} \subseteq \sangle{ap_{1}c}
+$$
+and by Proposition~\ref{prop: stub-bpk} we can assume
+$$
+  \sangle{b_{p_{k}}ab} \leq \sangle{p_{1}ab}.
+$$
+Define the angles $\alpha_{i} = \sangle{bap_{i}}$, for $i = 1,..,k$. They are subject to relationships
+\begin{equation}
+\label{eq: sequence-alphas-1}
+\alpha_{i} \geq \frac{4}{3} \cdot \alpha_{i-1} \text{,\hspace{0.8cm}   for    \hspace{0.8cm}} i = 2,...,k
+\end{equation}
+
+and
+
+\begin{equation}
+\label{eq: sequence-alphas-2}
+\frac{\alpha_{1}}{\alpha_{k}} > \frac{7}{37}.
+\end{equation}
+By induction on above relationships, we produce an estimate
+$$
+\alpha_{1} \geq \frac{7}{37}  \cdot  \alpha_{k} \geq \frac{7}{37}  \cdot  \left(\frac{3}{4}\right)^{k-1}  \cdot \alpha_{1},
+$$
+which holds for $k \leq 6$. The following statement follows.
+\begin{proposition}
+\label{prop: corner-regions-1}
+If $\Pi$ is the basis of a partial drawing and $Q = \quadsym{b_{a}bb_{c}b^{*}}$, then
+\begin{equation}
+\left|\left(\Pi \cap Q\right) \setminus \left\{ b \right\}\right| \leq 6.
+\end{equation}
+\end{proposition}
+
+% improvement by taking into account point d
+\begin{figure}
+\begin{center}
+\input{./tikz/corner-regions-improvement-1.tikz}
+\end{center}
+\caption{The shadow $S_{\overline{b}a}$ in ray coordinate system with respect to $a,b,d$ is represented as a dark gray area.}
+\label{fig: corner-regions-improvement-1}
+\end{figure}
+
+The estimate of the number of basis points in the corner regions at $a$ and $b$ can be improved by assuming that the edge point $d$ is \textit{low enough} in the lower quadrilateral of the partial drawing. For the case when the parameter $h = -\frac{d_{y}}{c_{y}}$ it holds
+$$
+h \leq \frac{2}{3},
+$$
+see Figure~\ref{fig: corner-regions-improvement-1}. If the point $p \in \Pi \cap \trisym{abc}$ lies too close to the points $a$ or $b$, its stub $\overline{p}d$ intersects one of the stubs $\overline{a}b$ or $\overline{b}a$. The shadows
+$$
+S_{\overline{a}b} = \tpz{\left[ 0,\frac{1}{4},1,\frac{4}{3} \right]_{a,b,d}}
+$$
+and
+$$
+S_{\overline{b}a} = \tpz{\left[ \frac{3}{4},1,1,\frac{4}{3} \right]_{a,b,d}}
+$$
+depend on the position of the point $d$. We would like to improve the estimate in Proposition~\ref{prop: corner-regions-1} that follows from Proposition~\ref{prop: stub-bpk}, for the number of points in corner region $Q = \quadsym{bb_{a}b^{*}b_{c}}$ and consequently also in the region $\quadsym{aa_{b}a^{*}a_{c}}$. We do the following:
+
+Using transformation, the triangle $\trisym{abc}$ is mapped into equilateral triangle. We show that the shadow of the pointer $\overline{b}a$ with respect to $d$ is minimal in a precisely determined position of the point $d$. In this position, we estimate the maximum number of basis points in $\quadsym{bb_{a}b^{*}b_{c}}$. The same estimate will apply to $quadsym{aa_{b}a^{*}a_{c}}$. The shadow $S_{\overline{b}a}$ is ray trapezoid in RCS with respect to $a, b, d$. The height of its long base is the smallest in the case when $h = \frac{2}{3}$ and its leg lies at a minimum angle exactly when the point $d$ lies on the extreme left border of the frame. In the case when $\trisym{abc}$ is equilateral (the frame is a parallelogram), the intersection $S_{\overline{b}a} \cap \trisym{abc}$ is minimal at the value of parameter $t = 0$, see Figure~\ref{fig: improvement-3}. Again, we denote by $k$ the maximum number of basis points 
+$$
+p_{1}, p_{2}, ..., p_{k}
+$$
+located in
+$$
+\left(\Pi \cap \quadsym{bb_{a}b^{*}b_{c}}\right) \setminus \left\{ b \right\},
+$$
+The points must not lie in the shadow of $S_{\overline{b}a}$ and we assume nesting property.
+
+\begin{proposition}
+The quadrilateral $\quadsym{bb_{a}b^{*}b_{c}} \setminus \left\{ b \right\}$ in the case of $h \geq \frac{2}{3}$ contains a maximum of $4$ basis points,
+$$
+|\left(\Pi \cap \quadsym{bb_{a}b^{*}b_{c}}\right) \setminus \left\{ b \right\}| \leq 4.
+$$
+\end{proposition}
+
+\begin{proof}
+The point at the intersection of the bisector of the angle $\sangle{abc}$ and the shadow side $\overline{b_{a}e}$ has coordinates at most $(\frac{22}{25},\frac{\sqrt{3}}{25})$ and denote it by $p^{*}$, see Figure~\ref{fig: improvement-3}. It holds
+$$
+\sangle{p^{*}ab} = \sangle{p^{*}cb} = \arctan{\frac{\sqrt{3}}{22}}.
+$$
+
+For point $p_{1}$ holds
+$$
+\sangle{p_{1}ab} \geq \sangle{p^{*}ab}
+$$
+or
+$$
+\sangle{p_{1}cb} \geq \sangle{p^{*}ab}.
+$$
+Without the loss of generality, we decide for the first case. Consequentially
+$$
+\alpha_{1} = \sangle{p_{1}ab} \geq \arctan{\frac{\sqrt{3}}{22}}.
+$$
+For the point $p_{k}$ holds the inequality
+$$
+\alpha_{k} = \sangle{p_{k}ab} \leq \arctan{\frac{\sqrt{3}}{7}}.
+$$
+
+If we also consider the nesting relationships~\ref{prop: nesting}
+$$
+\alpha_{i} \geq \frac{4}{3} \cdot \alpha_{i-1} \text{,\hspace{0.8cm}   for   \hspace{0.8cm}} i = 2,...,k,
+$$
+we produce the inequalities
+$$
+\arctan{\frac{\sqrt{3}}{7}} \geq \alpha_{k} \geq \left(\frac{4}{3}\right)^{k-1} \cdot \alpha_{1} \geq \left(\frac{4}{3}\right)^{k-1} \cdot \arctan{\frac{\sqrt{3}}{22}},
+$$
+which is fulfilled only at $k \leq 4$.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\input{./tikz/corner-regions-improvement-3.tikz}
+\end{center}
+\caption{The intersection $S_{\overline{b}a} \cap \trisym{abc}$ is minimal for the value of parameter $t = 0$.}
+\label{fig: improvement-3}
+\end{figure}
+
+The section can be concluded with a cumulative estimate for the maximum number of basis points in the union of corner regions.
+
+\begin{proposition}
+\label{prop: corner-regions-union}
+In the corner regions, if we exclude the points $a,b,c$, there is at most 18 basis points. However, if $h \geq \frac{2}{3}$ and we exclude the points $a,b,c$, there is at most 14 basis points. Symbolically
+$$
+\left|\left(\Pi \cap \left(
+\quadsym{aa_{b}a^{*}a_{c}} \cup
+\quadsym{bb_{a}b^{*}b_{c}} \cup
+\quadsym{cc_{a}c^{*}c_{b}}
+\right)\right)
+\setminus \left\{ a,b,c \right\}\right| \leq \twopartdef
+{ 14, } {h \geq \frac{2}{3},}
+{ 18, } {h < \frac{2}{3}.}
+$$
+\end{proposition}
+
+\subsection{Inner layers}
+To estimate the number of basis points in the inner layers, by symmetry it is sufficient to consider one of them.
+
+\begin{proposition}
+\label{prop: inner-layer}
+The inner belt contains a maximum of 5 basis points. Symbolically
+$$
+\left|
+\tpz{\left[ \frac{1}{4},\frac{3}{4},\frac{3}{4},1 \right]_{a,b,c} } \cap \Pi
+\right| \leq 5.
+$$
+\end{proposition}
+
+\begin{proof}
+We break the layer into 5 cells $C_{i}, i = 1,...,5$. Let $\beta_{i}, i = 0,...,5$ be cell boundaries. Cell $C_{i}$ has a left boundary $\beta_{i-1}$ and right boundary $\beta_{i}$. Cells are constructed starting from the left. The first four cells will be the largest, but the fifth cell will not:
+\begin{align*}
+\beta_{0} &= \frac{1}{4}, \\[6pt]%
+\beta_{1} &= \min\left\{ f_{1,1}\left(\frac{1}{4}\right), f_{2,1}\left(\frac{1}{4}\right) \right\} = \frac{1}{3} \approx 0{,}33\text{\hspace{0.1cm}},\\[6pt]%
+\beta_{2} &= \min\left\{ f_{1,1}\left(\frac{1}{3}\right), f_{2,1}\left(\frac{1}{3}\right) \right\} = \frac{4}{9} \approx 0{,}44\text{\hspace{0.1cm}},\\[6pt]%
+\beta_{3} &= \min\left\{ f_{1,1}\left(\frac{4}{9}\right), f_{2,1}\left(\frac{4}{9}\right) \right\} = \frac{7}{12} \approx 0{,}58\text{\hspace{0.1cm}},\\[6pt]%
+\beta_{4} &= \min\left\{ f_{1,1}\left(\frac{7}{12}\right), f_{2,1}\left(\frac{7}{12}\right) \right\} = \frac{11}{16} \approx 0{,}69\text{\hspace{0.2cm} and}\\[6pt]%
+\beta_{5} &= \frac{3}{4}.
+\end{align*}
+Finally, it should be shown, that for each cell $C_{i},i=1,...,5$ holds
+$$
+m(C_{i}) = 1.
+$$
+Here we use the Theorem~\ref{thm: k33-trapezoid} (Trapezoid crossing) with $Q = C_{i}$ and $Q_{0} = C_{i}$. Choose any point $p \in C_{i}$. By definition, $\overline{p}z$ intersects the short base of trapezoid $C_{i}$. We need to check that the stubs $\overline{p}x, \overline{p}y$ intersect the legs of trapezoid $C_{i}$. The ray height of the point $p$ is denoted by
+$$
+\xi \in \left[\frac{3}{4}, 1 \right].
+$$
+The ray heights of the ends of the stubs $\overline{p}x, \overline{p}y$ are
+$$
+\frac{1+3\xi}{4} \in \left[\frac{3}{4}, 1 \right].
+$$
+Since the stub $\overline{p}x$ intersects $\beta_{i-1}$-ray and the stub $\overline{p}y$ intersects $\beta_{i}$-ray, the proposition is proved.
+\end{proof}
+
+We conclude the section with a cumulative estimate for the maximum number of basis points in the union of inner layers.
+
+\begin{proposition}
+\label{prop: inner-layers}
+In the inner layers, there is a maximum of 15 basis points in total. Symbolically
+$$
+\left|
+\Pi \cap \left(
+\tpz{\left[ \frac{1}{4},\frac{3}{4},\frac{3}{4},1 \right]_{a,b,c} } \cup
+\tpz{\left[ \frac{1}{4},\frac{3}{4},\frac{3}{4},1 \right]_{a,c,b} } \cup
+\tpz{\left[ \frac{1}{4},\frac{3}{4},\frac{3}{4},1 \right]_{b,c,a} }
+\right)
+\right|
+\leq 15.
+$$
+\end{proposition}
+
+We summarize all the estimates in the inner triangle into a theorem:
+\begin{theorem}
+In the inner triangle $\trisym{abc}$, if we exclude the points $a,b,c$, there are at most 36 basis points. If $h \geq \frac{2}{3}$ and we exclude the points $a,b,c$, there are at most 32 basis points in the inner triangle. Symbolically
+$$
+\left|\left(\Pi \cap \trisym{abc}\right) \setminus \left\{ a,b,c \right\}\right| \leq \twopartdef
+{ 32, } {h \geq \frac{2}{3},}
+{ 36, } {h < \frac{2}{3}.}
+$$
+\end{theorem}
+\begin{proof}
+Use Proposition~\ref{prop: deltoids}, Proposition~\ref{prop: corner-regions-union} and Proposition~\ref{prop: inner-layers}.
+\end{proof}
+
+\section{Left and right triangle}
+The left triangle $\trisym{ac\abovesym{a}}$ and the right triangle $\trisym{b\abovesym{b}c}$ depend on the parameter $t$, which represents the $x$-coordinate of the point $c$. Select the fixed $t$. We can observe only the left triangle $\trisym{ac\abovesym{a}}$ for each value of parameter $t$ from the interval $(0, 1)$. The corresponding drawing for the right triangle is obtained by mirroring the space over the vertical of the line segment $\overline{ab}$ for the parameter $1 - t$.
+
+Let's transform the space so that the central triangle $\trisym{abc}$ becomes equilateral, see Figure~\ref{fig: upper-layers}. After the transformation, the point $c$ is fixed and the parameter $t$ represents the distance between the vertex $\abovesym{a}$ and the point $c$. The ray height of the vertex $\abovesym{a}$ is equal to $1 + t$. We choose a ray coordinate system according to the points $a,c,b$, so we place the origin at the point $b$ and the ray axis runs from $b$ to $a$.
+
+\begin{figure}
+\begin{center}
+\input{./tikz/upper-layers.tikz}
+\end{center}
+\caption{First upper layer for $t = 0.24.$}
+\label{fig: upper-layers}
+\end{figure}
+
+For each value of parameter $t$ in the shadows $S_{\overline{a}c}$ and $S_{\overline{c}a}$ there will be no basis points except for the points $a$ and $c$. The maximum ray height of a point in the left triangle $\trisym{ac\abovesym{a}}$ that does not lie inside the shadow $S_{\overline{c}a}$ (it may lie on the edge of the shadow) is denoted by $\delta_{max}$. In Figure~\ref{fig: upper-layers} we marked the point $e$ with the maximum ray height $\delta_{max}$ with value of parameter $t = 0.24$.
+
+The region in the left triangle without the shadows $S_{\overline{a}c}, S_{\overline{c}a}$ is covered by a maximum of three layers $L_{1},L_{2},L_{3}$. We define them as ray trapezoids with respect to $a, c, b$:
+$$
+L_{1} = \tpz{\left[ \alpha_{1},\omega_{1},\gamma_{1},\delta_{1} \right]_{a,c,b} },
+$$
+$$
+L_{2} = \tpz{\left[ \alpha_{2},\omega_{2},\gamma_{2},\delta_{2} \right]_{a,c,b} },
+$$
+$$
+L_{3} = \tpz{\left[ \alpha_{3},\omega_{3},\gamma_{3},\delta_{3} \right]_{a,c,b} }.
+$$
+
+The boundaries $\alpha_{i},\omega_{i},\gamma_{i},\delta_{i}, i = 1,2,3$, for each layer, depend on the value of parameter $t$ and are represented in Table~\ref{tab: upper-bounds-boundaries}. The table shows the following. If $t \leq \frac{1}{3}$ then $\delta_{max} \leq \frac{4}{3}$ and we say that the layers $L_{2}$ and $L_{3}$ are empty. The layer $L_{1}$ is always non-empty because $t > 0$ is always valid and therefore $\delta_{max} > 1$. For $t < \frac{1}{3}$, we adjust the upper ray height of the layer $L_{1}$ so that it is equal to $\delta_{max}$. The layer $L_{2}$ is not empty for $t > \frac{1}{3}$. For $t < \frac{2}{3}$, we adjust the upper ray height of the layer $L_{2}$ so that it is equal to $\delta_{max}$. The layer $L_{3}$ is not empty for $t > \frac{2}{3}$ and we adjust the upper ray height of this layer so that it is equal to $\delta_{max}$.
+
+\begin{table*}
+\centering
+\begin{tabular}{@{}ccccccccc@{}}\toprule
+& \multicolumn{1}{c}{$t \in [0,\frac{1}{3}]$} & \phantom{abc}& \multicolumn{2}{c}{$t \in (\frac{1}{3},\frac{2}{3}]$} &
+\phantom{abc} & \multicolumn{3}{c}{$t \in (\frac{2}{3},1]$}\\
+\cmidrule{2-2} \cmidrule{3-4} \cmidrule{5-9}
+         & $L_{1}$               && $L_{1}$       			  & $L_{2}$          		   && $L_{1}$       & $L_{2}$         & $L_{3}$  \\ \midrule
+ & $\alpha_{1} = \frac{1}{4}$    && $\alpha_{1} = \frac{1}{4}$ & $\alpha_{2} = \frac{1}{4t}$ && $\alpha_{1} = \frac{1}{4}$ & $\alpha_{2} = \frac{1}{4t}$  & $\alpha_{3} = \frac{2}{5t}$ \\[0.2cm]
+ & $\omega_{1} = \frac{3}{4}$    && $\omega_{1} = \frac{3}{4}$ & $\omega_{2} = \frac{3}{4}$  && $\omega_{1} = \frac{3}{4}$ & $\omega_{2} = \frac{3}{4}$   & $\omega_{3} = \frac{3}{5}$ \\[0.2cm]
+ & $\gamma_{1} = 1$              && $\gamma_{1} = 1$           & $\gamma_{2} = \frac{4}{3}$  && $\gamma_{1} = 1$           & $\gamma_{2} = \frac{4}{3}$   & $\gamma_{3} = \frac{5}{3}$ \\[0.2cm]
+ & $\delta_{1} = \frac{4}{4-3t}$ && $\delta_{1} = \frac{4}{3}$ & $\delta_{2} = 1 + t$        && $\delta_{1} = \frac{4}{3}$ & $\delta_{2} = \frac{5}{3}$   & $\delta_{3} = 1 + t$ \\
+\bottomrule
+\end{tabular}
+\caption{Boundaries of the upper layers.}
+\label{tab: upper-bounds-boundaries}
+\end{table*}
+
+% regarding the function k
+For $m = 1,2,3$, we denote by $k_{L_{m}} = k_{L_{m}}(t)$ a function of the required number of cells into which we break the layer $L_{m}$. It follows from the Proposition~\ref{prop: inner-layer} that there is at most one basis point in each cell. Therefore, the function $k_{L_{m}}(t)$ is the estimate for the maximum number of possible basis points in the layer $L_{m}$. By layer definition, $\gamma \geq \frac{3}{4}\delta$, so $k_{L_{m}}(t)$ is independent of the $\gamma$ parameter. For a fixed $t$, the layer $L_{m}$, if it is non-empty, is partitioned into as few cells as possible. In such a partition we can assume that all the cells except perhaps the last one are maximal. To partition into cells
+$$
+C_{1}, C_{2}, ..., C_{k},
+$$
+it is necessary to determine their ray heights
+$$
+\beta_{0} = \alpha, \beta_{1}, \beta_{2},..., \beta_{k} = \omega.
+$$
+Where for every $i = 1, ..., k$ holds
+$$
+\beta_{i} = \min\left\{ f_{1,\delta}(\beta_{i-1}), f_{2,\delta}(\beta_{i-1}) \right\}.
+$$
+For chosen $t$, the required number of cells $k_{m}$ in the layer $L_{m}$ is determined by calculating the ray angles $\beta_{i}$. We stop at that $i = k - 1$, where
+$$
+\min\left\{ f_{1,\delta}(\beta_{k-1}), f_{2,\delta}(\beta_{k-1}) \right\} \geq \omega.
+$$
+
+If for the chosen value $t = t_{0}$ all cells in the layer $L_ {m}$ are maximal, we say that such a value of the parameter $t$ is \textit{critical}. To illustrate, the parameter $t$ is critical when, with a small change in the parameter in the appropriate direction, we achieve that the number of cells in one of the layers changes by 1 or the step function $k_{L_{m}}$ has (maybe) a discontinuity at $t_{0}$.
+
+% the L2 case
+For the layer $L_{2}$, the estimate for the number of points $k_{L_{2}} = k_{L_{2}}(t)$ is a jump-step function with jumps at approx.
+$$
+0.36\text{\hspace{0.2cm}},\text{\hspace{0.2cm}} 0,41\text{\hspace{0.2cm}} ,\text{\hspace{0.2cm}} 0,47\text{\hspace{0.2cm}}  ,\text{\hspace{0.2cm}} 0,55\text{\hspace{0.2cm}} ,\text{\hspace{0.2cm}} 0,63\text{\hspace{0.2cm}} , 0,75\text{\hspace{0.2cm}} ,\text{\hspace{0.2cm}} 0,9.
+$$
+It is presented in Figure~\ref{fig: left-triangle-layers-estimates} in blue. Its system of safety intervals is determined by a sequence of rational numbers
+$$
+\frac{5}{14}\text{\hspace{0.2cm}} ,\text{\hspace{0.2cm}} \frac{2}{5}\text{\hspace{0.2cm}} ,\text{\hspace{0.2cm}} \frac{7}{15}\text{\hspace{0.2cm}} ,\text{\hspace{0.2cm}} \frac{6}{11}\text{\hspace{0.2cm}} ,\text{\hspace{0.2cm}} \frac{3}{5}\text{\hspace{0.2cm}} ,\text{\hspace{0.2cm}} \frac{77}{103}\text{\hspace{0.2cm}} ,\text{\hspace{0.2cm}} \frac{17}{19}\text{\hspace{0.2cm}} ,\text{\hspace{0.2cm}} 1.
+$$
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./figures/plot-kL2-jL2-large.pdf}
+\end{center}
+\caption{Plot of the function $k_{L_{2}}(t)$ in blue and plot of the function $j_{L_{2}}(t)$ in red as functions of $t$.}
+\label{fig: left-triangle-layers-estimates}
+\end{figure}
+
+% function j
+In a layer with a known left boundary of a maximal cell, its right boundary is calculated either by using $f_{1,\delta}$ or by using $f_{2, \delta}$. By Proposition~\ref{prop: compare-functions-f1-f2}, there exists some $j \in \mathbb{Z}$, to which the implications
+\begin{itemize}
+  \item if $i \leq j$, then $\beta_{i} = f_{1,\delta}(\beta_{i-1})$;
+  \item if $i > j$, then $\beta_{i} = f_{2,\delta}(\beta_{i-1})$;
+\end{itemize}
+apply. For some $t$, there may be a jump in the values of $j$. This only happens if:
+$$
+\beta_{j} = f_{1,\delta}(\beta_{j-1}) = f_{2,\delta}(\beta_{j-1}).
+$$
+
+For $m=1,2,3$ denote by $j_{L_{m}} = j_{L_{m}}(t)$ a function that counts how many times we have to use $f_{2, \delta}$ before we start using $f_{2, \delta}$ to calculate the right boundary in the layer $L_{m}$. The $j_{L_{m}}$ is also a jump-step function and we mark its discontinuity points as critical values of parameter $t$. For these values of parameter $t$, the function $k_{L_{m}}$ can have a jump, which is limited in size by 1.
+
+For the layer $L_{2}$, the $j_{L_{2}} = j_{L_{2}}(t)$ is a jump-step function shown in Figure~\ref{fig: left-triangle-layers-estimates} in red.
+
+In the left triangle, the number of cells in the layers increases monotonically whit $t$. Approximations for critical values of $t$ were calculated numerically using bisection. The calculation is attached in Appendix A.
+
+For $m = 1,2,3$ in the right triangle we analogously define the layers $L_{m}'$ and functions $k_{L_{m}'}, j_{L_{m}'}$. It is easy to see that the parameters $t$ and $t' = 1 - t$ are critical or subcritical at the same time. Cumulative number of cells in layers
+$$
+L_{1}, L_{2}, L_{3},L_{1}', L_{2}', L_{3}',
+$$
+represents the estimate for the number of basis points in the left and right triangles as a function of $t$. To calculate the sum of such functions, it suffices to ensure that for a single value of $t$, at most one of the terms of the sum has a jump. If we succeed in constraining the approximately calculated critical and subcritical values of the parameters
+$$
+t_{1} < t_{2} < ... < t_{r}
+$$
+by rational numbers
+$$
+q_{0} < q_{1} < ... < q_{r},
+$$
+for which $q_{i-1} < t_{i} < q_{i}$ holds, the extreme of the sum of these step functions can be determined by calculating such a sum for all the values of $q_{i}, i = 0, ..., r$.
+
+Figure~\ref{fig: left-and-right-layers-estimates} shows an approximate calculation of the sum $S_{k}(t)$. The function $S_{k}(t)$ reaches a maximum at
+$$
+q_{1} = \frac{1}{11}
+$$
+and the sum of the functional values $S_{k}(\frac{1}{11}) = 24$. The sum of functions is a symmetric function, therefore
+$$
+S_{k}(\frac{10}{11}) = 24.
+$$
+The estimate for the upper bound on the number of basis points in the union of the left and right triangles is consequently equal to the maximum value of the function $S_{k}$, $S_{k}(\frac{1}{11}) = 24$.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/left-and-right-layers-estimates-small.pdf}
+\caption{Estimate for the number of basis points in the left and right triangles as a function of $t$.}
+\label{fig: left-and-right-layers-estimates}
+\end{figure}
+
+The exact estimate for the whole frame $F$ will be made in the next section using the lower part $\rectansym{ab\undersym{b}\undersym{a}}$ of the frame. If both the lower and upper parts of the frame were estimated by breaking into $\trisym{abc}, \trisym{abd}$, and a pair of left and right triangles, we obtain the following suboptimal estimate. We have a maximum of 36 basis points in the central triangle. In the union of the left and right triangles, a maximum of 24 basis points. This means that the basis of the partial drawing has a maximum of
+$$
+2 \cdot 36 + 2 \cdot 24 + 4 = 124
+$$
+points. In this case, the term 4 corresponds to the contribution of the boundary points $ a, b, c, d $.
+
+
+\section{Lower quadrilateral}
+We choose ray coordinate system with respect to the points $a,b,c$. Lower quadrilateral $\rectansym{a\undersym{a}\undersym{b}b}$ without the shadows $S_{\overline{a}b}, S_{\overline{b}a}$ is covered with a maximum of three layers $B_{1},B_{2},B_{3}$. We define them as ray trapezoids with respect to $a, b, c$:
+\begin{itemize}
+\item $B_{1}$ with ray heights $1,\frac{4}{3}$;
+\item $B_{2}$ with ray heights $\frac{4}{3},\frac{5}{3}$;
+\item $B_{3}$ with ray heights $\frac{5}{3},2$.
+\end{itemize}
+
+In doing so, we can limit ourselves to two separate cases. If the parameter
+$$
+h = -\frac{d_{y}}{c_{y}} > \frac{2}{3},
+$$
+then all the layers $B_{m}, m = 1,2,3$ are non-empty. The upper height of layer $B_{3}$ can be set to 2, as the higher the height, the worst the upper bound. If, however
+$$
+h \leq \frac{2}{3},
+$$
+the layer $B_{3}$ is empty. The upper height of layer $B_{2}$ can be set to $\frac{5}{3}$ for the same reason.
+
+\begin{figure}
+\begin{center}
+\input{./tikz/half-shadows.tikz}
+\end{center}
+\caption{Illustration at a very small value of parameter $t$.}
+\label{fig: half-shadows}
+\end{figure}
+
+Let's look at the illustration for a very small value of the parameter $t$ in Figure~\ref{fig: half-shadows}. The points from the regions $P_{1}$ and $P_{2}$ have very small ray angles in RCS with respect to $a, b, c$. Therefore, to break such a layer into cells would require a large number, albeit maximal, of cells. We address the problem by dealing separately with the regions $P_ {1}$ and $P_{2}$, which will be related to the estimate for the number of points in the corner areas, which we made in Proposition~\ref{prop: corner-regions-union}.
+
+\subsection{Half shadows}
+In RCS with respect to $a,b,c$ in the lower quadrilateral $\quadsym{a\undersym{a}\undersym{b}b}$, we define four regions of special treatment called \textit{half-shadows}\footnote{A term is related to astronomy. Astronomical term is penumbra used for the shadows cast by celestial bodies.} and we denote them by
+% TODO: H_1, ...
+$$
+P_{1},P_{2},P_{3},P_{4}.
+$$
+
+Their shape depends on the parameter $t$ (position of the point $c$). It is also possible that each of the half-shadows is empty.
+Half-shadows $P_{1}, P_{3}$ lie in the layer with ray heights between $\frac{4}{3}$ and $\frac{5}{3}$, half-shadows $P_{2}, P_{4}$ in the layer with ray heights between $\frac{5}{3}$ and $2$, see Figure~\ref{fig: half-shadows-2}.
+
+\begin{figure}
+\begin{center}
+\input{./tikz/half-shadows-2.tikz}
+\end{center}
+\caption{Illustration at value $t = \frac{3}{8}$.}
+\label{fig: half-shadows-2}
+\end{figure}
+
+% description of half-shadows
+The half-shadow $P_{1}$ is empty for the values of the parameter $t \in (\frac{5}{8}, 1]$. For $t \in [0, \frac{5}{8}]$, the half-shadow $P_{1}$ is defined as the intersection of the frame $F$ with the ray trapezoid
+$$
+\tpz{\left[ 0,\varphi,\frac{4}{3},\frac{5}{3} \right]_{a,b,c} }.
+$$
+For $t \in [\frac{1}{4},\frac{5}{8}]$ the value of parameter $\varphi = \frac{1}{4}$. For $t \in [0, \frac{1}{4}]$ the $\varphi$ is the extreme ray angle at which for every point $p \in P_{1}$ its stub $\overline{p}b$ intersects $\varphi$-ray. It follows from Corollary~\ref{cor: consequence-of-ray-coordinates-of-umbrella-ends} that for $\varphi$ we can choose the ray angle of the ray from $c$ to the end of $e_{b}$, see Figure~\ref{fig: half-shadows}.
+
+The half-shadow $P_{2}$ is empty for the values of parameter $t \in (\frac{3}{8}, 1]$. For $t \in [0, \frac{3}{8}]$, the half-shadow $P_{2}$ is defined as the intersection of the frame $F$ with the ray trapezoid
+$$
+\tpz{\left[ 0,\varphi,\frac{5}{3},2 \right]_{a,b,c} }.
+$$
+For $t \in [\frac{1}{4},\frac{3}{8}]$, the value of parameter is $\varphi = \frac{1}{4}$. For $t \in [0, \frac{1}{4}]$, the $\varphi$ is the extreme ray angle at which for every point $p \in P_{2}$ its stub $\overline{p}b$ intersects $\varphi$-ray. From Corollary~\ref{cor: consequence-of-ray-coordinates-of-umbrella-ends} it follows that for $\varphi$ we can choose the ray angle of the ray from $c$ to end $\undersym{a}_{b}$, see Figure~\ref{fig: half-shadows}.
+
+The half-shadows $P_{3}, P_{4}$ are defined analogously as $P_{1}, P_{2}$ by choosing the parameter $1 - t$ and stubs towards point $a$. The treatment of half-shadows is summarized in Table~\ref{tab: half-shadows-description}.
+
+\begin{table*}
+\begin{center}
+\begin{tabular}{lcc}
+	\toprule[1.5pt]
+    Half-shadow & $t \in $ & $\varphi$ from \\
+	\midrule[1.5pt]
+	$P_{1}$  & $[0,\frac{1}{4}]$ & $e_{b}$\\[0.2cm]
+	$P_{1}$  & $[\frac{1}{4},\frac{5}{8}]$& $a_{b}$ \\[0.2cm]
+
+	$P_{2}$  & $[0,\frac{1}{4}]$& $\undersym{a}_{b}$ \\[0.2cm]
+	$P_{2}$ & $[\frac{1}{4},\frac{3}{8}]$ & $a_{b}$ \\[0.2cm]
+
+	$P_{3}$ & $[\frac{3}{8},\frac{3}{4}]$ & $b_{a}$ \\[0.2cm]
+	$P_{3}$ & $[\frac{3}{4},1]$ & $m_{a}$ \\[0.2cm]
+
+	$P_{4}$ & $[\frac{5}{8},\frac{3}{4}]$ & $b_{a}$ \\[0.2cm]
+	$P_{4}$ & $[\frac{3}{4},1$ & $\undersym{b}_{a}$ \\[0.2cm]
+	\bottomrule[1.5pt]
+\end{tabular}
+\end{center}
+\caption{Summary of half-shadows.}
+\label{tab: half-shadows-description}
+\end{table*}
+
+% nesting and the assumption that p 'is more inward than p
+Observe the half-shadow $P_{1}$ and choose any two points $p,p' \in P_{1}$. Assume that they belong to the basis $p,p' \in \Pi$. For the point $p$ its stub $\overline{p}b$ intersects the extreme ray of the region $P_{1}$ (line trough $c$ and $f$), and the stub $\overline{p}c$ intersects the line parallel to $\overline{ab}$ at ray height $\frac{5}{4}$. The same is true for $p'$. This means that the angles $\sangle{cpb}$ and $\sangle{cp'b}$ are nested and we can assume without the loss of generality that
+$$
+\sangle{cp'b} \subseteq \sangle{cpb}.
+$$
+
+% estimate of length quotient
+Denote the vertices of half-shadow $P_{1}$ with $e,f,g,h$, see Figure~\ref{fig: half-shadows-2}. Let $r$ be the line that goes trough $p$ and $b$. We estimate the quotient of the following lengths. The length of the line segment $\overline{pb}$ and the lengths of the rectangular projection of the line segment $\overline{p'b}$ on the line $r$, denoted by $\left|\proj_{r} \left(\overline{p'b}\right) \right|$, and denote it by $q_{b}(t)$:
+\begin{align*}
+\frac{\left|pb\right|}{\left|\proj_{r} \left(\overline{p'b}\right)\right|} &\leq
+\frac{\left|eb\right|}{\min
+\left\{
+\left|\proj_{\overline{fb}} \left(\overline{gb}\right)\right|,
+\left|\proj_{\overline{hb}} \left(\overline{gb}\right)\right|
+\right\}
+} = q_{b}(t) = \\[6pt]%
+&= \vertwopartdef
+{ \frac{\sqrt{13}}{
+3\cdot\min
+\left\{ \frac{\left| 65 - 12 t \right|}{24 \sqrt{10}},
+\frac{\left| 451 + 8 (1 - 2 t) t \right|}{24 \sqrt{545 + 8 t (17 + 2 t)}} \right\}
+}, } {t \leq \frac{1}{4},}
+{ \frac{\sqrt{13}}{
+3\cdot\min
+\left\{ \frac{\left| 7 + 3 t \right|}{3 \sqrt{10}},
+\frac{\left| 22 + t (23 + 8 t) \right|}{3 \sqrt{113 + 16 t (7 + 4 t)}} \right\}
+}, } {t \geq \frac{1}{4}.} \\[6pt]%
+\end{align*}
+
+The calculation for the expression $q_{b}$ as a function of $t$ is available in Appendix A. Let $s$ be a line passing through $p$ and $c$. Similarly, we denote by $q_{c}$ the estimate for the quotient of the length of $\overline{pc}$ and the length of the rectangular projection of the line segment $\overline{p'c}$ on $s$, denoted by $\left|\proj_{s} \left(\overline{p'c}\right) \right|$:
+
+\begin{align*}
+\frac{\left|pc\right|}{\left|\proj_{s} \left(\overline{p'c}\right)\right|} &\leq
+\frac{\max\left\{ \left|ec\right|, \left|fc\right| \right\}}{\min
+\left\{
+\left|\proj_{\overline{gc}} \left(\overline{hc}\right)\right|,
+\left|\proj_{\overline{hc}} \left(\overline{gc}\right)\right|
+\right\}
+} = q_{c}(t) = \\[6pt]%
+&= \vertwopartdef
+{
+\frac{
+\max
+\left\{ \sqrt{\frac{25}{9} + \frac{49}{576}\left(1-4t\right)^{2}}, \sqrt{\frac{25}{9}+t^{2}} \right\}
+}{
+\min
+\left\{ \frac{128 + 15t(4t-1)}{24 \sqrt{16+9t^{2}}},
+\frac{128 + 15t(4t-1)}{3 \sqrt{1049+200t(2t-1)}} \right\}}, } {t \leq \frac{1}{4},}
+{
+\frac{
+\max
+\left\{ \frac{5}{3} \sqrt{1 + \left(t - \frac{1}{4}\right)^{2}}, \sqrt{\frac{25}{9}+t^{2}} \right\}
+}{
+\min
+\left\{ \frac{16 + 3t(4t-1)}{3 \sqrt{16+9t^{2}}},
+\frac{16 + 3t(4t-1)}{3 \sqrt{17 + 8t(2t-1)}} \right\}}, } {t \geq \frac{1}{4}.} \\[6pt]%
+\end{align*}
+
+The calculation for the expression $q_{c}$ as a function of $t$ is also available in Appendix A. With $\ell$ we denote the end of the stub $\overline{p}p'$ and define the angles:
+$$
+\beta' = \sangle{pbp'}, \hat{\beta} = \sangle{pbl},
+$$
+$$
+\gamma' = \sangle{pcp'}, \hat{\gamma} = \sangle{pcl}.
+$$
+At least one of the inequalities holds because of nesting
+$$
+\beta' \geq \hat{\beta} \text{\hspace{0.8cm}   or   \hspace{0.8cm}} \gamma' \geq \hat{\gamma}.
+$$
+
+Estimate the quotient of the angles $\beta'$ and $\hat{\beta}$ assuming that $\beta' \geq \hat{\beta}$
+\begin{equation}
+\label{eq: half-shados-beta}
+\frac{\beta'}{\hat{\beta}} \leq \frac{\tan(\beta')}{\tan(\hat{\beta})} \leq 4\cdot\frac{\left|pb\right|}{\left|\proj_{\overline{pb}} \left(\overline{p'b}\right) \right|} \leq 4 \cdot q_{b}(t).
+\end{equation}
+
+The first inequality follows due to the convexity and increasing of tangent function on $(0,\frac{\pi}{2})$. Provided that $\gamma' \geq \hat{\gamma}$, a similar relationship holds
+\begin{equation}
+\label{eq: half-shadows-gamma}
+\frac{\gamma'}{\hat{\gamma}} \leq 4 \cdot q_{c}(t).
+\end{equation}
+Therefore, at least one of the estimates~\eqref{eq: half-shados-beta} or~\eqref{eq: half-shadows-gamma} holds.
+
+Let $\left\{ p_{0},p_{1},..., p_{k} \right\}$ be the maximum family of points from the basis $\Pi$ lying in $P_{1}$. Here we can assume nesting:
+$$
+\sangle{cp_{k}b} \subseteq \sangle{cp_{k-1}b} \subseteq ... \subseteq \sangle{cp_{1}b} \subseteq \sangle{cp_{0}b}.
+$$
+For $i = 1, ..., k$ we write
+$$
+\beta_{i} = \sangle{p_{0}bp_{i}} \textit{  and  } \gamma_{i} = \sangle{p_{0}cp_{i}}.
+$$
+Similar to Preposition~\ref{prop: nesting} also for sequences $(\beta_{i})_{i}$ and $(\gamma_{i})_{i}, i = 1,...,k$ holds:
+$$
+\beta_{i} \geq \frac{4}{3}\beta_{i-1} \text{\hspace{0.8cm}   in   \hspace{0.8cm}} \gamma_{i} \geq \frac{4}{3} \gamma_{i-1}.
+$$
+
+The point $p_{1}$ is subject to one of the relationships:
+$$
+\sangle{p_{0}bp_{1}} \geq  \sangle{p_{0}b(p_{0})_{p_{k}}} \text{\hspace{0.8cm}   or   \hspace{0.8cm}} \sangle{p_{0}cp_{1}} \geq \sangle{p_{0}c(p_{0})_{p_{k}}}.
+$$
+In the first case, we produce an estimate
+$$
+\beta_{k} \leq 4 \cdot q_{b}(t) \cdot \beta_{1} \leq 4 \cdot q_{b}(t) \left(\frac{3}{4}\right)^{k-1} \cdot \beta_{k},
+$$
+which holds when $k \leq 7$ for $t < t_{0} \approx 0{,}4585$ and when $k \leq 6$ for $t \geq t_{0}$. For $t > \frac{5}{8}$ the half-shadow $P_{1}$ is empty. In the second case
+$$
+\gamma_{k} \leq 4 \cdot q_{c}(t) \cdot \gamma_{1} \leq 4 \cdot q_{c}(t) \left(\frac{3}{4}\right)^{k-1} \cdot \gamma_{k},
+$$
+which holds when $k \leq 6$ for each $t$ from the interval on which the half-shadow $P_{1}$ is not empty. We get a worse bound in the first of the two cases and summarize it in the next statement, taking into account the point $p_{0}$.
+
+\begin{proposition}
+In the half-shadow $P_{1}$ we have at most 8 basis points for $t < t_{0} \approx 0{,}4585$ and at most 7 for $t \geq t_{0}$. Symbolically
+$$
+\left|
+\Pi \cap P_{1}
+\right| \leq \twopartdef
+{ 8, } {t < t_{0} \approx 0{,}4585,}
+{ 7, } {t \geq t_{0}.}
+$$
+\end{proposition}
+
+We get the critical value of $t$, which is the exact value at which the estimate drops from 8 to 7 basis points, which we limit between two rational numbers. An analogous estimate is also made for the region $P_{2}$. The half-shadows $P_{3}, P_{4}$ are derived using symmetry. The results can be summarized in a plot showing the estimate for the number of basis points in half-shadows depending on the value of parameter $t$.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/estimates-in-half-shadows.pdf}
+\caption{Estimate for the number of basis points in half-shadows as a function of $t$.}
+\label{fig: estimates-in-half-shadows}
+\end{figure}
+
+\subsection{Lower layers}
+We transform the frame again so that the central triangle $\trisym{abc}$ becomes equilateral and introduce the RCS with respect to $a,b,c$. Assume $h > \frac{2}{3}$. The lower quadrilateral $\rectansym{a\undersym{a}\undersym{b}b}$, without the shadows $S_{\overline{a}b}, S_{\overline{b}a}$ and without the half-shadows $P_{1}, P_{2}, P_{3}, P_{4}$, we cover with ray trapezoids with respect to $a,b,c$:
+$$
+B_{1} = \tpz{\left[ \frac{1}{4},\frac{3}{4},1,\frac{4}{3} \right]_{a,b,c} },
+$$
+$$
+B_{2} = \tpz{\left[ \alpha_{2},\omega_{2},\frac{4}{3},\frac{5}{3} \right]_{a,c,b} },
+$$
+$$
+B_{3} = \tpz{\left[ \alpha_{3},\omega_{3},\frac{5}{3},2 \right]_{a,c,b} }.
+$$
+The parameters $\alpha$ and $\omega$ in the layers $B_{2}, B_{3}$ depend on which sub-interval $t$ lies and on whether the half-shadows $P_{i}, i = 1,...,4$ are empty or non-empty.
+
+\begin{figure}
+\begin{center}
+\input{./tikz/lower-layers.tikz}
+\end{center}
+\caption{Lower layers at $t = 0.4$}
+\label{fig: lower-layers}
+\end{figure}
+
+\begin{table*}
+\begin{center}
+\begin{tabular}{lccccc}
+	\toprule[1.5pt]
+    Layer & $t \in $ & $\alpha$ from & $\omega$ from & $\alpha$ & $\omega$ \\
+	\midrule[1.5pt]
+	$B_{2}$ & $(0, \frac{1}{4}]$           & $e_{b}$ & $\overline{\undersym{b}b}$ & $\frac{1+3t}{7}$ & $\frac{3+2t}{5}$ \\[0.2cm]
+	$B_{2}$ & $(\frac{1}{4}, \frac{3}{8}]$ & $a_{b}$ & $\overline{\undersym{b}b}$ & $\frac{1}{4}$ & $\frac{3+2t}{5}$ \\[0.2cm]
+	$B_{2}$ & $(\frac{3}{8}, \frac{1}{2}]$ & $a_{b}$ & $b_{a}$ 				     & $\frac{1}{4}$ & $\frac{3}{4}$ \\[0.2cm]
+
+	$B_{3}$ & $(0, \frac{1}{4}]$           & $\undersym{a}_{b}$         & $\overline{\undersym{b}b}$ & $\frac{1+4t}{8}$ & $\frac{1+t}{2}$ \\[0.2cm]
+	$B_{3}$ & $(\frac{1}{4}, \frac{3}{8}]$ & $a_{b}$                    & $\overline{\undersym{b}b}$ & $\frac{1}{4}$ & $\frac{1+t}{2}$ \\[0.2cm]
+	$B_{3}$ & $(\frac{3}{8}, \frac{1}{2}]$ & $\overline{\undersym{a}a}$ & $\overline{\undersym{b}b}$ & $\frac{t}{2}$ & $\frac{1+t}{2}$ \\[0.2cm]
+	\bottomrule[1.5pt]
+\end{tabular}
+\end{center}
+\caption{Left and right boundaries of lower layers $B_{2}, B_{3}$.}
+\label{tab: left-and-right-borders-of-lower-layers}
+\end{table*}
+
+The first lower layer $B_{1}$ lies between the shadows $S_{\overline{a}b}, S_{\overline{b}a}$. After the transformation that achieves the equilaterality of the triangle $\trisym{abc}$, the shape and size of layer $B_{1}$ are independent of $t$. Therefore, using Proposition~\ref{prop: inner-layer}, we can derive an estimate
+$$
+\left|
+B_{1} \cap \Pi
+\right| \leq 7.
+$$
+
+For the remaining two layers, however, the left and right boundaries depend on $t$. By symmetry, the lower layers can be considered only for $t \in [0,\frac{1}{2}]$. For $t$, where half-shadow $P_{1}$ is nonempty, the left boundary of the layer $B_{2}$ will be the right leg of half-shadow $P_{1}$, determined by the end of stub $e_{b}$ or by end of stub $a_{b}$. For other values of $t$, the boundaries will be defined by the sides $\overline{\undersym{a}a}, \overline{\undersym{b}b}$ of the frame $F$. The same is true for the lower layer $B_{3}$. The left and right boundaries of the layers $B_{2}, B_{3}$ are summarized in Table~\ref{tab: left-and-right-borders-of-lower-layers}. In Table we have listed where from where we get $\alpha$ and $\omega$ and how they depend on the parameter $t = c_{y}$.
+
+Let $k_{2}$ and $k_{3}$ be estimates for the upper bound on the number of basis points located in lower layers $B_{2}$ and $B_{3}$ respectively. For a fixed $t$ we can calculate
+$$
+k_{B_{2}}(t),j_{B_{2}}(t),k_{B_{3}}(t),j_{B_{3}}(t),
+$$
+which, however, are generally no longer monotonous functions. Therefore, we need to find the critical values of the parameter $t$ analytically. In Figure~\ref{fig: lower-layer-kj} we have drawn the approximate behavior of the function $k_{B_{3}}(t)$ in blue and $j_{B_{3}}(t)$ in red for the layer $B_{3}$. The larger jump of 4 occurs due to a different definition of half-shadows when passing over $t = \frac{3}{8}$.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/lower-layer-kj.pdf}
+\caption{Plot of the function $k_{B_{3}}(t)$ in blue and the function $j_{B_{3}}(t)$ in red as functions of $t$.}
+\label{fig: lower-layer-kj}
+\end{figure}
+
+For an individual layer $B_{m}$, for $m = 2,3$, we first find the critical values of $t$, for which there are jumps in the value of $j_{B_{m}}(t)$. By Proposition~\ref{prop: compare-functions-f1-f2} we have
+\begin{align*}
+\beta_{i} &= \frac{3\delta}{1+6\delta}, \\[6pt]%
+\left(\frac{1+3\delta}{3\delta}\right)^{i}\beta_{0} &= \frac{3\delta}{1+6\delta}, \\[6pt]%
+\alpha(t) &= \frac{3\delta}{1+6\delta}\left(\frac{3\delta}{1+3\delta}\right)^{i}
+\end{align*}
+and the value of the parameter $t$ can be calculated as the inverse value of the linear function of the left boundary.
+\begin{equation}
+\label{eq: inverse}
+t = \overset{-1}{\alpha}\left( \frac{\left(3\delta\right)^{i+1}}{(1+6\delta)\left(1+3\delta\right)^{i}} \right).
+\end{equation}
+
+For an individual layer $B_{m}, m = 2,3$, the adjacent critical values of parameter $t$, which are calculated using~\ref{eq: inverse}, are denoted by $t_{0}$ and $t_{1}$. Function $j_{B_{m}}$ is constant on the sub-interval
+$$
+t \in (t_{0}, t_{1}).
+$$
+
+The height $\delta$ of each individual layer is constant. Therefore, we can calculate all critical values of $t$, where the value of $k_{B_{m}}(t)$ changes. On each sub-interval between adjacent evaluations of $t$ we check whether there is a change in the number of cells $k = k_{B_{m}}(t)$. As in the proof of Proposition~\ref{prop: inner-layer}, for some fixed $t \in (t_{0}, t_{1})$, we can calculate the cell boundaries $\beta_{i}, i = 1,...,k$ and determine the value of $k_{B_{m}}(t)$. On the sub-interval $(t_{0}, t_{1})$ the critical value of $t$ occurs in two cases. In the first case, when the number of cells in the layer is reduced and $\beta_{k-1}(t)$ reaches $\omega(t)$ and the value of $k_{B_{m}}(t)$ decreases by 1. To find the critical value of $t$, we need to solve the equation
+$$
+\beta_{k-1}(t) = \omega(t).
+$$
+
+In the second case, however, the number of cells in the layer increases and $\omega(t)$ exceeds $\beta_{k}(t)$ and the value of $k_{B_{m}}(t)$ increases by 1. To find the critical $t$, we need to solve the equation
+$$
+\omega(t) = \beta_{k}(t).
+$$
+
+Specifically, there are two sub-cases in the second case. If
+$$
+k-1 > j_{B_{m}}(t) \text{\hspace{0.8cm}   for   \hspace{0.8cm}} t \in (t_{0}, t_{1}),
+$$
+then $\beta_{k}(t)$ is calculated using $f_{1,\delta}$, otherwise using $f_{2, \delta}$. The functions of left and right boundary are linear. The functions $f_{1,\delta}, f_{2,\delta}$ from the expression for $\beta_{i}$ are also linear. Therefore, $\beta_{i}$ is linear because it is a composite of $i$ linear functions. We find the critical value of $t$ by finding the intersection of two linear functions on the observed sub-interval. If there is no intersection on the sub-interval, then there is no critical value of $t$.

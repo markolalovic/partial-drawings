@@ -1,0 +1,74 @@
+\begin{tikzpicture}[scale = 1.4, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm,
+  dot2/.style={circle,inner sep=1.4pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+
+% analogous theorem about the region inside a triangle
+\draw [thick](3.19,2.28)-- (3.14,3.01);
+\draw [thick] (2.86,2.34)-- (2.9,3.05);
+\draw [thick]  (2.86,2.34)-- (3.65,1.75);
+\draw [thick] (3.19,2.28)-- (3.89,1.71);
+\draw [thick] (2.15,1.75)-- (2.86,2.34);
+\draw [thick] (2.39,1.71)-- (3.19,2.28);
+\draw [blue] (2.39,1.71)-- (0,0);
+\draw [blue] (2.15,1.75)-- (0,0);
+\draw [blue] (3.14,3.01)-- (3,5.2);
+\draw [blue] (2.9,3.05)-- (3,5.2);
+\draw [blue] (3.89,1.71)-- (6,0);
+\draw [blue] (3.65,1.75)-- (6,0);
+
+\draw (1.31,4.22) -- (4.31,-0.97) node[pos=0.1,sloped,above] {$p_{x}$}; %px
+\draw (0,2.6)-- (6,2.6) node[pos=0.9,sloped,above] {$p_{z}$}; %pz
+\draw (4.69,4.22)-- (1.69,-0.97) node[pos=0.1,sloped,above] {$p_{y}$}; %py
+
+\draw [] (2.25,2.6)-- (3,1.3);
+\draw [] (3,1.3)-- (3.75,2.6);
+\draw [] (3.75,2.6)-- (2.25,2.6);
+
+
+\node [dot=](p1) at (2.86,2.34) {};
+%\node [below = of p1] {$p_{1}$};
+
+\node [dot=](p2) at (3.19,2.28) {};
+%\node [below = of p2] {$p_{2}$};
+
+\node [dot=](x) at (0,0) {};
+\node [left = of x] {$x$};
+
+\node [dot=](y) at (6,0) {};
+\node [left = of y] {$y$};
+
+\node [dot=](z) at (3,5.2) {};
+\node [above = of z] {$z$};
+
+
+\node [dot=](inf) at (2.49,-0.68) {};
+\node [below = of inf] {$\infty$};
+
+\node [dot2=](k) at (2.25,2.6) {};
+\node [dot2=](l) at (3.75,2.6) {};
+\node [dot2=](h) at (3,1.3) {};
+
+\fill[color-inside, opacity=0.3] (2.25,2.6) -- (3.75,2.6) -- (3,1.3) -- (2.25,2.6) -- cycle;
+%\draw [] (t1) -- (t2) -- (t3) -- (t4) -- (t1) -- cycle;
+
+% draw the area T_0 inside T
+\draw [red] plot [smooth cycle] coordinates {(2.54,2.3) (2.6,2.5) (3.5,2.4) (3,1.9)};
+
+\coordinate (t0) at (2.26, 2.5);
+\node [red,below = of t0] {$T_{0}$};
+
+\coordinate (t) at (3.4,2.5);
+\node [above = of t] {$T$};
+
+\coordinate (k33) at (5,1);
+\node [blue, right = of k33] {$K_{3,3}$};
+
+\draw [blue]  (x) to[out=-40,in=80] (inf);
+\draw [blue]  (y) to[out=-55,in=-20] (inf);
+\draw [blue]  (z) to[out=180,in=140] (-0.34,-0.48);
+\draw [blue]  (-0.34,-0.48) to[out=-40,in=200] (inf);
+
+\end{footnotesize}
+\end{tikzpicture}

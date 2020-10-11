@@ -1,0 +1,93 @@
+\begin{tikzpicture}[scale = 6, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+% points
+\node [dot=](a) at (0,0) {};
+\node [below = of a,fill=white] {$a$};
+\node [dot=](b) at (1,0) {};
+\node [below = of b] {$b$};
+\node [dot=](c) at ({1/2},{sqrt(3)/2}) {};
+\node [above = of c] {$c$};
+
+% x,y,z
+\node [dot2=](x) at ({0.375}, {sqrt(3)/8}) {};
+\node [below = of x] {$a'$};
+\node [dot2=](y) at ({0.625}, {sqrt(3)/8})  {};
+\node [below = of y] {$b'$};
+\node [dot2=](z) at ({0.5}, {sqrt(3)/4})  {};
+% d,e,f, g, h, i, j, k, l
+\node [dot2=](d) at ({0.5}, 0) {};
+\node [below = of d] {$d$};
+\node [dot2=](e) at ({0.75}, {sqrt(3)/4})  {};
+\node [above = of e] {$e$};
+\node [dot2=](f) at ({0.25}, {sqrt(3)/4})  {};
+\node [above = of f] {$f$};
+\node [dot2=](g) at ({0.5}, {sqrt(3)/6})  {};
+\node [dot2=](h) at ({1/2},{sqrt(3)/8})  {};
+
+\node [dot2=](i) at ({1/2+1/16},{3*sqrt(3)/16})  {};
+\coordinate (ifix) at ({1/2+1/16+0.025},{3*sqrt(3)/16});
+\node [above = of ifix] {$i$};
+
+\node [dot2=](j) at ({1/2-1/16},{3*sqrt(3)/16})  {};
+\coordinate (jfix) at ({1/2-1/16-0.025},{3*sqrt(3)/16});
+\node [above = of jfix] {$j$};
+
+%\node [dot2=](k) at ({3/8},{sqrt(3)/4})  {};
+%\node [above = of k] {$k$};
+%\node [dot2=](l) at ({5/8},{sqrt(3)/4})  {};
+%\node [above = of l] {$l$};
+ 
+
+% big triangle 
+\draw[ultra thin] (a) -- (b) -- (c) -- (a) -- cycle;
+% inner small triangle
+\draw[ultra thin] (x) -- (y) -- (z) -- (x) -- cycle;
+% triangle median, deltoide, sigma'
+\draw[ thin,dotted] (d) -- (c);
+\draw[ thin,dotted] (a) -- (e);
+\draw[ thin,dotted] (b) -- (f);
+\draw[] (g) -- (h);
+\draw[] (g) -- (i);
+\draw[] (g) -- (j);
+%\draw[thin, dotted] (h) -- (l) -- (k) -- (h) -- cycle;
+
+% ticks of heights
+% 2/3, 1/2, ... 
+%\draw [thin] (0.2575000000, 0.4286825749) -- (0.2425000000, 0.4373428289);
+%\node [left = of f] {$\frac{1}{2}$};
+%\draw [thin, dotted] (f) -- (k);
+%\draw [thin, dotted] (l) -- (e);
+%
+%\draw [thin] (0.1741666667,0.2843450076) -- (0.1591666667,0.2930052616);
+%\draw [thin, dotted] (0.1666666667,0.2886751346) -- (0.8333333333,0.2886751346);
+
+% again white points to cover the lines
+\coordinate (gfix) at ({0.5}, {sqrt(3)/6-0.005});
+\node [above = of gfix, fill=white] {$g$};
+\draw[] (g) -- (i);
+\draw[] (g) -- (j);
+% inner small triangle
+\draw[ultra thin] (x) -- (y) -- (z) -- (x) -- cycle;
+
+\node [below = of h,fill=white] {$h$};
+% x,y,z
+\node [dot2=](x) at ({0.375}, {sqrt(3)/8}) {};
+\node [dot2=](y) at ({0.625}, {sqrt(3)/8})  {};
+\node [dot2=](z) at ({0.5}, {sqrt(3)/4})  {};
+% d,e,f, g, h, i, j, k, l
+\node [dot2=](d) at ({0.5}, 0) {};
+\node [dot2=](e) at ({0.75}, {sqrt(3)/4})  {};
+\node [dot2=](f) at ({0.25}, {sqrt(3)/4})  {};
+\node [dot2=](g) at ({0.5}, {sqrt(3)/6})  {};
+\node [dot2=](h) at ({1/2},{sqrt(3)/8})  {};
+\node [dot2=](i) at ({1/2+1/16},{3*sqrt(3)/16})  {};
+\node [dot2=](j) at ({1/2-1/16},{3*sqrt(3)/16})  {};
+%\node [dot2=](k) at ({3/8},{sqrt(3)/4})  {};
+%\node [dot2=](l) at ({5/8},{sqrt(3)/4})  {};
+\node [above = of z,fill=white] {$c'$};
+
+\fill[color-inside,opacity=0.3] ({0.375}, {sqrt(3)/8}) -- ({0.625}, {sqrt(3)/8}) -- ({0.5}, {sqrt(3)/4}) -- ({0.375}, {sqrt(3)/8}) -- cycle;
+
+\end{footnotesize}
+\end{tikzpicture}

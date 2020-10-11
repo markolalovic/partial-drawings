@@ -1,0 +1,63 @@
+\begin{subfigure}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=1.42, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]  
+\begin{footnotesize}
+\draw (3.44,1.25)-- (3.33,0.31);
+\draw (2.04,1.58)-- (2.28,0.56);
+\draw (2.04,1.58)-- (3.03,1.18);
+\draw (3.44,1.25)-- (4.08,0.94);
+\draw (1.53,1.18)-- (2.04,1.58);
+\draw (2.58,0.94)-- (3.44,1.25);
+\node [dot=](u) at (2.04,1.58) {};
+\node [above = of u] {$u$};
+\node [dot=](v) at (3.44,1.25) {};
+\node [above = of v] {$v$};
+\end{footnotesize}
+\end{tikzpicture}	
+\caption{$Y_{u,x,y,z} \cap Y_{v,x,y,z} = \emptyset.$}
+\label{fig: umbrella-no-crossings}
+\end{subfigure}%
+\begin{subfigure}{0.3\textwidth}
+\centering%
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=1.42, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]  
+\begin{footnotesize}
+\draw (3.14,1.2)-- (3.1,0.28);
+\draw (2.89,1.46)-- (2.91,0.47);
+\draw (2.89,1.46)-- (3.66,1.1);
+\draw (3.14,1.2)-- (3.85,0.9);
+\draw (2.16,1.1)-- (2.89,1.46);
+\draw (2.35,0.9)-- (3.14,1.2);
+\node [dot=](u) at (2.89,1.46) {};
+\node [above = of u] {$u$};
+\node [dot=](v) at (3.14,1.2) {};
+\node [above = of v] {$v$};
+\end{footnotesize}
+\end{tikzpicture}
+\caption{$Y_{u,x,y,z} \cap Y_{v,x,y,z} \neq \emptyset.$}
+\label{fig: umbrella-crossings-1}
+\end{subfigure}%
+\begin{subfigure}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=1.42, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]  
+\begin{footnotesize}
+\draw (3.82,1.2)-- (3.61,0.28);
+\draw (2.57,1.19)-- (2.68,0.27);
+\draw (2.57,1.19)-- (3.43,0.89);
+\draw (3.82,1.2)-- (4.36,0.9);
+\draw (1.93,0.89)-- (2.57,1.19);
+\draw (2.86,0.9)-- (3.82,1.2);
+\node [dot=](u) at (2.57,1.19) {};
+\node [above = of u] {$u$};
+\node [dot=](v) at (3.82,1.2) {};
+\node [above = of v] {$v$};
+\end{footnotesize}
+\end{tikzpicture}	
+\caption{$Y_{u,x,y,z} \cap Y_{v,x,y,z} \neq \emptyset.$}
+\label{fig: umbrella-crossings-2}
+\end{subfigure}

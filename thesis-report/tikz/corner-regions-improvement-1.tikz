@@ -1,0 +1,86 @@
+\begin{tikzpicture}[scale = 4, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1.4pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1.4pt,draw,fill=white,label={#1}, name=#1}]
+
+% shadow S_ba
+\draw ({0.75}, 0) -- (1,0) -- (1.26667, 0.246667)  -- (.933333, 0.246667) -- (0.75,0) -- cycle;
+\fill[color-parallelogram,opacity=0.9] ({0.75}, 0) -- (1,0) -- (1.26667, 0.246667)  -- (.933333, 0.246667) -- (0.75,0) -- cycle;
+
+\node [dot=](a) at (0,0) {};
+\node [left = of a] {$a$} {};
+\node [dot=](b) at (1,0) {};
+\node [right = of b] {$b$} {};
+\node [dot=](c) at ({0.25},{sqrt(3)/2}) {};
+\node [above = of c] {$c$} {};
+\node [dot=](d) at (0.2,-0.74) {};
+\node [above = of d] {$d$};
+
+% axes
+\draw[dotted] (c) -- (-0.25, -0.866025);
+\draw[dotted] (c) -- (1.75, -0.866025);
+\draw[dotted] (-0.25, -0.866025) -- (1.75, -0.866025);
+\draw[dotted] (-0.0833333, -0.288675) -- (1.25, -0.288675);
+\draw[dotted] (-0.166667, -0.57735) -- (1.5, -0.57735);
+\draw[dotted] (c) -- (0.75, -0.866025);
+\draw[dotted] (-0.24, -1.33) -- (1.26,0.69);
+%\draw[dotted] (1.77,-0.35) -- (-0.66,0.76);;
+
+ 
+\begin{footnotesize}
+%\draw[color=black] (0,{sqrt(3)/2}) circle (inner sep=1pt);
+\node [dot2=](abovea) at (0,{sqrt(3)/2}) {};
+\node [dot2=](aboveb) at (1,{sqrt(3)/2}) {};
+\node [dot2=](undera) at (0,-0.74) {};
+\node [dot2=](underb) at (1,-0.74) {};
+
+% frame F
+\draw[] (undera) -- (underb) -- (aboveb) -- (abovea) -- (undera) -- cycle;
+\draw[ultra thin] (a) -- (b) -- (c) -- (a) -- cycle;
+
+% stubs
+\draw[ultra thick] (b) -- (0.8125,0.216506);
+\draw[ultra thick] (0.4375,0.649519) -- (c);
+
+\draw[ultra thick] (a) -- (0.0625,0.216506);
+\draw[ultra thick] (0.1875,0.649519) -- (c);
+
+\draw[ultra thick] (a) -- ({0.25},0);
+\draw[ultra thick] ({0.75}, 0) -- (b);
+
+% color region for point d
+%\fill[color-trapezoid,opacity=0.3] (0,{-2/3*sqrt(3)/2}) -- (0,{-sqrt(3)/2}) -- (0.75, -0.866025) -- (0.666667, -0.57735) -- (0,{-2/3*sqrt(3)/2}) -- cycle;
+% -0.416667, -1.44338
+% -0.25, -0.866025
+%\fill[color-trapezoid,opacity=0.3] (-0.166667, -0.57735) -- (-0.25, -0.866025) -- (0.75, -0.866025) -- (0.666667, -0.57735) -- (-0.166667, -0.57735) -- cycle;
+
+% color allowed area Q i.e. no shadow corners at b
+\draw (0.75,0) -- (0.86,0.16) -- (0.8125,0.216506) -- (0.65,0.17) -- (0.75,0) -- cycle;
+\fill[color-parallelogram,opacity=0.3] (0.75,0) -- (0.86,0.16) -- (0.8125,0.216506) -- (0.65,0.17) -- (0.75,0) -- cycle;
+% dotted remaining corners
+\draw[dotted] (0,0) -- (0.25,0) -- (0.25,0.17) -- (0.0625,0.216506) -- (0,0) -- cycle;
+\draw[dotted] ({0.25},{sqrt(3)/2}) -- (0.4375,0.649519) -- (0.35,0.52) -- (0.1875,0.649519) -- ({0.25},{sqrt(3)/2}) -- cycle;
+
+\node [dot2=](abovea) at (0,{sqrt(3)/2}) {};
+\node [above = of abovea] {$\abovesym{a}$}; 
+
+\node [dot2=](aboveb) at (1,{sqrt(3)/2}) {};
+\node [above = of aboveb] {$\abovesym{b}$};
+
+\node [dot2=](undera) at (0,-0.74) {};
+\node [dot2=](underb) at (1,-0.74) {};
+
+\node [below = of undera] {$\undersym{a}$};
+\node [below = of underb,fill=white] {$\undersym{b}$};
+
+\node [dot2=](ba) at (0.75,0) {};
+\node [below = of ba] {$b_{a}$}; 
+\node [dot2=](bc) at (0.8125,0.216506){};
+\node [above = of bc] {$b_{c}$}; 
+\node [dot2=](e) at (0.86,0.16){};
+\node [right = of e] {$e$}; 
+\node [dot2=](bstar) at (0.65,0.165){};
+\node [left = of bstar] {$b^{*}$}; 
+\coordinate (D) at (0.75, -0.866025) {};
+\node [left = of D] {$D$}; 
+
+\end{footnotesize}
+\end{tikzpicture}

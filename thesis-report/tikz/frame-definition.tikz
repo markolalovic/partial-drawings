@@ -1,0 +1,59 @@
+\begin{tikzpicture}[scale = 7, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1.4pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1.4pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+% axes
+\draw[gray,thick,->] ({-0.2}, 0) -- (1.3, 0) node[right] {$x$};
+\draw[gray,thick,->] (0, {-0.1545-0.2}) -- ({0, 0.464+0.3}) node[above] {$y$};
+
+\node [dot=] at (0.1,0.2) {};
+\node [dot=] at (0.1,0.3) {};
+\node [dot=] at (0.2,-0.15) {};
+\node [dot=] at (0.4,-0.12) {};
+\node [dot=] at (0.6,0.44) {};
+\node [dot=] at (0.55,0.32) {};
+\node [dot=] at (0.7,-0.13) {};
+\node [dot=] at (0.523,0.4) {};
+\node [dot=] at (0.8,0.38) {};
+\node [dot=] at (0.9,0.32) {};
+
+\node [dot=](a) at (0,0) {};
+\node [dot=](b) at (1,0) {};
+\node [dot=](c) at ({1/4},0.464) {};
+\node [dot=](d) at ({3/5}, -0.1545) {};
+\node [dot2=](abovea) at (0,0.464) {};
+\node [dot2=](aboveb) at (1,0.464) {};
+\node [dot2=](undera) at (0,-0.1545) {};
+\node [dot2=](underb) at (1,-0.1545) {};
+
+\fill[color-trapezoid,opacity=0.3] (0,0.464) -- (1,0.464)  -- (1,-0.1545) -- (0,-0.1545)-- cycle;
+
+% c
+\coordinate (t) at ({1/4},0);
+\draw [thin] (-0.01, 0.464) -- (0.01, 0.464);
+\coordinate (cy) at (0,0.464);
+
+% d
+\draw [thin] ({1/4}, 0.01000000000) -- ({1/4}, -0.01000000000);
+\coordinate (u) at (0,-0.1545);
+
+\draw[ultra thin] (undera) -- (underb) -- (aboveb) -- (abovea) -- (undera) -- cycle;
+\draw[ultra thin] (a) -- (b) -- cycle;
+\node [right = of b,fill=white] {$b(1,0)$};
+\node [left = of a,fill=white] {$a(0,0)$};
+\node [above = of c] {$c = c(t, \cdot)$} {};
+\node [below = of d] {$d$}; 
+
+\node [below = of t] {$t$};
+
+\node [dot2=](abovea) at (0,0.464) {};
+\node [dot2=](aboveb) at (1,0.464) {};
+\node [dot2=](undera) at (0,-0.1545) {};
+\node [dot2=](underb) at (1,-0.1545) {};
+\node [above = of abovea,fill=white] {$\abovesym{a}$};
+\node [above = of aboveb] {$\abovesym{b}$};
+\node [below = of undera, fill=white] {$\undersym{a}$};
+\node [below = of underb] {$\undersym{b}$};
+\coordinate (f) at (0.33,0.22);
+\node [above = of f] {$F$};
+\end{footnotesize}
+\end{tikzpicture}

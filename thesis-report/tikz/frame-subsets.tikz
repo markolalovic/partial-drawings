@@ -1,0 +1,58 @@
+\begin{tikzpicture}[scale = 4, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1.4pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1.4pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+% axes
+\draw[gray,thick,->] ({-0.2}, 0) -- (1.3, 0) node[right] {$x$};
+\draw[gray,thick,->] (0, {-2/3-0.2}) -- (0, 1.3) node[above] {$y$};
+\node [dot=](a) at (0,0) {};
+\node [dot=](b) at (1,0) {};
+\node [dot=](c) at ({1/4},{sqrt(3)/2}) {};
+\node [dot=](d) at ({3/4}, {-2/3}) {};
+\node [dot2=](abovea) at (0,{sqrt(3)/2}) {};
+\node [dot2=](aboveb) at (1,{sqrt(3)/2}) {};
+\node [dot2=](undera) at (0,{-2/3}) {};
+\node [dot2=](underb) at (1,{-2/3}) {};
+
+
+% denote where c and d are
+%%%%%%%%%%%%%% c
+\draw [thin] (0.2500000000, 0.01000000000) -- (0.2500000000, -0.01000000000);
+\coordinate (t) at (0.25,0);
+\node [below = of t] {$t$}; % = \frac{1}{4}
+\draw [thin] (-0.01, {sqrt(3)/2}) -- (0.01, {sqrt(3)/2});
+\coordinate (cy) at (0,{sqrt(3)/2});
+\node [left = of cy] {$\frac{\sqrt{3}}{2}$};
+\draw[thin,dotted] (t) -- (c);
+\draw[thin,dotted] (cy) -- (c);
+%%%%%%%%%%%%%%%% d
+\draw [thin] ({3/4}, 0.01000000000) -- ({3/4}, -0.01000000000);
+\coordinate (dx) at ({3/4},0);
+\draw [thin] (-0.01, {-2/3}) -- (0.01, {-2/3});
+\coordinate (u) at (0,{-2/3});
+%\node [left = of u] {$u = -\frac{1}{3}$};
+\draw[thin,dotted] (u) -- (d);
+\draw[thin,dotted] (dx) -- (d);
+%[semithick,black]
+\draw[ultra thin] (undera) -- (underb) -- (aboveb) -- (abovea) -- (undera) -- cycle;
+\draw[ultra thin] (a) -- (b) -- (c) -- (a) -- cycle;
+\node [right = of b,fill=white] {$b$};
+\node [left = of a,fill=white] {$a$};
+\node [above = of c] {$c$} {};
+\node [below = of d] {$d$}; %fill=white
+\node [dot2=](abovea) at (0,{sqrt(3)/2}) {};
+\node [above = of abovea,fill=white] {$\abovesym{a}$};
+\node [dot2=](aboveb) at (1,{sqrt(3)/2}) {};
+\node [above = of aboveb] {$\abovesym{b}$};
+\node [dot2=](undera) at (0,{-2/3}) {};
+\node [below = of undera, fill=white] {$\undersym{a}$};
+\node [dot2=](underb) at (1,{-2/3}) {};
+\node [below = of underb] {$\undersym{b}$};
+%\node [below = of dx,fill=white] {$\frac{2}{3}$};
+
+
+\fill[orange, opacity=0.3] (0,0) -- (1,0) -- ({1/4},{sqrt(3)/2}) -- (0,0) -- cycle;
+\fill[gray,opacity=0.3] (0,0) -- ({1/4},{sqrt(3)/2}) -- (0,{sqrt(3)/2}) -- (0,0) -- cycle;
+\fill[gray,opacity=0.3] (1,0) -- ({1/4},{sqrt(3)/2}) -- (1,{sqrt(3)/2}) -- (1,0) -- cycle;
+\fill[blue,opacity=0.3] (0,0) -- (1,0) -- (1,{-2/3}) -- (0,{-2/3}) -- (0,0) -- cycle;
+\end{footnotesize}
+\end{tikzpicture}

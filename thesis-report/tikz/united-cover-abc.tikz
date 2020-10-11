@@ -1,0 +1,118 @@
+\begin{tikzpicture}[scale = 6, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1.4pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1.4pt,draw,fill=white,label={#1}, name=#1}]
+% axes
+%\draw[gray,thick,->] ({-0.1}, 0) -- (1.1, 0) node[right] {$x$};
+%\draw[gray,thick,->] (0, {-0.1}) -- (0, {sqrt(3)/2 + .1}) node[above] {$y$};
+
+% color inside
+\fill[orange,opacity=0.6] ({0.375}, {sqrt(3)/8}) -- ({0.625}, {sqrt(3)/8}) -- ({0.5}, {sqrt(3)/4}) -- cycle;
+
+%% color deltoids
+% deltoid_a
+\fill[blue,opacity=0.3] (0,0) -- (0.25,0) -- (0.3, 0.173205) -- (0.125, 0.216506) -- (0,0) -- cycle;
+% deltoid_b
+\fill[blue,opacity=0.3] (0.75,0) -- (1,0) -- (0.875, 0.216506) -- (0.7, 0.173205) -- (0.75,0) -- cycle;
+% deltoid_c
+\fill[blue,opacity=0.3] (0.5, 0.866025) -- (0.625, 0.649519) -- (0.5, 0.519615) -- (0.375, 0.649519) -- (0.5, 0.866025) -- cycle;
+
+% color trapezoids
+\fill[gray,opacity=0.8] ({0.3125},{0.2165063509}) -- ({0.2500000000},{0}) -- ({0.7500000000},{0}) -- ({0.6875},{0.2165063509}) -- cycle;
+\fill[gray,opacity=0.8] ({0.46875},{0.4871392896}) -- ({0.625},{0.6495190528}) -- ({0.875},{0.2165063509})-- ({0.65625},{0.1623797632}) -- cycle;
+\fill[grey,opacity=0.8] ({0.53125},{0.4871392896}) -- ({0.375},{0.6495190528}) -- ({0.125},{0.2165063509}) -- ({0.34375},{0.1623797632}) -- cycle;
+
+
+\node [dot=](a) at (0,0) {};
+\node [dot=](b) at (1,0) {};
+\node [dot=](c) at ({1/2},{sqrt(3)/2}) {};
+
+
+\begin{footnotesize}
+% points
+\node [dot=](a) at (0,0) {};
+\node [below = of a,fill=white] {$a$};
+\node [dot=](b) at (1,0) {};
+\node [below = of b] {$b$};
+\node [dot=](c) at ({1/2},{sqrt(3)/2}) {};
+\node [above = of c] {$c$};
+
+% c
+%\draw [thin] (0.5, 0.01000000000) -- (0.5, -0.01000000000);
+%\coordinate (zx) at (0.5,0);
+%\node [below = of zx] {$\frac{1}{2}$};
+%
+%\draw [thin] (-0.01, {sqrt(3)/8}) -- (0.01, {sqrt(3)/8});
+%\coordinate (xy) at (0,{sqrt(3)/8});
+%\node [left = of xy] {$\frac{\sqrt{3}}{8}$};
+%
+%\draw [thin] (-0.01, {sqrt(3)/4}) -- (0.01, {sqrt(3)/4});
+%\coordinate (xz) at (0,{sqrt(3)/4});
+%\node [left = of xz] {$\frac{\sqrt{3}}{4}$};
+%
+%\draw [thin] (-0.01, {3*sqrt(3)/8}) -- (0.01, {3*sqrt(3)/8});
+%\coordinate (kaza) at (0,{3*sqrt(3)/8});
+%\node [left = of kaza] {$\frac{3\sqrt{3}}{8}$};
+%
+%\draw [thin] (-0.01, {sqrt(3)/2}) -- (0.01, {sqrt(3)/2});
+%\coordinate (cy) at (0,{sqrt(3)/2});
+%\node [left = of cy] {$\frac{\sqrt{3}}{2}$};
+
+%[semithick,black]
+\draw[ultra thin] (a) -- (b) -- (c) -- (a) -- cycle;
+
+% lines
+% inner - deltoids
+\draw [ultra thin] ({0.5}, {0.2165063509461096}) -- ({0.5}, {0.28867513459481287});
+\draw [ultra thin] ({0.5625}, {0.3247595264191645}) -- ({0.5}, {0.28867513459481287});
+\draw [ultra thin] ({0.4375}, {0.3247595264191645}) -- ({0.5}, {0.28867513459481287});
+
+% draw stubs
+\draw[ultra thick] (b) -- ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25},0);
+\draw[ultra thick] ({0.75}, 0) -- (b);
+
+
+% simmetrically inside
+\draw [ultra thin] ({0.3125},{0.2165063509}) -- ({0.2500000000},{0});
+\draw [ultra thin] ({0.375},{0.2165063509}) -- ({0.3333333333},{0});
+\draw [ultra thin] ({0.458333},{0.2165063509}) -- ({0.4444444444},{0});
+\draw [ultra thin] ({0.541667},{0.2165063509}) -- ({0.5555555556},{0});
+\draw [ultra thin] ({0.625},{0.2165063509}) -- ({0.6666666667},{0});
+\draw [ultra thin] ({0.6875},{0.2165063509}) -- ({0.7500000000},{0});
+\draw [ultra thin] ({0.3125},{0.2165063509}) -- ({0.6875},{0.2165063509});
+
+\draw [ultra thin] ({0.46875},{0.4871392896}) -- ({0.625},{0.6495190528});
+\draw [ultra thin] ({0.5},{0.4330127019}) -- ({0.666667},{0.5773502692});
+\draw [ultra thin] ({0.541667},{0.3608439182}) -- ({0.722222},{0.4811252243});
+\draw [ultra thin] ({0.583333},{0.2886751346}) -- ({0.777778},{0.3849001795});
+\draw [ultra thin] ({0.625},{0.2165063509}) -- ({0.833333},{0.2886751346});
+\draw [ultra thin] ({0.65625},{0.1623797632}) -- ({0.875},{0.2165063509});
+\draw [ultra thin] ({0.46875},{0.4871392896}) -- ({0.65625},{0.1623797632});
+
+\draw [ultra thin] ({0.53125},{0.4871392896}) -- ({0.375},{0.6495190528});
+\draw [ultra thin] ({0.5},{0.4330127019}) -- ({0.333333},{0.5773502692});
+\draw [ultra thin] ({0.458333},{0.3608439182}) -- ({0.277778},{0.4811252243});
+\draw [ultra thin] ({0.416667},{0.2886751346}) -- ({0.222222},{0.3849001795});
+\draw [ultra thin] ({0.375},{0.2165063509}) -- ({0.166667},{0.2886751346});
+\draw [ultra thin] ({0.34375},{0.1623797632}) -- ({0.125},{0.2165063509});
+\draw [ultra thin] ({0.53125},{0.4871392896}) -- ({0.34375},{0.1623797632});
+
+% stub ends
+%\node [dot2=](bc) at ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+%\node [above = of bc] {$b_{c}$};
+%\node [dot2=](cb) at ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+%\node [right = of cb] {$c_{b}$};
+%
+%\node [dot2=](ac) at ({0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+%\node [above = of ac] {$a_{c}$};
+%\node [dot2=](ca) at ({0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+%\node [left = of ca] {$c_{a}$};
+%
+%\node [dot2=](ab) at ({0.25},0) {};
+%\node [below = of ab] {$a_{b}$};
+%\node [dot2=](ba) at ({0.75}, 0)  {};
+%\node [below = of ba] {$b_{a}$};
+\end{footnotesize}
+\end{tikzpicture}

@@ -1,0 +1,117 @@
+\begin{tikzpicture}[scale = 7, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+\node [dot=](x) at (0,0) {};
+\node [left = of x] {$x$};
+\node [dot=](y) at (1,0) {};
+\node [right = of y] {$y$};
+\node [dot=](z) at (0.5,-0.87) {};
+\node [below = of z] {$z$};
+
+% triangle xyz
+\draw [thin,dotted] (x) -- (y);
+
+% band L
+\draw[] (-0.03,0.64) -- (1.02,0.64) -- (0.95,0.44) -- (0.04,0.44) -- (-0.03,0.64) -- cycle;
+
+\fill[red, opacity=0.1] (-0.03,0.64) -- (1.02,0.64) -- (0.95,0.44) -- (0.04,0.44) -- (-0.03,0.64) -- cycle;
+
+\node [dot=](p) at (0.24,0.52) {};
+\node [left = of p] {$p$};
+\coordinate (px) at (0.18,0.39) {};
+\coordinate (py) at (0.43,0.39) {};
+\coordinate (pz) at (0.3,0.17) {};
+
+\coordinate (xp) at (0.06,0.13) {};
+\coordinate (yp) at (0.81,0.13) {};
+\coordinate (zp) at (0.43,-0.52) {};
+
+\draw [thick] (p) -- (px);
+\draw [thick] (p) -- (py);
+\draw [thick] (p) -- (pz);
+
+%\draw [thick] (x) -- (xp);
+%\draw [thick] (y) -- (yp);
+%\draw [thick] (z) -- (zp);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%% horizontal ticks, dashed lines
+\draw [thin] (-0.199231,0.353331) -- (-0.210769,0.346669);
+\draw [thin] (-0.251231,0.443331) -- (-0.262769,0.436669);
+\draw [thin] (-0.366231,0.643331) -- (-0.377769,0.636669);
+\coordinate (delta) at (-0.372,0.64);
+\node [left = of delta] {$\delta$};
+\coordinate (gamma) at (-0.257,0.44) {};
+\node [left = of gamma] {$\gamma$};
+\coordinate (gammakaca) at (-0.205,0.35) {};
+\node [left = of gammakaca] {$\frac{3}{4}\delta$};
+
+\coordinate (delta1) at (1.372,0.64) {};
+\coordinate (gamma1) at (1.257,0.44) {};
+\coordinate (gammakaca1) at (1.205,0.35) {};
+\draw [thin,dotted] (delta) -- (delta1);
+\draw [thin,dotted] (gamma) -- (gamma1);
+\draw [thin,dotted] (gammakaca) -- (gammakaca1);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% vertical ticks
+\draw [thin] (0.195,0.00666173) -- (0.195,-0.00666173); % alpha
+\draw [thin] (0.8,0.00666173) -- (0.8,-0.00666173); % beta
+\draw [thin] (0.287, 0.00666173) -- (0.287, -0.00666173); % alphai
+\draw [thin] (0.367, 0.00666173) -- (0.367, -0.00666173); % alphaii
+
+\coordinate (alpha) at ({0.2-0.005},0) {};
+\coordinate (beta) at (0.8,0) {};
+\coordinate (alphai) at ({0.29 - 0.003},0) {};
+%\coordinate (alphaii) at ({0.37 - 0.003},0) {};
+\coordinate (alphaii) at ({0.39},0) {};
+
+\coordinate (z1) at (-0.43,0.74) {};
+\coordinate (z2) at (-0.065,0.74) {};
+\coordinate (z3) at ({0.11 - 0.005},0.74) {};
+\coordinate (z4) at ({0.25 + 0.005},0.74) {};
+\coordinate (z5) at ({1.05 + 0.005},0.74) {};
+\coordinate (z6) at (1.43,0.74) {};
+% narisemo zarke
+\draw [thin,dotted] (z) -- (z1);
+\draw [thin,dotted] (z) -- (z2);
+\draw [thin,dotted] (z) -- (z3);
+\draw [thin,dotted] (z) -- (z4);
+\draw [thin,dotted] (z) -- (z5);
+\draw [thin,dotted] (z) -- (z6);
+
+
+\node [below = of alpha,fill=white] {$\alpha$};
+\node [below = of beta,fill=white] {$\omega$};
+\node [below = of alphaii,fill=white] {$\beta'$};
+\node [below = of alphai,fill=white] {$\beta$};
+
+%\node [dot2=](ue) at (0.2,0.35) {};
+%\coordinate (uee) at (0.19, 0.35) {};
+%\node [below = of uee,fill=white] {$\undersym{e}$};
+%\coordinate (uff) at (0.33,0.35) {};
+%\node [dot2=](uf) at (0.315,0.35) {};
+%\node [below = of uff,fill=white] {$\undersym{f}$};
+%
+\coordinate (e) at (0.178,0.44) {};
+\coordinate (f) at (0.301,0.44) {};
+%\coordinate (ee) at (0.18,0.413) {};
+%\coordinate (ff) at (0.29, 0.413) {};
+%\node [left = of ee] {$e$};
+%\node [right = of ff] {$f$};
+%
+\coordinate (g) at (0.27,0.64) {};
+%\node [above = of g,fill=white] {$g$};
+\coordinate (h) at (0.13,0.64) {};
+%\node [above = of h,fill=white] {$h$};
+
+\draw (e) -- (f) -- (g) -- (h) -- (e) -- cycle;
+\coordinate (pasL) at (0.79, 0.54) {};
+\node [below = of pasL] {$L$};
+
+
+\coordinate (pasL) at (0.247, 0.64) {};
+\node [below = of pasL] {$C$};
+
+\end{footnotesize}
+\end{tikzpicture}

@@ -1,0 +1,61 @@
+\begin{tikzpicture}[scale = 16, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+\draw [dotted] (0,0.35) -- (0.58,0.35);
+
+
+\coordinate (ue) at (0.21,0.44) {};
+\coordinate (uf) at (0.3,0.44) {};
+\coordinate (ff) at (0.38,0.44) {};
+\coordinate (gx) at (0.2013,0.48) {};
+\coordinate (hy) at (0.376,0.48) {};
+\coordinate (h) at (0.17,0.64) {};
+\coordinate (g) at (0.27,0.64) {};
+\coordinate (gg) at (0.36,0.64) {};
+
+\fill[red,opacity=0.1] (ue) -- (uf) -- (g) -- (h) -- (ue) -- cycle;
+
+\draw (ue) -- (uf) -- (g) -- (h) -- (ue) -- cycle;
+\draw [dotted] (g) -- (gx);
+\draw [dotted] (h) -- (hy);
+\draw [dotted] (ue) -- (ff) -- (gg) -- (h) -- cycle;
+
+\coordinate (z3) at ({0.15 - 0.001},0.74) {};
+\coordinate (zz3) at ({0.26 - 0.008},0.24) {};
+\coordinate (z4) at ({0.26 - 0.004},0.74) {};
+\coordinate (zz4) at ({0.33 - 0.002},0.24) {};
+\coordinate (z5) at (0.35,0.74) {};
+\coordinate (zz5) at (0.4,0.24) {};
+
+\draw [dotted] (z3) -- (zz3);
+\draw [dotted] (z4) -- (zz4);
+\draw [dotted] (z5) -- (zz5);
+
+\node [dot2=](ue) at (0.21,0.44) {};
+\node [dot2=](uf) at (0.3,0.44) {};
+\node [dot2=](ff) at (0.38,0.44) {};
+\node [dot2=](gx) at (0.2013,0.48) {};
+\node [dot2=](hy) at (0.376,0.48) {};
+\node [dot2=](h) at (0.17,0.64) {};
+\node [dot2=](g) at (0.27,0.64) {};
+\node [dot2=](gg) at (0.36,0.64) {};
+
+\draw [thin] (0.2292,{0.35 + 0.00666173}) -- (0.2292,{0.35-0.00666173}); % alphai
+\coordinate (alphai) at (0.2292,0.35) {};
+\node [below = of alphai,fill=white] {$\beta$};
+
+\draw [thin] (0.312,{0.35+ 0.00666173}) -- (0.312,{0.35-0.00666173}); % alphaii
+\coordinate (alphaii) at (0.312,0.35) {};
+\node [below = of alphaii,fill=white] {$f_{1,\delta}(\beta)$};
+
+\draw [thin] (0.3888,{0.35+ 0.00666173}) -- (0.3888,{0.35-0.00666173}); % alphaii
+\coordinate (alphaiii) at (0.389,0.35) {};
+\node [below = of alphaiii,fill=white] {$f_{2,\delta}(\beta)$};
+
+\coordinate (Qi) at (0.24,0.49) {};
+\node [below = of Qi] {$C$};
+
+%\coordinate (Qii) at (0.313,0.49) {};
+%\node [below = of Qii] {$Q_{i}'$};
+\end{footnotesize}
+\end{tikzpicture}

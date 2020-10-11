@@ -1,0 +1,59 @@
+\chapter{Conclusion}
+Appendix A provides a calculation to arrive at all critical values of the parameter $t$. These are the values of $t$ where one of the step function that estimates the number of cells in the layers or the number of basis points in the half-shadows has a jump. The approximations of the critical values $t_{r}, r = 1, ..., 43$ of parameter $t$ are:
+
+\begin{align*}
+&0.049, \text{\hspace{0.2cm}} 0.075, \text{\hspace{0.2cm}}
+0.1, \text{\hspace{0.2cm}} 0.11, \text{\hspace{0.2cm}} 0.19, \text{\hspace{0.2cm}} 0.24, \text{\hspace{0.2cm}} 0.25, \text{\hspace{0.2cm}} 0.25, \text{\hspace{0.2cm}} 0.28, \text{\hspace{0.2cm}} 0.29, \text{\hspace{0.2cm}} 0.29,  \\[6pt]%
+&0.33, \text{\hspace{0.2cm}} 0.35, \text{\hspace{0.2cm}} 0.36, \text{\hspace{0.2cm}} 0.37, \text{\hspace{0.2cm}} 0.38, \text{\hspace{0.2cm}} 0.40, \text{\hspace{0.2cm}} 0.43, \text{\hspace{0.2cm}} 0.45, \text{\hspace{0.2cm}} 0.46, \text{\hspace{0.2cm}} 0.47, \text{\hspace{0.2cm}} 0.50.  \\[6pt]
+&0.53, \text{\hspace{0.2cm}} 0.54, \text{\hspace{0.2cm}} 0.55, \text{\hspace{0.2cm}} 0.57, \text{\hspace{0.2cm}} 0.60, \text{\hspace{0.2cm}} 0.63, \text{\hspace{0.2cm}} 0.63, \text{\hspace{0.2cm}} 0.64, \text{\hspace{0.2cm}} 0.65, \text{\hspace{0.2cm}} 0.67, \text{\hspace{0.2cm}} 0.71,  \\[6pt]%
+&0.71, \text{\hspace{0.2cm}} 0.72, \text{\hspace{0.2cm}} 0.75, \text{\hspace{0.2cm}} 0.75, \text{\hspace{0.2cm}} 0.76, \text{\hspace{0.2cm}} 0.81, \text{\hspace{0.2cm}} 0.89, \text{\hspace{0.2cm}} 0.90, \text{\hspace{0.2cm}} 0.93, \text{\hspace{0.2cm}} 0.95.
+\end{align*}
+
+To calculate the sum of all such functions, it suffices to ensure that for an individual value of $t$, at most one of the terms of the sum has a jump. The approximately calculated critical values of the parameter $t$ are limited by the rational numbers $q_{r}, r = 0, ..., 43$:
+
+\begin{align*}
+&\frac{1}{40}, \text{\hspace{0.2cm}} \frac{ 1}{16}, \text{\hspace{0.2cm}} \frac{ 1}{11}, \text{\hspace{0.2cm}} \frac{ 2}{19}, \text{\hspace{0.2cm}} \frac{ 1}{6}, \text{\hspace{0.2cm}} \frac{ 1}{5}, \text{\hspace{0.2cm}} \frac{ 5}{21}, \text{\hspace{0.2cm}} \frac{ 26}{103}, \text{\hspace{0.2cm}} \frac{ 3}{11}, \text{\hspace{0.2cm}} \frac{ 2}{7}, \text{\hspace{0.2cm}} \frac{ 5}{17}, \text{\hspace{0.2cm}}\\[6pt]%
+&\frac{3}{10}, \text{\hspace{0.2cm}} \frac{ 6}{17}, \text{\hspace{0.2cm}} \frac{ 5}{14}, \text{\hspace{0.2cm}} \frac{ 4}{11}, \text{\hspace{0.2cm}} \frac{ 7}{19}, \text{\hspace{0.2cm}} \frac{ 2}{5}, \text{\hspace{0.2cm}} \frac{ 3}{7}, \text{\hspace{0.2cm}} \frac{ 4}{9}, \text{\hspace{0.2cm}} \frac{ 5}{11}, \text{\hspace{0.2cm}} \frac{ 6}{13}, \text{\hspace{0.2cm}} \frac{ 7}{15}, \text{\hspace{0.2cm}}\\[6pt]%
+&\frac{ 8}{15}, \text{\hspace{0.2cm}} \frac{7}{13}, \text{\hspace{0.2cm}} \frac{ 6}{11}, \text{\hspace{0.2cm}} \frac{ 5}{9}, \text{\hspace{0.2cm}} \frac{ 4}{7}, \text{\hspace{0.2cm}} \frac{ 3}{5}, \text{\hspace{0.2cm}} \frac{ 12}{19}, \text{\hspace{0.2cm}} \frac{ 7}{11}, \text{\hspace{0.2cm}} \frac{ 9}{14}, \text{\hspace{0.2cm}} \frac{ 11}{17}, \text{\hspace{0.2cm}} \frac{ 7}{10}, \text{\hspace{0.2cm}} \\[6pt]%
+&\frac{ 12}{17}, \text{\hspace{0.2cm}} \frac{5}{7}, \text{\hspace{0.2cm}} \frac{ 8}{11}, \text{\hspace{0.2cm}} \frac{ 77}{103}, \text{\hspace{0.2cm}} \frac{ 16}{21}, \text{\hspace{0.2cm}} \frac{ 4}{5}, \text{\hspace{0.2cm}} \frac{ 5}{6}, \text{\hspace{0.2cm}} \frac{ 17}{19}, \text{\hspace{0.2cm}} \frac{ 9}{10}, \text{\hspace{0.2cm}} \frac{ 13}{14}, \text{\hspace{0.2cm}} \frac{ 20}{21}, \text{\hspace{0.2cm}}
+\end{align*}
+
+where each approximation of the critical value $t_{i}$
+$$
+q_{i-1} < t_{i} < q_{i}
+$$
+holds. To the sum of step functions that estimate the number of cells in the layers or the number of basis points in the half-shadows, we have added the estimate for the number of points in the central triangle when $h \geq \frac{2}{3}$, see Figure~\ref{fig: all-together-more-than-two-thirds}. The extremum of this function is determined by calculating such a sum for all values of $q_{r}, r = 1,..., 44$. We get the value 101 and our main result, which is summarized by the Theorem~\ref{thm: main}. However, if $h \leq \frac{2}{3}$, we get an estimate of 91. The function obtained in this case is in Figure~\ref{fig: all-together-less-than-two-thirds}.
+
+In Figure~\ref{fig: coverage-mapped} is the division of the frame at one of the critical values $t = \frac{1}{11}$ and $h \geq \frac{2}{3}$, where we get the estimate 101. In Figure~\ref{fig: coverage-final-cells} is the same frame division without using the transformation at the same value of $t$. In Figure~\ref{fig: coverage-final-numbers}, we have marked each region with the maximum number of points it can contain.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/all-together-more-than-two-thirds.pdf}
+\caption{Plot of the estimate of the number of basis points for $h \geq \frac{2}{3}$.}
+\label{fig: all-together-more-than-two-thirds}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/all-together-less-than-two-thirds.pdf}
+\caption{Plot of the estimate of the number of basis points for $h < \frac{2}{3}$.}
+\label{fig: all-together-less-than-two-thirds}
+\end{figure}
+
+\begin{figure}
+\centering
+\input{./tikz/coverage-mapped.tikz}
+\caption{Transformed frame division at $t=\frac{1}{11}$ in $h \geq \frac{2}{3}$.}
+\label{fig: coverage-mapped}
+\end{figure}
+
+\begin{figure}[t]%[b]{0.4\textwidth}
+\centering
+\input{./tikz/coverage-final.subfig}
+\caption{Frame division at $t=\frac{1}{11}$ in $h \geq \frac{2}{3}$.}
+\label{fig: coverage-final}
+\end{figure}
+
+With related methods and a more detailed analysis of estimates in the corner region, we would be able to lower our bound by 1, 2, maybe 3. It also seems that any additional improvement would require more additional pages of text compared to the resulting drop in the estimate. The 101 estimate is a psychological limit. Since it seems that with every improvement we do not produce a large enough drop in estimates, we have almost come to an end with the tools developed. Therefore, we need new methods for something more. We believe that the real number for the order of a complete graph that allows a partial edge drawing is much closer to 16 than 101.
+
+We were also developing the idea of cutting all the layers into finer, denser mesh. This way, we get examples of problems called \textit{maximum independent set problems}. It should work, but we have some reservations. The cell boundaries are selected in a tight manner in each of the layers. When we place a denser mesh over it, we lose on tightness, and maybe the limit increases even more. We don’t have a nice, simple, and effective reason to push points apart instead of allowing them to move. For example, the points in the right triangle may condense toward the point $a$. For a fixed value of the parameter $t$, unoccupied cells could be joined together. However, it is difficult to imagine a unified approach that would work for all possible values of $t$.

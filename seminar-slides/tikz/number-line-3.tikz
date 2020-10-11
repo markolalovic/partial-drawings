@@ -1,0 +1,17 @@
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=0.4, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1}]
+
+\draw [xshift=1cm] node[circle,fill,inner sep=8pt, color = white, label=below:$...$] {};
+\draw [xshift=5cm] node[circle,fill,inner sep=8pt, color = white, label=below:$...$] {};
+\draw [xshift=18cm] node[circle,fill,inner sep=3pt, color = white, label=below:\footnotesize{$155\text{ }117\text{ }520$}] {};
+
+\draw[gray,thick,->] ({-1}, 0) -- (19, 0) {};
+
+\tikzstyle{every node}=[draw,shape=circle]
+
+\draw [xshift=0cm] node[circle,fill,color=green,inner sep=2pt,label=below:$1$]{};
+\draw [xshift=2cm] node[circle,fill,color=green,inner sep=2pt]{};
+\draw [xshift=3cm] node[circle,fill,color=green,inner sep=2pt,label=below:$16$]{};
+
+\draw [xshift=18cm] node[circle,fill,color=red,inner sep=2pt]{};
+%,label=below:$155 117 520$
+\end{tikzpicture}

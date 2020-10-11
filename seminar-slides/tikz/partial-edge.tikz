@@ -1,0 +1,11 @@
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=0.4, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]  
+
+\node [dot=] at  (1.01,0.13) {};
+\node [dot=] at (8.06,2.44) {};
+
+\draw [thick] (1.01,0.13)-- (2.77,0.7);
+\draw [thick] (6.3,1.86)-- (8.06,2.44);
+
+\end{tikzpicture}

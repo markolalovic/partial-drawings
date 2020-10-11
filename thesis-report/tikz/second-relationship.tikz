@@ -1,0 +1,87 @@
+\begin{tikzpicture}[scale = 7, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1.4pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1.4pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+% axes
+\draw[gray,thick,->] ({-0.1}, 0) -- (1.1, 0) node[right] {$x$};
+\draw[gray,thick,->] (0, {-0.1}) -- (0, {sqrt(3)/2 + .1}) node[above] {$y$};
+
+\fill[color-parallelogram,opacity=0.3] (0.75,0) -- (1,0) -- (0.875, 0.216506) -- (0.7, 0.173205) -- (0.75,0) -- cycle;
+
+% points
+\node [dot=](a) at (0,0) {};
+\node [below = of a,fill=white] {$a$};
+\node [dot=](b) at (1,0) {};
+\node [below = of b] {$b$};
+\node [dot=](c) at ({1/2},{sqrt(3)/2}) {};
+\node [above = of c] {$c$};
+
+\node [dot=] (p) at (0.77,0.15) {};
+
+% stubs between p and a
+\draw [ultra thick] (p) -- (0.5775, 0.1125) {};
+\draw [ultra thick] (a) -- (0.1925, 0.0375) {};
+
+% stubs between p and b
+\draw [ultra thick] (p) -- (0.8275, 0.1125) {};
+\draw [ultra thick] (b) -- (0.9425, 0.0375) {};
+
+% stubs between p and c
+\draw [ultra thick] (c) -- (0.5675, 0.687019) {};
+\draw [ultra thick] (p) -- (0.7025, 0.329006) {};
+
+
+% stub ends
+\coordinate (bp) at (0.9425, 0.0375) {};
+%\node [above = of bp] {$b_{p}$};
+\coordinate (kapaa) at (0.92, 0.028);
+\node [above = of kapaa] {$b_{p}$};
+
+\draw [ultra thin] (p) -- (a) {};
+
+\coordinate (ba) at (0.75,0) {};
+\node [below = of ba] {$b_{a}$};
+\coordinate (bc) at (0.875,0.216506351) {};
+\node [right = of bc] {$b_{c}$};
+
+% b*, a*, c*
+\coordinate (bzv) at (0.7, {sqrt(3)/10}) {};
+\node [above = of bzv] {$b*$};
+
+% deltoids
+% deltoid_a
+\draw[dotted] (0,0) -- (0.25,0) -- (0.3, 0.173205) -- (0.125, 0.216506) -- (0,0) -- cycle;
+% deltoid_b
+\draw[] (0.75,0) -- (1,0) -- (0.875, 0.216506) -- (0.7, 0.173205) -- (0.75,0) -- cycle;
+
+% deltoid_c
+\draw[dotted] (0.5, 0.866025) -- (0.625, 0.649519) -- (0.5, 0.519615) -- (0.375, 0.649519) -- (0.5, 0.866025) -- cycle;
+
+% angles
+\tkzMarkAngle[mark=none, size=0.38cm, opacity=.4](b,a,p)
+\tkzLabelAngle[pos = 0.358](b,a,p){$\alpha$}
+
+\tkzMarkAngle[mark=none, size=0.92cm, opacity=.4](b,a,bp)
+\tkzLabelAngle[pos = 0.9](b,a,bp){$\hat{\alpha}$}
+
+\draw [thin] (a) -- (bp);
+% big triangle
+\draw[ultra thin] (a) -- (b) -- (c) -- (a) -- cycle;
+% stubs
+\draw[ultra thick] (b) -- ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra  thick] ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra  thick] (a) -- ({0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra  thick] ({0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra  thick] (a) -- ({0.25},0);
+\draw[ultra  thick] ({0.75}, 0) -- (b);
+
+
+% again white circles to cover the lines 
+\node [dot2=] (bzv) at (0.7, {sqrt(3)/10}) {};
+\node [dot2=] (ba) at (0.75,0) {};
+\node [dot2=] (bc) at (0.875,0.216506351) {};
+\node [dot2=] (bp) at (0.9425, 0.0375) {};
+\node [below = of p] {$p$};
+
+\end{footnotesize}
+\end{tikzpicture}
+

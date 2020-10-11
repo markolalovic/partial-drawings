@@ -1,0 +1,93 @@
+\begin{tikzpicture}[scale = 4, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1.4pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1.4pt,draw,fill=white,label={#1}, name=#1}]
+
+% axes
+\draw[gray,thick,->] ({-0.6}, 0) -- (1.6, 0) node[right] {$x$};
+\draw[gray,thick,->] (0, {-sqrt(3)/2-0.1}) -- (0, {sqrt(3)/2 + .1}) node[above] {$y$};
+
+\node [right = of b,fill=white] {$b$};
+
+% shadow S_ba
+\draw ({0.75}, 0) -- (1,0) -- (1.44333, 0.193333)  -- (1.11, 0.193333) -- (0.75,0) -- cycle;
+\fill[color-parallelogram,opacity=0.9] ({0.75}, 0) -- (1,0) -- (1.44333, 0.193333)  -- (1.11, 0.193333) -- (0.75,0) -- cycle;
+
+
+%\fill[color-trapezoid,opacity=0.3] ({-1/2},{-sqrt(3)/2}) -- (0.5, -0.866025) -- (0.5, -0.57735) -- (-0.33, -0.58) -- ({-1/2},{-sqrt(3)/2}) -- cycle;
+
+% deltoid_a
+\draw[dotted] (0,0) -- (0.25,0) -- (0.3, 0.173205) -- (0.125, 0.216506) -- (0,0) -- cycle;
+% deltoid_b
+\draw[] (0.75,0) -- (0.94,0.1) -- (0.875, 0.216506) -- (0.7, 0.173205) -- (0.75,0) -- cycle;
+\fill[color-parallelogram,opacity=0.3] (0.75,0) -- (0.94,0.1) -- (0.875, 0.216506) -- (0.7, 0.173205) -- (0.75,0) -- cycle;
+% deltoid_c
+\draw[dotted]  (0.5, 0.866025) -- (0.625, 0.649519) -- (0.5, 0.519615) -- (0.375, 0.649519) -- (0.5, 0.866025) -- cycle;
+
+\begin{footnotesize}
+\node [dot=](a) at (0,0) {};
+\node [dot=](b) at (1,0) {};
+\node [dot=](c) at ({1/2},{sqrt(3)/2}) {};
+\node [above = of c] {$\abovesym{a} = c$};
+\node [dot=](d) at (-0.33, -0.58) {};
+
+\node [dot2=](overa) at ({1/2},{sqrt(3)/2}) {};
+%\node [above = of overa] {$\abovesym{a}$};
+\node [dot2=](overb) at ({3/2},{sqrt(3)/2}) {};
+\node [above = of overb] {$\abovesym{b}$};
+\node [dot2=](underb) at (0.666667, -0.57735) {};
+
+% frame F
+\draw[] (-0.33, -0.58) -- (underb) -- (overb) -- (overa) -- (-0.33, -0.58) -- cycle;
+\draw[thin,dotted] (a) -- (b) -- (c) -- (a) -- cycle;
+
+%% big triangle
+\draw [thin,dotted] ({-1/2},{-sqrt(3)/2}) -- ({1/2},{sqrt(3)/2}) -- ({3/2},{-sqrt(3)/2}) -- cycle;
+
+%% the lower two lines and the upper four tilted lines
+\draw [thin,dotted]({-1/3},{-sqrt(3)/3}) -- ({4/3},{-sqrt(3)/3});
+\draw [thin,dotted]({-1/6},{-sqrt(3)/6}) -- ({7/6},{-sqrt(3)/6});
+
+% halves of 3/4 outwards
+\draw [thin,dotted] (c) -- ({1/2},{-sqrt(3)/2});
+
+% lines, e, p*, b*, corner regions
+\draw [dotted] (-.66,.96) -- (1.8,-0.46);
+%\draw [dotted] (-0.93,-0.9) -- (1.8,0.55);
+\draw [dotted] (-0.93,-0.9) -- (1.8,0.557);
+
+% stubs
+\draw[ultra thick] (b) -- ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25},0);
+\draw[ultra thick] ({0.75}, 0) -- (b);
+
+
+\node [dot2=](e) at (0.94,0.1) {};
+\node [right = of e] {$e$}; 
+\node [dot2=](bzvezd) at (0.7, 0.173205) {};
+\node [left = of bzvezd] {$b*$}; 
+\node [dot2=](pzvezd) at (0.88,0.07) {};
+\node [left = of pzvezd] {$p*$}; 
+
+\node [dot2=](ba) at (0.75,0) {};
+\node [below = of ba] {$b_{a}$}; 
+\node [dot2=](bc) at (0.875, 0.216506) {};
+\node [above = of bc] {$b_{c}$}; 
+%\node [below = of undera] {$\undersym{a}$};
+\node [below = of underb,fill=white] {$\undersym{b}$};
+\node [left = of a,fill=white] {$a$};
+\node [above = of d,fill=white] {$\undersym{a} = d*$};
+
+% again the dots to cover the lines
+\node [dot2=](overa) at ({1/2},{sqrt(3)/2}) {};
+%\node [above = of overa] {$\abovesym{a}$};
+\node [dot2=](overb) at ({3/2},{sqrt(3)/2}) {};
+\node [above = of overb] {$\abovesym{b}$};
+\node [dot2=](underb) at (0.666667, -0.57735) {};
+
+\coordinate (D) at (0.5, -0.866025) {};
+\node [left = of D] {$D$};
+
+\end{footnotesize}
+\end{tikzpicture}

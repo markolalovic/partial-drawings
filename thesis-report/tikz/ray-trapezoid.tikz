@@ -1,0 +1,66 @@
+\begin{tikzpicture}[scale = 4.5, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]
+\begin{footnotesize}
+\node [dot=](x) at (0,0) {};
+\node [left = of x] {$x$};
+\node [dot=](y) at (1,0) {};
+\node [right = of y] {$y$};
+\node [dot=](z) at ({1/2},{-sqrt(3)/2}) {};
+\node [below = of z] {$z$};
+
+\coordinate (x1) at (0.166667, 0.288675) {};
+\coordinate (y1) at (0.595238, 0.288675) {};
+\coordinate (y2) at (0.619048, 0.57735) {};
+\coordinate (x2) at (0.0833333, 0.57735) {};
+
+\draw[font=\footnotesize] (x1)--(y1) node[pos=0.5,above] {short base};
+
+\fill[red, opacity=0.1] (0.166667, 0.288675) -- (0.595238, 0.288675) -- (0.619048, 0.57735) -- (0.0833333, 0.57735) -- (0.166667, 0.288675) -- cycle;
+\draw [] (x1) -- (y1) -- (y2) -- (x2) -- (x1) -- cycle;
+
+% rays
+\draw [thin,dotted] (z) -- (-0.5, 0.866025);
+\draw [thin,dotted] (z) -- (1.5, 0.866025);
+\draw [thin,dotted] (z) -- (0., 0.866025);
+\draw [thin,dotted] (z) -- (0.642857, 0.866025);
+
+% ticks on y-axis
+\draw [thin] (-0.174167, 0.284345) -- (-0.159167, 0.293005);
+\draw [thin] (-0.340833, 0.57302) -- (-0.325833, 0.58168);
+
+\coordinate (zx1) at (-0.166667, 0.288675);
+\node [left = of zx1] {$\gamma$};
+\draw [thin,dotted] (zx1) -- (1.16667, 0.288675);
+
+\coordinate (zx2) at (-0.333333, 0.57735);
+\node [left = of zx2] {$\delta$};
+\draw [thin,dotted] (zx2) -- (1.33333, 0.57735);
+
+
+% ticks on x-axis
+\draw [thin] (0.2500000000, 0.008660254038) -- (0.2500000000, -0.008660254038);
+\coordinate (xy1) at (0.2500000000,-0.0);
+\node [below = of xy1,fill=white] {$\alpha$};
+
+\draw [thin] (0.571429, 0.00866025) -- (0.571429, -0.00866025);
+\coordinate (xy2) at (0.571429,0);
+\node [below = of xy2,fill=white] {$\omega$};
+
+%\draw [thin, ->] (x) -- (y);
+%\draw [thin, ->] (z) -- (x);
+\draw [thin,dotted] (x) -- (y) -- (z) -- (x) -- cycle;
+%\node [above = of y2,fill=white] {$y_{2}$};
+%\node [above = of x2,fill=white] {$x_{2}$};
+%\node [below = of x1,fill=white] {$x_{1}$};
+%\node [below = of y1,fill=white] {$y_{1}$};
+
+
+%\tkzLabelAngle[pos=0.2,fill=white](x,z,y){$\angle xzy$}
+\tkzMarkAngle[size=0.29 cm](y,z,x) %,mkcolor=red
+
+\coordinate (q) at (0.35, 0.55) {};
+\node [above = of q] {$\tpz{\left[ \alpha,\omega,\gamma,\delta \right]_{x,y,z} }$};
+
+\end{footnotesize}
+\end{tikzpicture}

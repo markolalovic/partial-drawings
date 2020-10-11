@@ -1,0 +1,103 @@
+\begin{tikzpicture}[scale = 6, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1.4pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1.4pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+% axes
+\draw[gray,thick,->] ({-0.1}, 0) -- (1.1, 0) node[right] {$x$};
+\draw[gray,thick,->] (0, {-0.1}) -- (0, {sqrt(3)/2 + .1}) node[above] {$y$};
+
+% points
+\node [dot=](a) at (0,0) {};
+\node [below = of a,fill=white] {$a(0,0)$};
+\node [dot=](b) at (1,0) {};
+\node [below = of b] {$b(1,0)$};
+\node [dot=](c) at ({1/2},{sqrt(3)/2}) {};
+\node [above = of c] {$c(\frac{1}{2},\frac{\sqrt{3}}{2})$};
+
+% stub ends
+\node [dot2=](bc) at ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\node [above = of bc] {$b_{c}$};
+\node [dot2=](cb) at ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\node [right = of cb] {$c_{b}$};
+
+\node [dot2=](ac) at ({0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\node [above = of ac] {$a_{c}$};
+\node [dot2=](ca) at ({0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\node [left = of ca] {$c_{a}$};
+
+\node [dot2=](ab) at ({0.25},0) {};
+\node [below = of ab] {$a_{b}$};
+\node [dot2=](ba) at ({0.75}, 0)  {};
+\node [below = of ba] {$b_{a}$};
+
+%x,y,z
+%\node [dot2=](x) at ({0.375}, {sqrt(3)/8}) {};
+%\node [below = of x] {$x$};
+%\node [dot2=](y) at ({0.625}, {sqrt(3)/8})  {};
+%\node [below = of y] {$y$};
+%\node [dot2=](z) at ({0.5}, {sqrt(3)/4})  {};
+%\node [above = of z] {$z$};
+
+%%%%%%%%%%%% to color it
+%\fill[color-trapezoid, opacity=0.3] (a) -- ({0.25*(0.5)}, {0.25*sqrt(3)/2}) -- ({0.375}, {sqrt(3)/8}) -- ({0.25},0) -- (a) -- cycle;
+%\fill[color-trapezoid, opacity=0.3] (b) -- ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2}) -- ({0.625}, {sqrt(3)/8}) -- ({0.75}, 0) -- (b) -- cycle;
+%\fill[color-trapezoid, opacity=0.3] (c) -- ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) -- ({0.5}, {sqrt(3)/4}) -- ({0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c) -- cycle;
+% color inside
+%\fill[color-inside, opacity=0.3] ({0.375}, {sqrt(3)/8}) -- ({0.625}, {sqrt(3)/8}) -- ({0.5}, {sqrt(3)/4}) -- cycle;
+
+% denote ticks 
+% denote c and d
+%%%%%%%%%%%%%% c
+\draw [thin] (0.5, 0.01000000000) -- (0.5, -0.01000000000);
+\coordinate (zx) at (0.5,0);
+\node [below = of zx] {$\frac{1}{2}$}; % = 
+
+\draw [thin] (-0.01, {sqrt(3)/8}) -- (0.01, {sqrt(3)/8});
+\coordinate (xy) at (0,{sqrt(3)/8});
+\node [left = of xy] {$\frac{\sqrt{3}}{8}$};
+
+\draw [thin] (-0.01, {sqrt(3)/4}) -- (0.01, {sqrt(3)/4});
+\coordinate (xz) at (0,{sqrt(3)/4});
+\node [left = of xz] {$\frac{\sqrt{3}}{4}$};
+
+\draw [thin] (-0.01, {3*sqrt(3)/8}) -- (0.01, {3*sqrt(3)/8});
+\coordinate (kaza) at (0,{3*sqrt(3)/8});
+\node [left = of kaza] {$\frac{3\sqrt{3}}{8}$};
+
+\draw [thin] (-0.01, {sqrt(3)/2}) -- (0.01, {sqrt(3)/2});
+\coordinate (cy) at (0,{sqrt(3)/2});
+\node [left = of cy] {$\frac{\sqrt{3}}{2}$};
+
+% big triangle
+\draw[ultra thin] (a) -- (b) -- (c) -- (a) -- cycle;
+% small triangle
+%\draw[ultra thin] (x) -- (y) -- (z) -- (x) -- cycle;
+
+% stubs
+\draw[ultra thick] (b) -- ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25},0);
+\draw[ultra thick] ({0.75}, 0) -- (b);
+
+% parallelograms
+%\draw[thin] (a) -- ({0.25*(0.5)}, {0.25*sqrt(3)/2}) -- ({0.375}, {sqrt(3)/8}) -- ({0.25},0) -- (a) -- cycle;
+%\draw[thin] (b) -- ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2}) -- ({0.625}, {sqrt(3)/8}) -- ({0.75}, 0) -- (b) -- cycle;
+%\draw[thin] (c) -- ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) -- ({0.5}, {sqrt(3)/4}) -- ({0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c) -- cycle;
+%\draw [thin] (0,0) -- (1,0) -- ({1/2},{sqrt(3)/2}) -- cycle;
+
+
+% again white circles to draw over the lines
+\node [dot2=](bc) at ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\node [dot2=](cb) at ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\node [dot2=](ac) at ({0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\node [dot2=](ca) at ({0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\node [dot2=](ab) at ({0.25},0) {};
+\node [dot2=](ba) at ({0.75}, 0)  {};
+%\node [dot2=](x) at ({0.375}, {sqrt(3)/8}) {};
+%\node [dot2=](y) at ({0.625}, {sqrt(3)/8})  {};
+%\node [dot2=](z) at ({0.5}, {sqrt(3)/4})  {};
+%\node [above = of z] {$z$};
+
+\end{footnotesize}
+\end{tikzpicture}

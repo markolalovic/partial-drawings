@@ -1,0 +1,627 @@
+\documentclass{beamer}
+
+\mode<presentation> {
+\usetheme{Madrid}
+}
+\usepackage[utf8x]{inputenc}
+\usepackage[english]{babel}
+\usepackage[labelformat=empty]{caption}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+% for a tick
+\usepackage{bbding}
+\usepackage{pifont}
+\usepackage{wasysym}
+\usepackage{amssymb}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+% subfigure
+\usepackage{caption}
+\usepackage{subcaption}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations.markings}
+\usepackage{accents}
+% angles
+\usepackage{tkz-euclide}
+
+\definecolor{blue}{RGB}{51,105,232}
+\definecolor{yellow}{RGB}{238,118,0}
+\definecolor{orange}{RGB}{213,15,37}
+\definecolor{red}{RGB}{139,37,0}
+\definecolor{grey}{RGB}{211,211,211} 
+\definecolor{gray}{RGB}{211,211,211} 
+\definecolor{green}{RGB}{0,153,37}
+\definecolor{color-trapezoid}{RGB}{211,211,211} 
+\definecolor{color-inside}{RGB}{211,211,211} 
+\definecolor{color-parallelogram}{RGB}{211,211,211} 
+\definecolor{color-CL}{RGB}{211,211,211}
+
+% trapezoid tpz
+\newcommand\tpz{%
+  \ensuremath{
+    \begin{tikzpicture}[line width=0.13ex] %0.15ex
+      \pgfsetbaseline{-0.575ex}
+      \useasboundingbox (-1ex, -1ex) rectangle (1ex, 1ex);
+      \draw (-0.7ex, -0.5ex ) -- (0.7ex, -0.5 ex) -- (0.4 ex, 0.5ex) -- (-0.4 ex, 0.5ex) -- cycle;
+    \end{tikzpicture}%
+  }
+}
+% moji makroji
+\newcommand{\abovesym}[1]{\tilde{#1}} %{\tilde{#1}}%
+\newcommand{\undersym}[1]{\underaccent{\tilde}{#1}} %{\utilde{#1}}%
+\newcommand{\rectansym}{\Box}
+\newcommand{\quadsym}{\Diamond} %{\diamond}
+\newcommand{\trisym}{\triangle}
+%norma
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\sangle}{\sphericalangle}
+
+\newcommand{\threepartdef}[6]
+{
+	\left\{
+		\begin{array}{lll}
+			#1 & \mbox{if } #2 \\
+			#3 & \mbox{if } #4 \\
+			#5 & \mbox{else } #6
+		\end{array}
+	\right.
+}
+\newcommand{\twopartdef}[4]
+{
+	\left\{
+		\begin{array}{ll}
+			#1 & \mbox{if } #2 \\
+			#3 & \mbox{if } #4
+		\end{array}
+	\right.
+}
+\newcommand{\vertwopartdef}[4]
+{
+	\left\{
+		\begin{array}{ll}
+			#1 & \mbox{if } #2 \\[22pt]
+			#3 & \mbox{if } #4
+		\end{array}
+	\right.
+}
+% floor
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+% proj
+\DeclareMathOperator{\proj}{proj}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\title[Partial Drawings of Complete Graphs]{Partial Drawings of Complete Graphs}
+\author[Marko Lalović]{\textbf {Marko Lalović}}
+
+\institute[]
+{
+University of Ljubljana \\
+Faculty of Computer and Information Science \\
+Faculty of Mathematics and Physics}
+\date{} % Nov 2014
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents 
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Idea of Partial Drawings}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Only two obstacles to planarity}
+\begin{figure}[H]
+\centering
+\resizebox{8cm}{!}{%
+\input{./tikz/only-two-obstacles-1.tikz}
+}
+\caption{Drawing of a graph that contains subgraphs $K_{5}$ and $K_{3,3}$.}
+\end{figure}
+\footnotesize{Kuratowski’s theorem.}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Idea of Partial Drawings}
+\begin{figure}[H]
+\centering
+\resizebox{8cm}{!}{%
+\input{./tikz/only-two-obstacles-2.tikz}
+}
+\caption{Partial drawing of a graph that contains subgraphs $K_{5}$ and $K_{3,3}$.}
+\end{figure}
+\footnotesize{User study [M.\ Burch et.\ al., 2012].}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Idea of Partial Drawings}
+\begin{figure}[H]
+\centering
+%\resizebox{8cm}{!}{%
+\includegraphics[width=0.9\textwidth]{./figures/becker-slide-1.pdf}
+%}
+\caption{Calls between locations after the earthquake on 17. October 1989.}
+\end{figure}
+\footnotesize{[R.\ A.\ Becker et.\ al., 1995].}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Idea of Partial Drawings}
+\begin{figure}[H]
+\centering
+%\resizebox{8cm}{!}{%
+\includegraphics[width=0.9\textwidth]{./figures/becker-slide-2.pdf}
+%}
+\caption{Calls between locations presented with partial edges.}
+\end{figure}
+\footnotesize{[R.\ A.\ Becker et.\ al., 1995].}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{What is a Partial Drawing}
+Partial edge is a pair of quarter-lines called stubs and we treat them as
+closed sets.
+\begin{figure}[H]
+\centering
+\input{./tikz/partial-edge.tikz}
+\caption{Stubs.}
+\end{figure}
+
+In addition, we require that the drawing is without crossings of partial
+edges or stubs.
+\begin{figure}[H]
+\centering
+\input{./tikz/no-crossing-requirement.subfig}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+\setcounter{subfigure}{0} % reset subfigure counter
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{What is a Partial Drawing}
+Partial drawing depends only on the relative positions of points.
+\begin{figure}[H]
+\centering
+\input{./tikz/various-drawings-k6.subfig}
+\caption{Various drawings of $K_{6}$.}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{What is the Problem We Were Trying to Solve}
+
+\begin{block}{Problem}
+For how big complete graph the partial drawing exists?
+\end{block}
+
+\begin{block}{In other words}
+Let $M$ denote the maximum number of points in a complete graph that we
+can draw as partial drawing. We want to estimate the upper bound
+of $M$:
+$$M < \text{ ?}$$
+\end{block}
+\begin{figure}[H]
+\centering
+\input{./tikz/number-line-1.tikz}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+\section{Known Work}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Known Work}
+The formalization of the problem and estimate of the ``lower bound'' $M \geq 16$ [T.\ Bruckdorfer, M.\ Kaufmann, 2012].
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.3\textwidth]{./figures/partial-drawing-of-k_16.pdf}
+\caption{Partial drawing of $K_{16}$}
+\end{figure}
+\begin{figure}[H]
+\centering
+\input{./tikz/number-line-2.tikz}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Known Work}
+It is not possible to draw a partial drawing of the complete graph on
+seventeen points which lie in \textcolor{blue}{one-sided convex position} [T.\ Bruckdorfer et.\ al., 2013]. According to the result of Erd\H{o}s and Szekeres we obtain $M < \binom{30}{15} = 155\text{ }117\text{ }520$.
+
+\begin{figure}[H]
+\centering
+\resizebox{6cm}{!}{%
+\input{./tikz/points-in-one-sided-convex-position.tikz}
+}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\input{./tikz/number-line-3.tikz}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Known Work}
+[Bruckdorfer et.\ al., 2013]: $M < 241$.
+\begin{figure}[H]
+\centering
+\input{./tikz/number-line-4.tikz}
+\end{figure}
+\vspace{2.7cm}
+\end{frame}
+%------------------------------------------------
+
+\section{Our Contribution}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Our Contribution}
+[Bruckdorfer et.\ al., 2013]: $M < 241$.
+\begin{figure}[H]
+\centering
+\input{./tikz/number-line-4.tikz}
+\end{figure}
+Our result: $M < 102$.
+\begin{figure}[H]
+\centering
+\input{./tikz/number-line-5.tikz}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\begin{block}{First Tool}
+If the region is small enough, it doesn’t contain two points of the partial
+edge drawing.
+\end{block}
+\begin{figure}
+\centering
+\resizebox{8cm}{!}{%
+\input{./tikz/proof-k33-trapezoid.tikz}
+}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\begin{block}{Second Tool}
+If a corner region is small enough, it doesn’t contain many points of the
+partial drawing.
+\end{block}
+
+\begin{figure}
+\centering
+\resizebox{6cm}{!}{%
+\input{./tikz/corner-region.tikz}
+}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Frame of the Drawing}
+\begin{figure}
+\centering
+\resizebox{8cm}{!}{%
+\input{./tikz/frame-definition.tikz}
+}
+\caption{Frame $F$}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Tessellation of the Frame}
+[Bruckdorfer et.\ al., 2013]:
+\begin{figure}
+\centering
+\includegraphics[width=10cm]{./figures/bruckdorfer-tessellation.png}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Tessellation of the Frame}
+Our tessellation:
+\begin{figure}[!ht]
+\begin{center}
+\resizebox{6cm}{!}{%
+\input{./tikz/our-tessellation.tikz}
+}
+\end{center}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{The Tessellation Dependents on the Positions of Points}
+\begin{figure}[!ht]
+\begin{center}
+%\resizebox{6cm}{!}{%
+\input{./tikz/tessellation-is-dependent-on-c.tikz}
+%}
+\end{center}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Transformation of the Drawing}
+\begin{figure}[!ht]
+\begin{center}
+\resizebox{6cm}{!}{%
+\input{./tikz/tessellation-transformation.tikz}
+}
+\end{center}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{The Tessellation Dependents on the Positions of Points}
+\begin{figure}[!ht]
+\begin{center}
+%\resizebox{6cm}{!}{%
+\input{./tikz/tessellation-transformation-is-dependent-on-c.tikz}
+%}
+\end{center}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+
+%------------------------------------------------
+% TREATMENT OF REGIONS
+%------------------------------------------------
+\begin{frame}
+\frametitle{Treatment of Regions}
+\begin{figure}%[!h]
+\begin{center}
+\resizebox{8cm}{!}{%
+\input{./tikz/relationship-2.tikz}
+}
+\end{center}
+\caption{The corner regions.}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Treatment of Regions}
+\begin{figure}%[!h]
+\begin{center}
+\resizebox{8cm}{!}{%
+\input{./tikz/corner-regions-1.tikz}
+}
+\end{center}
+\caption{Maximal cell $C$ in layer $L$.}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\begin{figure}[!h]
+\begin{center}
+\resizebox{9cm}{!}{%
+\input{./tikz/upper-layers.tikz}
+}
+\end{center}
+\caption{First layer for $t = 0.24.$}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./figures/plot-kL2-jL2-large.pdf}
+\end{center}
+\caption{Plot of the function $k_{L_{2}}(t)$ in blue and plot of the function $j_{L_{2}}(t)$ in red as functions of $t$.}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/left-and-right-layers-estimates-small.pdf}
+\caption{The estimate for the number of points in the left and right triangle as a function of $t$.}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\begin{figure}[!ht]
+\begin{center}
+\resizebox{4cm}{!}{%
+\input{./tikz/half-shadows-1.tikz}
+}
+\end{center}
+\caption{Illustration for very small values of the parameter $t$.}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+
+%------------------------------------------------
+\begin{frame}
+\begin{figure}[!ht]
+\begin{center}
+\resizebox{4cm}{!}{%
+\input{./tikz/half-shadows-2.tikz}
+}
+\end{center}
+\caption{Illustration for $t = \frac{3}{8}$.}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Calculations}
+\begin{block}{Example}
+\begin{align*}
+\frac{\left|pc\right|}{\left|\proj_{s} \left(\overline{p'c}\right)\right|} &\leq
+\frac{\max\left\{ \left|ec\right|, \left|fc\right| \right\}}{\min
+\left\{
+\left|\proj_{\overline{gc}} \left(\overline{hc}\right)\right|,
+\left|\proj_{\overline{hc}} \left(\overline{gc}\right)\right|
+\right\}
+} = q_{c}(t) = \\[6pt]%
+&= \vertwopartdef 
+{
+\frac{
+\max
+\left\{ \sqrt{\frac{25}{9} + \frac{49}{576}\left(1-4t\right)^{2}}, \sqrt{\frac{25}{9}+t^{2}} \right\}
+}{
+\min
+\left\{ \frac{128 + 15t(4t-1)}{24 \sqrt{16+9t^{2}}}, 
+\frac{128 + 15t(4t-1)}{3 \sqrt{1049+200t(2t-1)}} \right\}}, } {t \leq \frac{1}{4},} 
+{
+\frac{
+\max
+\left\{ \frac{5}{3} \sqrt{1 + \left(t - \frac{1}{4}\right)^{2}}, \sqrt{\frac{25}{9}+t^{2}} \right\}
+}{
+\min
+\left\{ \frac{16 + 3t(4t-1)}{3 \sqrt{16+9t^{2}}}, 
+\frac{16 + 3t(4t-1)}{3 \sqrt{17 + 8t(2t-1)}} \right\}}, } {t \geq \frac{1}{4}.} \\[6pt]%
+\end{align*}
+\end{block}
+\end{frame}
+%------------------------------------------------
+
+
+%------------------------------------------------
+\begin{frame}
+\begin{figure}%[!h]
+\begin{center}
+\resizebox{6cm}{!}{%
+\input{./tikz/lower-layers.tikz}
+}
+\end{center}
+\caption{The bottom layers for $t = 0.4$.}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/lower-layer-kj.pdf}
+\caption{Plot of the function $k_{B_{3}}(t)$ in blue and plot of $j_{B_{3}}(t)$ in red as functions of $t$.}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\begin{block}{How to find critical values of $t$}
+\begin{align*}
+\beta_{i} &= \frac{3\delta}{1+6\delta}, \\[6pt]%
+\left(\frac{1+3\delta}{3\delta}\right)^{i}\beta_{0} &= \frac{3\delta}{1+6\delta}, \\[6pt]%
+\alpha(t) &= \frac{3\delta}{1+6\delta}\left(\frac{3\delta}{1+3\delta}\right)^{i}, \\[6pt]%
+t &= \overset{-1}{\alpha}\left( \frac{\left(3\delta\right)^{i+1}}{(1+6\delta)\left(1+3\delta\right)^{i}} \right).
+\end{align*}	
+\end{block}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+% CONCLUSION
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Evaluation of the Result}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/all-together-more-than-two-thirds.pdf}%
+\caption{Plot of the estimate $M$.}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Evaluation of the Result}
+\begin{figure}[t] %[b]{0.4\textwidth}
+\centering
+\resizebox{4cm}{!}{%
+\input{./tikz/number-of-points.tikz}
+}
+\caption{Estimate $M < 102$ at $t = \frac{1}{11}$.}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\begin{block}{The Result}
+We improved the upper bound by more than twice. We have shown that it
+is not possible to draw a partial drawing of the complete graph on
+102 or more points:
+$$M < 102.$$
+
+\end{block}
+\begin{figure}[H]
+\centering
+\input{./tikz/number-line-5.tikz}
+\end{figure}
+
+We believe that the right estimate is much closer to 16 than to 102.
+\end{frame}
+%------------------------------------------------
+
+\end{document} 

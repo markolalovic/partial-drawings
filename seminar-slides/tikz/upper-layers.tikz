@@ -1,0 +1,88 @@
+\begin{tikzpicture}[scale = 6, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1pt,draw,fill=white,label={#1}, name=#1}]
+
+\begin{footnotesize}
+\draw (0,0) -- (0.125, 0.216506) -- (-0.166667, 0.288675) -- (-0.333333, 0.) -- (0,0) -- cycle;
+\fill[color-parallelogram,opacity=0.9] (0,0) -- (0.125, 0.216506) -- (-0.166667, 0.288675) -- (-0.333333, 0.) -- (0,0) -- cycle;
+
+%% S_{ca}
+\draw (0.375, 0.649519) -- (0.5,0.87) -- (0.333333, 1.1547) -- (0.166667, 0.866025) -- (0.375, 0.649519) -- cycle;
+\fill[color-parallelogram,opacity=0.9] (0.375, 0.649519) -- (0.5,0.87) -- (0.333333, 1.1547) -- (0.166667, 0.866025) -- (0.375, 0.649519) -- cycle;
+
+\node [dot=](a) at (0,0) {};
+\node [below = of a] {$a$};
+\node [dot=](b) at (1,0) {};
+\node [below = of b] {$b$};
+\node [dot=](c) at (0.5,0.87) {};
+\node [above = of c] {$c$};
+%
+\draw [thin] ({0.375},{0.6525}) -- ({0.223602},{0.810559});
+\draw [thin] ({0.340833},{0.59305}) -- ({0.181159},{0.736708});
+\draw [thin] ({0.297328},{0.51735}) -- ({0.127115},{0.642671});
+\draw [thin] ({0.25},{0.435}) -- ({0.068323},{0.540373});
+\draw [thin] ({0.202672},{0.35265}) -- ({0.00953071},{0.438074});
+\draw [thin] ({0.159167},{0.27695}) -- ({-0.0445135},{0.344037});
+\draw [thin] ({0.125},{0.2175}) -- ({-0.0869565},{0.270186});
+\draw [thin] ({0.375},{0.6525}) -- ({0.125},{0.2175});
+
+\draw [thin] ({-0.0869565},{0.270186}) -- ({0.223602},{0.810559});
+\fill[red,opacity=0.3] ({0.375},{0.6525}) -- ({0.125},{0.2175}) -- ({-0.0869565},{0.270186}) -- ({0.223602},{0.810559}) -- cycle;
+
+\coordinate[]  (aa) at (0.24,0.87) {};
+\coordinate[]  (bb) at (1.24,0.87) {};
+
+\coordinate[]  (b12) at (-0.4987,0.869) {};
+\coordinate[]  (b14b14) at (-0.75,0.435) {};
+\coordinate[]  (b34b34) at (0.04,1) {};
+\coordinate[]  (a2) at (-1,0) {};
+\coordinate[]  (ac) at (0.13,0.22) {};
+\coordinate[]  (ca) at (0.38,0.65) {};
+\coordinate[]  (a43) at (-0.33,0) {};
+\coordinate[]  (a43a43) at (0.24,1) {};
+\coordinate[]  (a53) at (-0.67,0) {};
+
+\coordinate[]  (e) at (0.23,0.8) {};
+\coordinate[]  (a53a53) at (-0.09,1) {};
+\coordinate[]  (a2a2) at (-0.42,1) {};
+\coordinate[]  (o) at (0.42,1.01) {};
+
+\draw[ultra thick] (b) -- ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25},0);
+\draw[ultra thick] ({0.75}, 0) -- (b);
+
+\draw [thin] (a) -- (b) -- (c) -- (a) -- cycle;
+\draw [thin] (a) -- (b) -- (bb) -- (aa) -- (a) -- cycle;
+\draw [dotted] (a) -- (b12) -- (c) -- cycle;
+
+\draw [dotted] (b) -- (a2);
+\draw [dotted] (b) -- (b14b14);
+\draw [dotted] (b) -- (b12);
+\draw [dotted] (b) -- (b34b34);
+\draw [dotted] (b) -- (o);
+
+\draw [dotted] (a43) -- (a43a43);
+\draw [dotted] (a53) -- (a53a53);
+\draw [dotted] (a2) -- (a2a2);
+
+\draw [thin] (-0.33,0.00666173) -- (-0.33,-0.00666173); 
+\node [below = of a43] {$\frac{4}{3}$};
+
+\draw [thin] (-0.67,0.00666173) -- (-0.67,-0.00666173); 
+\node [below = of a53] {$\frac{5}{3}$};
+
+\draw [thin] (-1,0.00666173) -- (-1,-0.00666173); 
+\node [below = of a2] {$2$};
+
+\node [dot2=] (aa) at (0.24,0.87) {};
+\node [above = of aa] {$\abovesym{a}$};
+\node [dot2=] (bb) at (1.24,0.87) {};
+\node [above = of bb] {$\abovesym{b}$};
+
+\node [dot2=] (e) at (0.222,0.809) {};
+\node [right = of e] {$e$};
+
+\end{footnotesize}
+\end{tikzpicture}

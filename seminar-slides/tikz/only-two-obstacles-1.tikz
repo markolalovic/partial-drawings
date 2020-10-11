@@ -1,0 +1,53 @@
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=1.6, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]  
+
+\node [dot=] at (4.01,4.78) {};
+\node [dot=] at (4,2.76){};
+\node [dot=] at (5.67,5.82){};
+\node [dot=] at (6.34,2.6){};
+\node [dot=] at (7.44,4.87){};
+\node [dot=] at (6.41,4){};
+\node [dot=] at (7.65,4) {};
+\node [dot=] at (9,4) {};
+\node [dot=] at (7.68,2.6) {};
+\node [dot=] at (9.03,2.6) {};
+\node [dot=] at (8.55,5.37) {};
+\node [dot=] at (5.25,2.05) {};
+\node [dot=] at (7,2) {};
+
+\draw [thick] (4.01,4.78)-- (5.67,5.82);
+\draw [thick] (4.01,4.78)-- (4,2.76);
+\draw [thick] (4,2.76)-- (6.41,4);
+\draw [thick] (4,2.76)-- (7.44,4.87);
+\draw [thick] (4,2.76)-- (5.67,5.82);
+\draw [thick] (4,2.76)-- (6.34,2.6);
+\draw [thick] (5.25,2.05)-- (4.01,4.78);
+\draw [thick] (5.25,2.05)-- (6.41,4);
+\draw [thick] (4.01,4.78)-- (6.34,2.6);
+\draw [thick] (6.34,2.6)-- (7,2);
+\draw [thick] (4.01,4.78)-- (6.41,4);
+\draw [thick] (4.01,4.78)-- (7.44,4.87);
+\draw [thick] (5.67,5.82)-- (6.34,2.6);
+\draw [thick] (6.34,2.6)-- (6.41,4);
+\draw [thick] (6.41,4)-- (5.67,5.82);
+\draw [thick] (5.67,5.82)-- (7.44,4.87);
+\draw [thick] (7.44,4.87)-- (6.41,4);
+\draw [thick] (6.41,4)-- (7.68,2.6);
+\draw [thick] (7.68,2.6)-- (7.65,4);
+\draw [thick] (7.65,4)-- (7,2);
+\draw [thick] (7,2)-- (9.03,2.6);
+\draw [thick] (9.03,2.6)-- (6.41,4);
+\draw [thick] (6.41,4)-- (6.34,2.6);
+\draw [thick] (6.34,2.6)-- (7.44,4.87);
+\draw [thick] (7.44,4.87)-- (8.55,5.37);
+\draw [thick] (8.55,5.37)-- (5.67,5.82);
+\draw [thick] (8.55,5.37)-- (9.03,2.6);
+\draw [thick] (8.55,5.37)-- (7.65,4);
+\draw [thick] (7.65,4)-- (6.34,2.6);
+\draw [thick] (6.34,2.6)-- (9,4);
+\draw [thick] (9,4)-- (9.03,2.6);
+\draw [thick] (9.03,2.6)-- (7.65,4);
+\draw [thick] (7.68,2.6)-- (9,4);
+
+\end{tikzpicture}

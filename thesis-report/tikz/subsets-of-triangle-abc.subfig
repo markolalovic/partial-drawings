@@ -1,0 +1,221 @@
+\begin{subfigure}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[scale = 3, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1.4pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1.4pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+% axes
+\draw[gray,thick,->] ({-0.1}, 0) -- (1.1, 0) node[right] {$x$};
+\draw[gray,thick,->] (0, {-0.1}) -- (0, {sqrt(3)/2 + .1}) node[above] {$y$};
+
+% color
+% color inside
+\fill[orange,opacity=0.6] ({0.375}, {sqrt(3)/8}) -- ({0.625}, {sqrt(3)/8}) -- ({0.5}, {sqrt(3)/4}) -- cycle;
+% points
+\node [dot=](a) at (0,0) {};
+\node [below = of a,fill=white] {$a$};
+\node [dot=](b) at (1,0) {};
+\node [below = of b] {$b$};
+\node [dot=](c) at ({1/2},{sqrt(3)/2}) {};
+\node [above = of c] {$c$};
+
+
+\coordinate (bc) at ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\coordinate (cb) at ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\coordinate (ac) at ({0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\coordinate (ca) at ({0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\coordinate (ab) at ({0.25},0) {};
+\coordinate (ba) at ({0.75}, 0)  {};
+
+% stub ends
+\coordinate (bc) at ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\coordinate (cb) at ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\coordinate (ac) at ({0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\coordinate (ca) at ({0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\coordinate (ab) at ({0.25},0) {};
+\coordinate (ba) at ({0.75}, 0)  {};
+
+\node [dot2=](z) at ({0.5}, {sqrt(3)/4}) {};
+\node [dot2=](y) at ({0.625}, {sqrt(3)/8}) {};
+\node [dot2=](x) at ({0.375}, {sqrt(3)/8}) {};
+
+% big triangle
+\draw[ultra thin] (a) -- (b) -- (c) -- (a) -- cycle;
+% inner triangle
+\draw[ultra thin] (x) -- (y) -- (z) -- (x) -- cycle;
+% auxiliary lines  
+\draw[dotted] (ab) -- (cb); 
+\draw[dotted] (ba) -- (ca);
+\draw[dotted] (ac) -- (bc);
+
+% stubs
+\draw[ultra thick] (b) -- ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25},0);
+\draw[ultra thick] ({0.75}, 0) -- (b);
+
+% x,y,z
+\node [dot2=](x) at ({0.375}, {sqrt(3)/8}) {};
+\node [below = of x] {$a'$};
+\node [dot2=](y) at ({0.625}, {sqrt(3)/8}) {};
+\node [below = of y] {$b'$};
+\node [dot2=](z) at ({0.5}, {sqrt(3)/4}) {};
+\node [above = of z] {$c'$};
+
+\end{footnotesize}
+\end{tikzpicture}
+		\caption{Inner triangle.}
+        \label{fig: inner-triangle}
+    \end{subfigure}%
+\begin{subfigure}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[scale = 3, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1.4pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1.4pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+% axes
+\draw[gray,thick,->] ({-0.1}, 0) -- (1.1, 0) node[right] {$x$};
+\draw[gray,thick,->] (0, {-0.1}) -- (0, {sqrt(3)/2 + .1}) node[above] {$y$};
+
+% color deltoids
+% deltoid_a
+\fill[blue,opacity=0.3] (0,0) -- (0.25,0) -- (0.3, 0.173205) -- (0.125, 0.216506) -- (0,0) -- cycle;
+% deltoid_b
+\fill[blue,opacity=0.3] (0.75,0) -- (1,0) -- (0.875, 0.216506) -- (0.7, 0.173205) -- (0.75,0) -- cycle;
+% deltoid_c
+\fill[blue,opacity=0.3] (0.5, 0.866025) -- (0.625, 0.649519) -- (0.5, 0.519615) -- (0.375, 0.649519) -- (0.5, 0.866025) -- cycle;
+% points
+\node [dot=](a) at (0,0) {};
+\node [below = of a,fill=white] {$a$};
+\node [dot=](b) at (1,0) {};
+\node [below = of b] {$b$};
+\node [dot=](c) at ({1/2},{sqrt(3)/2}) {};
+\node [above = of c] {$c$};
+
+\coordinate (bc) at ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\coordinate (cb) at ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\coordinate (ac) at ({0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\coordinate (ca) at ({0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\coordinate (ab) at ({0.25},0) {};
+\coordinate (ba) at ({0.75}, 0)  {};
+
+% stub ends
+\coordinate (bc) at ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\coordinate (cb) at ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\coordinate (ac) at ({0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\coordinate (ca) at ({0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\coordinate (ab) at ({0.25},0) {};
+\coordinate (ba) at ({0.75}, 0)  {};
+
+% big triangle
+\draw[ultra thin] (a) -- (b) -- (c) -- (a) -- cycle;
+
+
+% stubs
+\draw[ultra thick] (b) -- ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25},0);
+\draw[ultra thick] ({0.75}, 0) -- (b);
+
+%%\draw[thin] (ab) -- (c);
+%%\draw[thin] (ac) -- (b);
+\coordinate (xx) at (0.3, 0.173205) {};
+\draw[thin] (ab) -- (xx) -- (ac);
+%%\node [above = of bc] {$x'$};
+%
+%\draw[thin] (ba) -- (c);
+\draw [dotted] (a) -- (bc);
+\draw [dotted] (ba) -- (c);
+\node [dot2=](yy) at (0.7, 0.173205) {};
+%\node [left = of yy] {$y'$};
+
+\draw[thin] (bc) -- (yy) -- (ba);
+\coordinate (yyy) at (0.7, 0.24) {};
+\node [left = of yyy] {$b^{*}$};
+%
+%%\draw[thin] (ca) -- (b);
+%%\draw[thin] (cb) -- (a);
+\coordinate (zz) at (0.5, 0.519615) {};
+\draw[thin] (cb) -- (zz) -- (ca);
+%%\node [above = of bc] {$z'$};
+
+\end{footnotesize}
+\end{tikzpicture}
+		\caption{Corner regions.}
+        \label{fig: corner-regions}
+    \end{subfigure}%
+\begin{subfigure}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[scale = 3, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1.4pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1.4pt,draw,fill=white,label={#1}, name=#1}]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{footnotesize}
+% color
+%% trapezoids
+\fill[gray,opacity=0.8] ({0.3125},{0.2165063509}) -- ({0.2500000000},{0}) -- ({0.7500000000},{0}) -- ({0.6875},{0.2165063509}) -- cycle;
+\fill[gray,opacity=0.8] ({0.46875},{0.4871392896}) -- ({0.625},{0.6495190528}) -- ({0.875},{0.2165063509})-- ({0.65625},{0.1623797632}) -- cycle;
+\fill[gray,opacity=0.8] ({0.53125},{0.4871392896}) -- ({0.375},{0.6495190528}) -- ({0.125},{0.2165063509}) -- ({0.34375},{0.1623797632}) -- cycle;
+
+\draw [thin] ({0.3125},{0.2165063509}) -- ({0.2500000000},{0}) -- ({0.7500000000},{0}) -- ({0.6875},{0.2165063509}) -- cycle;
+
+\draw [thin] ({0.46875},{0.4871392896}) -- ({0.625},{0.6495190528}) -- ({0.875},{0.2165063509})-- ({0.65625},{0.1623797632}) -- cycle;
+
+\draw [thin] ({0.53125},{0.4871392896}) -- ({0.375},{0.6495190528}) -- ({0.125},{0.2165063509}) -- ({0.34375},{0.1623797632}) -- cycle;
+
+% points
+\node [dot=](a) at (0,0) {};
+\node [below = of a,fill=white] {$a$};
+\node [dot=](b) at (1,0) {};
+\node [below = of b] {$b$};
+\node [dot=](c) at ({1/2},{sqrt(3)/2}) {};
+\node [above = of c] {$c$};
+
+\coordinate (bc) at ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\coordinate (cb) at ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\coordinate (ac) at ({0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\coordinate (ca) at ({0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\coordinate (ab) at ({0.25},0) {};
+\coordinate (ba) at ({0.75}, 0)  {};
+
+% stub ends
+\coordinate (bc) at ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\coordinate (cb) at ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\coordinate (ac) at ({0.25*(0.5)}, {0.25*sqrt(3)/2}) {};
+\coordinate (ca) at ({0.75*(0.5)}, {0.75*sqrt(3)/2}) {};
+\coordinate (ab) at ({0.25},0) {};
+\coordinate (ba) at ({0.75}, 0)  {};
+
+% big triangle
+\draw[ultra thin] (a) -- (b) -- (c) -- (a) -- cycle;
+% ticks
+\draw[thick] (0.155, 0.199186) -- (0.095, 0.233827);
+\node [left = of ac] {$\frac{3}{4}$};
+
+\draw[thick] (0.03, -0.0173205) -- (-0.03, 0.0173205);
+\node [left = of a] {$1$};
+
+\draw[thick] (0.25, 0.034641) -- (0.25, -0.034641);
+\node [below = of ab] {$\frac{1}{4}$};
+
+\draw[thick] (0.75, 0.034641) -- (0.75, -0.034641);
+\node [below = of ba] {$\frac{3}{4}$};
+
+\draw [dotted] (c) -- (ab);
+\draw [dotted] (c) -- (ba);
+
+% stubs
+\draw[ultra thick] (b) -- ({1 - 0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({1 - 0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25*(0.5)}, {0.25*sqrt(3)/2});
+\draw[ultra thick] ({0.75*(0.5)}, {0.75*sqrt(3)/2}) -- (c);
+\draw[ultra thick] (a) -- ({0.25},0);
+\draw[ultra thick] ({0.75}, 0) -- (b);
+
+\end{footnotesize}
+\end{tikzpicture}
+\caption{Inner layers.}
+\label{fig: inner-layers}
+\end{subfigure}

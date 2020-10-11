@@ -1,0 +1,53 @@
+\begin{subfigure}[b]{0.3\textwidth}
+\centering
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=0.4, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]  
+
+\draw [green,thick] (1.23,4.51)-- (2.47,3.8);
+\draw [green,thick] (4.95,2.38)-- (6.19,1.67);
+\draw [green,thick] (1.01,0.13)-- (2.18,1.43);
+\draw [green,thick] (4.54,4.04)-- (5.72,5.35);
+
+\node [green,dot=] at (1.01,0.13) {};
+\node [green,dot=] at (5.72,5.35) {};
+\node [green,dot=] at (1.23,4.51) {};
+\node [green,dot=] at (6.19,1.67) {};
+\end{tikzpicture}
+\caption{\checkmark}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
+\centering%
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=0.4, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]  
+
+\draw [green,thick] (1.23,4.51)-- (2.47,3.8);
+\draw [green,thick] (4.95,2.38)-- (6.19,1.67);
+\draw [green,thick] (1.01,0.13)-- (2.13,0.81);
+\draw [green,thick] (4.36,2.17)-- (5.48,2.85);
+
+\node [green,dot=] at (1.01,0.13) {};
+\node [green,dot=] at (5.48,2.85) {};
+\node [green,dot=] at (1.23,4.51) {};
+\node [green,dot=] at (6.19,1.67) {};
+\end{tikzpicture}
+\caption{\checkmark}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
+\centering
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=0.4, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]  
+ \draw [red,thick](1.23,4.51)-- (2.47,3.8);
+\draw [red,thick] (4.95,2.38)-- (6.19,1.67);
+\draw [red,thick] (1.01,0.13)-- (2.23,0.71);
+\draw [red,thick] (4.66,1.89)-- (5.88,2.47);
+
+\node [red,dot=] at (1.01,0.13) {};
+\node [red,dot=] at (5.88,2.47) {};
+\node [red,dot=] at (1.23,4.51) {};
+\node [red,dot=] at (6.19,1.67) {};
+\end{tikzpicture}
+\caption{$\boldsymbol{\times}$}
+\end{subfigure}

@@ -1,0 +1,118 @@
+\begin{tikzpicture}[scale = 5, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+% S_{ab}
+\draw (0,0) -- (0., -0.33) -- (0.33, -0.33) -- (0.25,0) -- (0,0) -- cycle;
+\fill[color-parallelogram,opacity=0.9] (0,0) -- (0., -0.33) -- (0.33, -0.33) -- (0.25,0) -- (0,0) -- cycle;
+
+% osi
+\draw[gray,thick,->] ({-.2}, 0) -- (1.2, 0) node[right] {$x$};
+\draw[gray,thick,->] (0, {-1.2}) -- (0, {1.2}) node[above] {$y$};
+
+% GeoGebra export
+% since it does not change
+\node[dot2=] (aabove) at (0,1) {};
+\node [left = of aabove] {$\abovesym{a}$};
+\node[dot2=] (abelow) at (0,-1) {};
+\node [left = of abelow] {$\undersym{a}$}; %(0,-1)
+\node[dot2=] (babove) at (1,1) {};
+\node [right = of babove] {$\abovesym{b}$};
+\node[dot2=] (bbelow) at (1,-1) {};
+\node [right = of bbelow] {$\undersym{b}$};
+
+\coordinate (ab) at (0.25,0) {};
+\coordinate (ba) at (0.75,0) {};
+
+
+\node[dot2=] (h) at (0,-0.33) {};
+\node [left = of h] {$h$}; %(0,-\frac{1}{3})
+\node[dot2=] (e) at (0,-0.66) {};
+\node [left = of e] {$e$}; %(0,-\frac{2}{3})
+
+\coordinate (ee) at (1,-0.66) {};
+\coordinate (hh) at (1,-0.33) {};
+
+\coordinate (abelowb) at ({0.25+0.003},{-0.75}) {};
+
+\node [dot=](a) at (0,0) {};
+\node [left = of a,fill=white] {$a$};
+\node [dot=](b) at (1,0) {};
+\node [right = of b,fill=white] {$b$};
+
+% S_{ca}
+\draw (1,0) -- (1.33, -0.33) -- (1, -0.33) -- (0.75,0) -- (1,0)  -- cycle;
+\fill[color-parallelogram,opacity=0.9] (1,0) -- (1.33, -0.33) -- (1, -0.33) -- (0.75,0) -- (1,0) -- cycle;
+
+% since it changes with t
+\node [dot=](c) at (0,1) {};
+\node [above = of c,fill = white] {$c$};
+
+\coordinate (eb) at (0.25,-0.5) {};
+
+\coordinate (g) at (0.22,-0.33) {};
+\coordinate (f) at (0.28,-0.66) {};
+\coordinate (fbelow) at (0.29,-1) {};
+\coordinate (fcupframe) at ({0.33+0.003333},{-1}) {};
+\coordinate (c14cupframe) at (0.5,-1) {};
+\coordinate (c34cupframe) at (1.5,-1) {};
+\coordinate (gbelow) at (0.24,-0.66) {};
+
+% lines
+%%%% color the black holes
+\draw (abelow) -- (fbelow) -- (gbelow) -- (e) -- (abelow) -- cycle;
+\draw (e) -- (f) -- (g) -- (h) -- (e) -- cycle;
+
+\fill[blue,opacity=0.3] (0,-1) -- (fbelow) -- (gbelow) -- (0, {-2/3}) -- (abelow) -- cycle;
+\fill[blue,opacity=0.3] (0, {-2/3}) -- (f) -- (g) -- (0,{-1/3}) -- (e) -- cycle;
+
+
+% stubs
+\draw[ultra thick] (a) -- (ab);
+\draw[ultra thick] (b) -- (ba);
+\draw[ultra thick] (abelow) -- (abelowb);
+\draw[ultra thick] (e) -- (eb);
+
+% abc and the frame
+\draw [thin] (a) -- (b) -- (c) -- (a) -- cycle;
+\draw [thin] (abelow) -- (bbelow) -- (babove) -- (aabove) -- (abelow) -- cycle;
+
+% zarki iz c
+\draw [dotted] (c) -- (fbelow);
+\draw [dotted] (c) -- (fcupframe);
+\draw [dotted] (c) -- (c14cupframe);
+\draw [dotted] (c) -- (hh);
+
+% horizontalno vzporednice ab
+\draw [dotted] (h) -- (hh);
+\draw [dotted] (e) -- (ee);
+
+% end GeoGebra export
+
+% again the dots and labels to cover the lines
+\node[dot2=] (abelowb) at ({0.25+0.003},{-0.75}) {};
+\node [right = of abelowb,fill=white] {$\undersym{a}_{b}$};
+\node[dot2=] (eb) at (0.25,-0.5) {};
+\node [right = of eb,fill = white] {$e_{b}$};
+\node[dot2=] (h) at (0,-0.33) {};
+\node[dot2=] (e) at (0,-0.66) {};
+\node[dot2=] (abelow) at (0,-1) {};
+\node[dot2=] (ab) at (0.25,0) {};
+\node [above = of ab,fill=white] {$a_{b}$};
+\node[dot2=] (ba) at (0.75,0) {};
+\node [above = of ba,fill=white] {$b_{a}$};
+
+\node[dot2=] (n) at (1,-0.33) {};
+\node [right = of n] {$n$}; %(1,-\frac{1}{3})
+\node[dot2=] (m) at (1,-0.66) {};
+\node [right = of m] {$m$};%(1,-\frac{2}{3})
+
+%%% denote P1, P2, P3
+\coordinate (p1) at (0.03,{-2/3+0.25}) {};
+\node [right = of p1] {$P_{1}$};
+
+\coordinate (p2) at (0.014,{-2/3-0.1}) {};
+\node [right = of p2] {$P_{2}$};
+
+
+\end{footnotesize}
+\end{tikzpicture}

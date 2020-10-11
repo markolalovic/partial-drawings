@@ -1,0 +1,63 @@
+\begin{subfigure}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=6, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]  
+	\begin{footnotesize}
+	\node [dot=](u) at (0,0) {};
+	\node [below = of u] {$u$};
+	\node [dot=](v) at ({3/8}, {sqrt(3)/8}) {};
+	\node [below = of v] {$v$};
+	\draw (u) -- node[above]{$\overline{uv}$} (v) {};
+	\end{footnotesize}
+\end{tikzpicture}	
+\caption{Edge $\overline{uv}$.}
+\label{fig: edge}
+\end{subfigure}%
+\begin{subfigure}{0.3\textwidth}
+    \centering%
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=6, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]  
+	\begin{footnotesize}
+	\node [dot=](u) at (0,0) {};
+	\node [below = of u] {$u$};
+	\node [dot=](v) at ({3/8}, {sqrt(3)/8}) {};
+	\node [below = of v] {$v$};
+	\coordinate[] (baru) at ({3/4*3/8},{3/4*sqrt(3)/8});
+	\coordinate[] (baruv) at ({1/4*3/8},{1/4*sqrt(3)/8});
+	\draw (u) -- node[above]{$\overline{u}v$} (baruv) {};
+	\draw (v) -- node[above]{$\overline{v}u$} (baru) {};	
+	\end{footnotesize}
+\end{tikzpicture}
+\caption{Stubs $\overline{u}v$ and $\overline{v}u$.}
+\label{fig: partial-edge}
+\end{subfigure}%
+\begin{subfigure}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=6, 
+dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1pt,draw,fill=white,label={#1}, name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=1cm]
+  \begin{footnotesize}
+	\node [dot=](u) at (0,0) {};
+	\node [below = of u] {$u$};
+	\node [dot=](v) at ({3/8}, {sqrt(3)/8}) {};
+	\node [below = of v] {$v$};
+	
+	\coordinate[] (baru) at ({3/4*3/8},{3/4*sqrt(3)/8});
+	\coordinate[] (baruv) at ({1/4*3/8},{1/4*sqrt(3)/8});	
+
+	\draw (v) -- (baru) {};
+	\draw (u) -- (baruv) {};
+
+	\node [dot2=](uv) at ({3/4*3/8},{3/4*sqrt(3)/8}) {};
+	\node [dot2=](vu) at ({1/4*3/8},{1/4*sqrt(3)/8}) {};	
+	\node [below = of uv] {$v_{u}$};
+	\node [below = of vu] {$u_{v}$};
+  \end{footnotesize}
+\end{tikzpicture}	
+\caption{Stub ends $u_{v}$ and $v_{u}$.}
+\label{fig: stub-ends}
+\end{subfigure}

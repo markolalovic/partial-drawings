@@ -1,0 +1,21 @@
+\textbf{\begin{subfigure}[t]{0.27\textwidth}
+\centering
+\resizebox{3cm}{!}{%
+\input{./tikz/tessellation-left-transformation.tikz}%	
+}%
+\caption{$t = \frac{1}{11}, M < 102$.}
+\end{subfigure}\qquad%
+\begin{subfigure}[t]{0.27\textwidth}
+\centering
+\resizebox{2.51cm}{!}{%
+\input{./tikz/tessellation-center.tikz}%
+}%
+\caption{$t = \frac{1}{2}, M < 99$.}
+\end{subfigure}\qquad%
+\begin{subfigure}[t]{0.27\textwidth}
+\centering%
+\resizebox{3cm}{!}{%
+\input{./tikz/tessellation-right-transformation.tikz}%
+}%
+\caption{$t = \frac{10}{11}, M < 102$.}
+\end{subfigure}}

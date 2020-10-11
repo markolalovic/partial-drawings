@@ -1,0 +1,199 @@
+% kl-side
+\begin{subfigure}{0.49\textwidth}
+\centering
+\begin{tikzpicture}[scale = 6, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+% points
+\node [dot=](a) at (0,0) {};
+\node [below = of a,fill=white] {$a$};
+\node [dot=](b) at (1,0) {};
+\node [below = of b] {$b$};
+\node [dot=](c) at ({1/2},{sqrt(3)/2}) {};
+\node [above = of c] {$c$};
+
+% x,y,z
+\node [dot2=](x) at ({0.375}, {sqrt(3)/8}) {};
+\node [below = of x] {$a'$};
+\node [dot2=](y) at ({0.625}, {sqrt(3)/8})  {};
+\node [below = of y] {$b'$};
+\node [dot2=](z) at ({0.5}, {sqrt(3)/4})  {};
+% d,e,f, g, h, i, j, k, l
+\node [dot2=](d) at ({0.5}, 0) {};
+\node [below = of d] {$d$};
+\node [dot2=](e) at ({0.75}, {sqrt(3)/4})  {};
+\node [above = of e] {$e$};
+\node [dot2=](f) at ({0.25}, {sqrt(3)/4})  {};
+\node [above = of f] {$f$};
+\node [dot2=](g) at ({0.5}, {sqrt(3)/6})  {};
+\node [dot2=](h) at ({1/2},{sqrt(3)/8})  {};
+\node [dot2=](i) at ({1/2+1/16},{3*sqrt(3)/16})  {};
+\node [above = of i] {$i$};
+\node [dot2=](j) at ({1/2-1/16},{3*sqrt(3)/16})  {};
+\node [above = of j] {$j$};
+\node [dot2=](k) at ({3/8},{sqrt(3)/4})  {};
+\node [above = of k] {$k$};
+\node [dot2=](l) at ({5/8},{sqrt(3)/4})  {};
+\node [above = of l] {$l$};
+ 
+
+% big triangle
+\draw[ultra thin] (a) -- (b) -- (c) -- (a) -- cycle;
+% inner small triangle
+\draw[ultra thin] (x) -- (y) -- (z) -- (x) -- cycle;
+% triangle median, deltoids, sigma'
+\draw[ thin,dotted] (d) -- (c);
+\draw[ thin,dotted] (a) -- (e);
+\draw[ thin,dotted] (b) -- (f);
+\draw[] (g) -- (h);
+\draw[] (g) -- (i);
+\draw[] (g) -- (j);
+\draw[thick] (h) -- (l) -- (k) -- (h) -- cycle;
+
+% ticks for heights
+% 2/3, 1/2, ... 
+\draw [thin] (0.2575000000, 0.4286825749) -- (0.2425000000, 0.4373428289);
+\node [left = of f] {$\frac{1}{2}$};
+\draw [thin, dotted] (f) -- (k);
+\draw [thin, dotted] (l) -- (e);
+
+\draw [thin] (0.1741666667,0.2843450076) -- (0.1591666667,0.2930052616);
+\draw [thin, dotted] (0.1666666667,0.2886751346) -- (0.8333333333,0.2886751346);
+
+\coordinate (visinag) at (0.1666666667,0.2886751346);
+\node [left = of visinag] {$\frac{2}{3}$};
+
+
+\node [above = of g,fill=white] {$g$};
+\fill[color-inside,opacity=0.3] ({1/2},{sqrt(3)/4}) -- ({1/2-1/16},{3*sqrt(3)/16}) -- ({1/2},{sqrt(3)/6}) -- ({1/2+1/16},{3*sqrt(3)/16}) -- cycle;
+\draw [] ({1/2},{sqrt(3)/4}) -- ({1/2-1/16},{3*sqrt(3)/16}) -- ({1/2},{sqrt(3)/6}) -- ({1/2+1/16},{3*sqrt(3)/16}) -- cycle;
+
+% again white dots to cover the lines
+\node [above = of g] {$g$};
+\node [below = of h,fill=white] {$h$};
+% x,y,z
+\node [dot2=](x) at ({0.375}, {sqrt(3)/8}) {};
+\node [dot2=](y) at ({0.625}, {sqrt(3)/8})  {};
+\node [dot2=](z) at ({0.5}, {sqrt(3)/4})  {};
+% d,e,f, g, h, i, j, k, l
+\node [dot2=](d) at ({0.5}, 0) {};
+\node [dot2=](e) at ({0.75}, {sqrt(3)/4})  {};
+\node [dot2=](f) at ({0.25}, {sqrt(3)/4})  {};
+\node [dot2=](g) at ({0.5}, {sqrt(3)/6})  {};
+\node [dot2=](h) at ({1/2},{sqrt(3)/8})  {};
+\node [dot2=](i) at ({1/2+1/16},{3*sqrt(3)/16})  {};
+\node [dot2=](j) at ({1/2-1/16},{3*sqrt(3)/16})  {};
+\node [dot2=](k) at ({3/8},{sqrt(3)/4})  {};
+\node [dot2=](l) at ({5/8},{sqrt(3)/4})  {};
+\node [above = of z,fill=white] {$c'$};
+
+\end{footnotesize}
+\end{tikzpicture}
+\caption{Stub $\overline{x}c$ intersects the side $\overline{kl}$.}
+\label{fig: side-kl}
+\end{subfigure}%
+\begin{subfigure}{0.49\textwidth}
+\centering
+\begin{tikzpicture}[scale = 6, node distance=0.1cm,>=latex, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1},
+dot2/.style={circle,inner sep=1pt,draw,fill=white,label={#1}, name=#1}]
+\begin{footnotesize}
+% points
+\node [dot=](a) at (0,0) {};
+\node [below = of a,fill=white] {$a$};
+\node [dot=](b) at (1,0) {};
+\node [below = of b] {$b$};
+\node [dot=](c) at ({1/2},{sqrt(3)/2}) {};
+\node [above = of c] {$c$};
+
+% x,y,z
+\node [dot2=](x) at ({0.375}, {sqrt(3)/8}) {};
+\node [below = of x] {$a'$};
+\node [dot2=](y) at ({0.625}, {sqrt(3)/8})  {};
+\node [below = of y] {$b'$};
+\node [dot2=](z) at ({0.5}, {sqrt(3)/4})  {};
+% d,e,f, g, h, i, j, k, l
+\node [dot2=](d) at ({0.5}, 0) {};
+\node [below = of d] {$d$};
+\node [dot2=](e) at ({0.75}, {sqrt(3)/4})  {};
+\node [above = of e] {$e$};
+\node [dot2=](f) at ({0.25}, {sqrt(3)/4})  {};
+\node [above = of f] {$f$};
+\node [dot2=](g) at ({0.5}, {sqrt(3)/6})  {};
+\node [dot2=](h) at ({1/2},{sqrt(3)/8})  {};
+\node [dot2=](i) at ({1/2+1/16},{3*sqrt(3)/16})  {};
+\node [dot2=](j) at ({1/2-1/16},{3*sqrt(3)/16})  {};
+
+\node [dot2=](m) at (0.6875000000,0.3247595264)  {};
+\node [dot2=](n) at (0.5625000000,0.1082531755)  {};
+\node [below = of n] {$n$};
+
+% big triangle
+\draw[ultra thin] (a) -- (b) -- (c) -- (a) -- cycle;
+
+% triangle median, deltoids, sigma'
+\draw[ thin,dotted] (d) -- (c);
+\draw[ thin,dotted] (a) -- (e);
+\draw[ thin,dotted] (b) -- (f);
+\draw[] (g) -- (h);
+\draw[] (g) -- (i);
+\draw[] (g) -- (j);
+
+%\draw[thin, dotted] (j) -- (n);
+% ticks for heights
+% 2/3, 1/2, ...
+\coordinate (ca34) at (0.1250000000,0.2165063509);
+\coordinate (ca58) at (0.1875000000,0.3247595264);
+%\coordinate (ca916) at (0.2187500000,0.3788861142);
+
+\coordinate (cb34) at (0.8750000000,0.2165063509);
+\coordinate (cb58) at (0.8125000000,0.3247595264);
+%\coordinate (cb916) at (0.7812500000,0.3788861142);
+
+\draw [thin, dotted] (ca34) -- (cb34);
+\draw [thin, dotted] (ca58) -- (cb58);
+%\draw [thin, dotted] (ca916) -- (cb916);
+
+\node [left = of ca34] {$\frac{3}{4}$};
+\node [left = of ca58] {$\frac{5}{8}$};
+%\node [left = of ca916] {$\frac{9}{16}$};
+
+\draw [thin] (0.1325000000,0.2121762239) -- (0.1175000000,0.2208364780);
+\draw [thin] (0.1950000000,0.3204293994) -- (0.1800000000,0.3290896534);
+%\draw [thin] (0.2262500000,0.3745559871) -- (0.2112500000,0.3832162412);
+
+
+\node [above = of g,fill=white] {$g$};
+\fill[color-inside,opacity=0.3] ({1/2},{sqrt(3)/8}) -- ({0.625}, {sqrt(3)/8}) -- ({1/2+1/16},{3*sqrt(3)/16}) -- ({0.5}, {sqrt(3)/6})  -- cycle;
+\draw [] ({1/2},{sqrt(3)/8}) -- ({0.625}, {sqrt(3)/8}) -- ({1/2+1/16},{3*sqrt(3)/16}) -- ({0.5}, {sqrt(3)/6})  -- cycle;
+
+% again white dots to cover the lines
+\node [above = of g] {$g$};
+\node [below = of h,fill=white] {$h$};
+%x,y,z
+\node [dot2=](x) at ({0.375}, {sqrt(3)/8}) {};
+
+\node [dot2=](z) at ({0.5}, {sqrt(3)/4})  {};
+% d,e,f, g, h, i, j, k, l
+\node [dot2=](d) at ({0.5}, 0) {};
+\node [dot2=](e) at ({0.75}, {sqrt(3)/4})  {};
+\node [dot2=](f) at ({0.25}, {sqrt(3)/4})  {};
+\node [dot2=](g) at ({0.5}, {sqrt(3)/6})  {};
+\node [dot2=](m) at (0.6875000000,0.3247595264)  {};
+\node [dot2=](n) at (0.5625000000,0.1082531755)  {};
+\node [above = of z,fill=white] {$c'$};
+\node [above = of i] {$i$};
+\node [above = of j] {$j$};
+\node [above = of m,fill=white] {$m$};
+\draw[thick] (m) -- (n) -- (j) -- (m) -- cycle;
+% inner small triangle
+\draw[ultra thin] (x) -- (y) -- (z) -- (x) -- cycle;
+\node [dot2=](h) at ({1/2},{sqrt(3)/8})  {};
+\node [dot2=](y) at ({0.625}, {sqrt(3)/8})  {};
+\node [dot2=](i) at ({1/2+1/16},{3*sqrt(3)/16})  {};
+\node [dot2=](j) at ({1/2-1/16},{3*sqrt(3)/16})  {};
+
+\end{footnotesize}
+\end{tikzpicture}
+\caption{Stub $\overline{y}c$ intersects the side $\overline{jm}$.}
+\label{fig: side-jm}
+\end{subfigure}

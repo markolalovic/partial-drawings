@@ -1,0 +1,20 @@
+\begin{tikzpicture}[node distance=0.1cm,>=latex,scale=0.4, dot/.style={circle,inner sep=1pt,fill,label={#1}, name=#1}]
+
+\draw [xshift=1cm] node[circle,fill,inner sep=8pt, color = white, label=below:$...$] {};
+\draw [xshift=5cm] node[circle,fill,inner sep=8pt, color = white, label=below:$...$] {};
+\draw [xshift=13cm] node[circle,fill,inner sep=5pt, color = white, label=below:$?$] {};
+
+\draw [xshift=15cm] node[circle,fill,inner sep=8pt, color = white, label=below:$...$] {};
+
+\draw[gray,thick,->] ({-1}, 0) -- (19, 0) {};
+
+\tikzstyle{every node}=[draw,shape=circle]
+
+\draw [xshift=0cm] node[circle,fill,color=green,inner sep=2pt,label=below:$1$]{};
+\draw [xshift=2cm] node[circle,fill,color=green,inner sep=2pt]{};
+\draw [xshift=3cm] node[circle,fill,color=green,inner sep=2pt,label=below:$16$]{};
+
+\draw [xshift=12cm] node[circle,fill,color=green,inner sep=2pt,label=below:$M$]{};
+\draw [xshift=13cm] node[circle,fill,color=red,inner sep=2pt]{};
+\draw [xshift=14cm] node[circle,fill,color=red,inner sep=2pt]{};
+\end{tikzpicture}
