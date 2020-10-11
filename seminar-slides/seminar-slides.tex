@@ -20,12 +20,14 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows}
+
 % subfigure
 \usepackage{caption}
 \usepackage{subcaption}
 \usetikzlibrary{shapes}
 \usetikzlibrary{decorations.markings}
 \usepackage{accents}
+
 % angles
 \usepackage{tkz-euclide}
 
@@ -51,13 +53,13 @@
     \end{tikzpicture}%
   }
 }
-% moji makroji
-\newcommand{\abovesym}[1]{\tilde{#1}} %{\tilde{#1}}%
-\newcommand{\undersym}[1]{\underaccent{\tilde}{#1}} %{\utilde{#1}}%
+
+\newcommand{\abovesym}[1]{\tilde{#1}}
+\newcommand{\undersym}[1]{\underaccent{\tilde}{#1}}
 \newcommand{\rectansym}{\Box}
-\newcommand{\quadsym}{\Diamond} %{\diamond}
+\newcommand{\quadsym}{\Diamond}
 \newcommand{\trisym}{\triangle}
-%norma
+
 \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
 \newcommand{\sangle}{\sphericalangle}
 
@@ -89,10 +91,12 @@
 		\end{array}
 	\right.
 }
+
 % floor
 \usepackage{mathtools}
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
 % proj
 \DeclareMathOperator{\proj}{proj}
 
@@ -102,14 +106,16 @@
 \begin{document}
 
 \title[Partial Drawings of Complete Graphs]{Partial Drawings of Complete Graphs}
-\author[Marko Lalović]{\textbf {Marko Lalović}}
 
-\institute[]
-{
+\author[Marko Lalović]{
+Marko Lalović \\
+Mentor: prof.\ dr.\ Gašper Fijavž}
+
+\institute[UL]{
 University of Ljubljana \\
 Faculty of Computer and Information Science \\
 Faculty of Mathematics and Physics}
-\date{} % Nov 2014
+\date{{Nov 2014}}
 
 \begin{frame}
 \titlepage
@@ -129,7 +135,7 @@ Faculty of Mathematics and Physics}
 
 %------------------------------------------------
 \begin{frame}
-\frametitle{Only two obstacles to planarity}
+\frametitle{Only Two Obstacles to Planarity}
 \begin{figure}[H]
 \centering
 \resizebox{8cm}{!}{%
