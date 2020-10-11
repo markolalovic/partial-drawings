@@ -2,8 +2,8 @@
 This repository contains my Bachelor’s thesis report. And seminar slides.
 
 * **Title:** Partial Drawings of Complete Graphs
-* **Thesis report:**
-* **Seminar slides:**
+* **Thesis report:** [https://github.com/markolalovic/partial-drawings/raw/master/thesis-report.pdf](https://github.com/markolalovic/partial-drawings/raw/master/thesis-report.pdf)
+* **Seminar slides:** [https://github.com/markolalovic/partial-drawings/raw/master/seminar-slides.pdf](https://github.com/markolalovic/partial-drawings/raw/master/seminar-slides.pdf)
 * **Keywords:** Partial Edge Drawings, Graph Theory, Planar Graphs, Analytic Geometry
 * **Year:** 2014
 
