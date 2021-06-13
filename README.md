@@ -4,7 +4,7 @@
 
 <p align="center">
 <figure class="image">
-  <img src="figures/figure.png" alt="Upper bound position" width="800">
+  <img src="figures/figure.png" alt="Upper bound position" width="600">
 </figure>
 </p>
 
