@@ -1,6 +1,7 @@
 #!/usr/bin/env wolframscript
 
-(*The following are more important modules in the Mathematica language in which we programmed the calculation of the critical values of the parameter t.*)
+(*The following are more important modules in the Mathematica language 
+in which we programmed the calculation of the critical values of the parameter t.*)
 
 cellsFromLeft::usage="cellsFromLeft[l0_,r0_,h0_,q0_] 
 computes the minimum number of cells in a layer, 
@@ -289,7 +290,10 @@ sftIntBH,sftIntBHSim,sftIntAll,allbis,fk,fklist,fkGlobal,midRats},
 
 
 
-(*The following is an example of using modules. On all systems of safety intervals, we add the functional values of all functions, add constants and calculate the maximum. The result is an estimate for the upper bound on the number of basis points of a partial drawing of a complete graph.*)
+(*The following is an example of using modules. On all systems of safety intervals, 
+we add the functional values of all functions, add constants and calculate the maximum. 
+The result is an estimate for the upper bound on the number of basis points 
+of a partial drawing of a complete graph.*)
 
 fklist = findPartsOfGlobalFunction[];
 (*(B_2 + B_3 + L_1 + L_2 + L_3 + P_1 + P_2)[t]*)

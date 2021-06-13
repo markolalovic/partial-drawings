@@ -3,9 +3,7 @@
 **An estimate for the upper bound on the number of basis points of a partial edge drawing of a complete graph**
 
 <p align="center">
-<figure class="image">
-  <img src="figures/figure.png" alt="Upper bound position" width="600">
-</figure>
+  <img src="figures/figure.png" alt="Upper bound position" width="550">
 </p>
 
 ## Introduction
